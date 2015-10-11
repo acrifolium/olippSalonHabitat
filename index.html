@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="olippApp">
+<head>
+  <title>Olipp</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- jquery & bootsrap -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+  <!-- Bootstrap -->
+  <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" media="screen">
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+
+  <script src="app/app.js"></script>
+  <script src="app/directives.js"></script>
+  <script src="app/controllers.js"></script>
+  <script src="app/dataWebServices.js"></script>
+  <script src="app/authWebServices.js"></script>
+
+</head>
+<body>
+
+<header>
+  <div ng-controller="OlippNavTreeCtrl" ng-include="'partials/navigation-panel.html'"></div>
+</header>
+
+<div class="view-container">
+  <div ng-view class="view-frame">
+  </div>
+</div>
+
+<footer>
+  <div ng-controller="OlippFooterCtrl" ng-include="'partials/footer-panel.html'"></div>
+</footer>
+
+</body>
+</html>

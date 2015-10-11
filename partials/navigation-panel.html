@@ -1,0 +1,48 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+
+    <div class="navbar-header">   
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" arial-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" ng-href="#/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>  
+    </div>
+
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul ng-repeat="node in menuItems" class="nav navbar-nav"> 
+            <li ng-If="node.children == null"><a href="#/{{node.type}}/{{node.id}}">{{node.caption}}</a></li>
+            <li ng-If="node.children != null" class="dropdown">
+              <a ng-href="#" class="dropdown-toggle" data-toggle="dropdown">{{node.caption}} <b class="caret"></b></a>
+              <ul class="dropdown-menu">              
+                <li ng-repeat="child in node.children"><a ng-href="#/{{child.type}}/{{child.id}}">{{child.caption}}</a></li>
+              </ul>
+            </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">          
+          <li>
+            <form role="search" class="navbar-form navbar-search-right">
+              <div class="form-group">
+                  <input type="text" placeholder="Search" class="form-control">
+              </div>
+            </form>
+          </li>
+          <li>
+            <a ng-show="IsAdminExists == true && !authenticated" ng-href="#/login" aria-expanded="true"><button type="button" ng-href="#/login" class="btn btn-success btn-xs">Sign In</button></a>
+            <a ng-show="IsAdminExists == false" ng-href="#/signup" aria-expanded="true"><button type="button" ng-href="#/signup" class="btn btn-success btn-xs">Sign Up</button></a>
+
+              <a ng-show="authenticated" ng-href="#" class="dropdown-toggle" data-toggle="dropdown">{{username}} <b class="caret"></b></a>
+              <ul ng-show="authenticated" class="dropdown-menu">              
+                <li><a href="#"><button type="button" class="btn btn-success btn-xs" ng-click="Logout()">Log Out</button></a></li>
+              </ul>            
+
+          </li>
+        </ul>
+      </div>
+
+  </div>
+</nav>
