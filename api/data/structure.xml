@@ -1,9 +1,9 @@
 <olipp>
 	<navigation>
 		<menuItem id="1" caption="Home" type="dashboard"/>
-		<menuItem id="2" caption="Services" type="service" order="1" />
-		<menuItem id="3" caption="Contact" type="contact" order="2" />
-		<menuItem id="4" caption="Menu" type="dropdown" order="3">
+		<menuItem id="2" caption="SERVICES" type="service" order="1" />
+		<menuItem id="3" caption="NOUS CONTACTER" type="contact" order="2" />
+		<menuItem id="4" caption="MENU" type="dropdown" order="3">
 			<menuItem id="5" caption="submenuItem" type="article" order="1" />
 			<menuItem id="6" caption="submenuItem" type="article" order="3" />
 			<menuItem id="7" caption="submenuItem" type="article" order="2"/>

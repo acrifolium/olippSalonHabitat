@@ -5,10 +5,13 @@
 	class XmlDataAccess {
 
 		private $xmlFileConfig;
-		private $xmlRootConfig;
+		private $xmlRootConfig;		
 
 		private $xmlFileStructure;
 		private $xmlRootStructure;
+
+		private $xmlFileExposant;
+		private $xmlRootExposant;
 
 		private $xmlFileUsers;
 		private $xmlRootUsers;
@@ -17,6 +20,7 @@
 
 			$this->xmlFileConfig = DataFileEnum::Config;
 			$this->xmlFileStructure = DataFileEnum::Structure;
+			$this->xmlFileExposant = DataFileEnum::Exposant;
 			$this->xmlFileUsers = DataFileEnum::Users;
 		}
 
@@ -52,6 +56,23 @@
 			}
 
 			return $this->xmlRootStructure;
+		}
+
+		public function GetXmlFileExposant(){
+			return $this->xmlFileExposant;
+		}
+
+		public function GetXmlRootExposant(){
+			// Exposant file Creation if doesn't exist
+			if(file_exists($this->xmlFileExposant))
+				$this->xmlRootExposant = simplexml_load_file($this->xmlFileExposant);	
+			else 
+			{
+				$content = "<olipp></olipp>";
+				$this->xmlRootExposant = $this->CreateFile($this->xmlFileExposant, $content);
+			}
+
+			return $this->xmlRootExposant;
 		}
 
 		public function GetXmlFileUsers(){

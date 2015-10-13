@@ -1,1 +1,38 @@
-<olipp><version></version><mailer><smtp_server></smtp_server><port></port><smtp_username></smtp_username><smtp_password></smtp_password></mailer></olipp>
+<olipp>
+	<version></version>
+	<mailer>
+		<smtp_server></smtp_server>
+		<port></port>
+		<smtp_username></smtp_username>
+		<smtp_password></smtp_password>
+	</mailer>
+	<contact>
+		<headquarter>Comité Salon TOUT POUR L'HABITAT</headquarter>
+		<address>
+			<firstLine>Menuiserie COMBE</firstLine>
+			<secondLine>ZI du Cappa</secondLine>
+			<postalCode>26140</postalCode> 
+			<city>Saint Rambert d'Albon</city>
+		</address>
+		<site>http://www.salonhabitatsaintrambert.com</site>
+		<mail>contact@salonhabitatsaintrambert.com</mail>		
+		<members>
+			<member>
+				<name>Laurent TARDY</name>
+				<telephone>04 74 84 26 13</telephone>
+			</member>
+			<member>
+				<name>Chantal COMBE</name>
+				<telephone>06 07 34 49 45 ou 04 75 31 15 39</telephone>
+			</member>
+			<member>
+				<name>Murielle ou Philippe CELLE</name>
+				<telephone>04 75 31 21 18</telephone>
+			</member>
+			<member>
+				<name>Françoise SANFILIPPO</name>
+				<telephone>06 89 41 14 90</telephone>
+			</member>			
+		</members>
+	</contact>
+</olipp>

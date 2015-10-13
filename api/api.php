@@ -1,6 +1,7 @@
 <?php
  	require_once("libs/Rest.inc.php");	
 	require_once("Navigation.php");
+	require_once("Contact.php");
 	require_once("Authentication.php");
 
 	class API extends REST {
@@ -32,6 +33,18 @@
 				$this->response('',406);
 			else
 				$this->response($this->json($nav->GetNavigation()), 200);
+		}
+
+		private function contact(){
+			if($this->get_request_method() != "GET"){
+				$this->response('',406);
+			}
+
+			$cont = ContactFactory::create();
+			if(is_null($cont))
+				$this->response('',406);
+			else
+				$this->response($this->json($cont->GetContact()), 200);
 		}
 
 		private function session(){

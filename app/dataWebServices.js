@@ -12,6 +12,10 @@ olippServices.factory('dataWebServices', ['$http',
       return $http.get(serviceBase + 'navigation');
     }
 
+    obj.contact = function(){
+      return $http.get(serviceBase + 'contact');
+    }
+
 	return obj; 
 	
   }]);

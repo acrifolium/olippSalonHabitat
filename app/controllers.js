@@ -20,8 +20,16 @@ olippControllers.controller('OlippNavTreeCtrl', ['$scope', '$routeParams','dataW
     });
 }]);
 
-olippControllers.controller('OlippFooterCtrl', ['$scope', function($scope) {
-  $scope.copyright = "Fauchery SARL";
+olippControllers.controller('OlippCarouselCtrl', ['$scope', function($scope) {
+  
+}]);
+
+olippControllers.controller('OlippFooterCtrl', ['$scope','dataWebServices', function($scope, dataWebServices) {
+  dataWebServices.contact().then(function(results){
+    console.log(results);
+    $scope.contact = results.data;
+    $scope.date = new Date();
+  });
 }]);
 
 

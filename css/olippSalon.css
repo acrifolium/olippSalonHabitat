@@ -1,0 +1,65 @@
+.left-side{
+	width: 15%;
+	float: left;
+	border-style: solid;
+	border-color: transparent;
+}
+
+.center-side{
+	width: 70%;
+	float: left;
+}
+
+.right-side{
+	width: 15%;
+	float: left;
+	border-style: solid;
+	border-color: transparent;
+}
+
+.navbar-inverse{
+	border-color: #8cc63e;
+	background-color: #8cc63e;
+}
+
+.navbar-inverse .navbar-nav li a{
+	color: #401600;
+}
+
+.navbar-inverse .navbar-nav li a:focus{
+	background-color: #401600;
+}
+
+.navbar-inverse .navbar-nav .open a:focus{
+	background-color: #401600;
+}
+
+.dropdown-menu{
+	background-color: #8cc63e;
+}
+
+.dropdown-menu li a:hover, 
+.dropdown-menu li a:focus{
+	color: white;
+	background-color: transparent;
+}
+
+.glyphicon{
+	color: #401600;
+}
+
+.navbar-inverse .navbar-text{
+	color: #401600;
+}
+
+.footer-top-side{
+	width: 100%;
+	float:left;
+}
+
+.footer-bottom-side{
+	float:left;
+}
+
+
+

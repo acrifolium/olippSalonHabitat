@@ -1,7 +1,30 @@
-<div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
-	<div class="container">
-		<div class="navbar-text pull-left">
-			<p>skf,qslkdflsjkdfnsqdlkjfnqskldjf</p>
+<div class="navbar navbar-inverse " role="navigation">
+	<div class="container-fluid">
+
+		<div class="footer-top-side">
+			<div class="navbar-text pull-left">
+				<p>{{contact.headquarter}}</p>
+				<p>{{contact.address.firstLine}}</p>
+				<p>{{contact.address.secondLine}}</p>
+				<p>{{contact.address.postalCode}}</p>
+				<p>{{contact.address.city}}</p>
+			</div>
+
+			<div class="navbar-text pull-left">
+				<ul ng-repeat="member in contact.members">
+					<li>{{member.name}} - {{member.telephone}}</li>
+				</ul>
+			</div>
+
+			<div class="navbar-text pull-left">
+				<p>{{contact.site}}</p>
+				<p>{{contact.mail}}</p>
+			</div>			
 		</div>
+
+		<div class="footer-bottom-side">
+			<p>Copyright © {{date | date:'yyyy'}} - {{contact.headquarter}}</p>
+		</div>
+
 	</div>
 </div>

@@ -6,12 +6,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <!-- Favicon-->
+  <link href="favicon.ico" rel="icon" type="image/x-icon" />
+
   <!-- jquery & bootsrap -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 
   <!-- Bootstrap -->
   <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" media="screen">
+  <link href="css/olippSalon.css" rel="stylesheet" media="screen">
 
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
@@ -25,19 +29,25 @@
 </head>
 <body>
 
-<header>
-  <div ng-controller="OlippNavTreeCtrl" ng-include="'partials/navigation-panel.html'"></div>
-  <div ng-controller="OlippNavTreeCtrl" ng-include="'partials/caroussel-panel.html'"></div>
-</header>
+  <div class="left-side"></div>
 
-<div class="view-container">
-  <div ng-view class="view-frame">
+  <div class="center-side">
+    <header>
+      <div ng-controller="OlippNavTreeCtrl" ng-include="'partials/navigation-panel.html'"></div>
+      <div ng-controller="OlippCarouselCtrl" ng-include="'partials/carousel-panel.html'"></div>
+    </header>
+
+    <div class="view-container">
+      <div ng-view class="view-frame">
+      </div>
+    </div>
+
+    <footer>
+      <div ng-controller="OlippFooterCtrl" ng-include="'partials/footer-panel.html'"></div>
+    </footer>
   </div>
-</div>
 
-<footer>
-  <div ng-controller="OlippFooterCtrl" ng-include="'partials/footer-panel.html'"></div>
-</footer>
+  <div class="right-side"></div>
 
 </body>
 </html>
