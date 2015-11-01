@@ -17,6 +17,11 @@
 	border-color: transparent;
 }
 
+.banniere-header{
+	width: 100%;
+	margin-bottom: 5px;
+}
+
 .navbar-inverse{
 	border-color: #8cc63e;
 	background-color: #8cc63e;
@@ -24,6 +29,8 @@
 
 .navbar-inverse .navbar-nav li a{
 	color: #401600;
+	font-family: "Century Gothic";
+	font-weight: bold;
 }
 
 .navbar-inverse .navbar-nav li a:focus{
@@ -31,6 +38,10 @@
 }
 
 .navbar-inverse .navbar-nav .open a:focus{
+	background-color: #401600;
+}
+
+.navbar-inverse .navbar-nav .open a:hover{
 	background-color: #401600;
 }
 
@@ -52,14 +63,52 @@
 	color: #401600;
 }
 
-.footer-top-side{
+.footer-panel{
+	background-color: #8cc63e;
+	border: none;
+	color: white;
+}
+
+.footer-sponsor{
+	width: 150px;
+	height: 77px;
+}
+
+.footer-body{
+	color: #401600;
+	font-size: 12px;
+}
+
+.footer-copyright{
+	color: white;
+	font-size: 10px;
+}
+
+.panel-default{
+	margin-top: 20px;
+}
+
+.panel-default > .panel-heading{
+	background-color: #8cc63e;
+	color: #401600;
+}
+
+.panel-title {
+	color: white;
+	font-size: 20px;
+}
+
+.dashboard-plan{
 	width: 100%;
-	float:left;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
-.footer-bottom-side{
-	float:left;
+.dashboard-download{
+	width: 50px;
+	height: 50px;
 }
 
-
-
+.content-center{
+	text-align: center;
+}

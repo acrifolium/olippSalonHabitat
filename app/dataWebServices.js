@@ -15,6 +15,20 @@ olippServices.factory('dataWebServices', ['$http',
     obj.contact = function(){
       return $http.get(serviceBase + 'contact');
     }
+    
+    obj.exposant = function(){
+      return $http.get(serviceBase + 'exposant');      
+    }
+
+    obj.movies = function($id){     
+      return $http({
+                    method: "post",
+                    url: serviceBase + "movies",
+                    data: {
+                        'id': $id
+                    }
+                });
+    }
 
 	return obj; 
 	

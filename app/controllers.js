@@ -24,6 +24,10 @@ olippControllers.controller('OlippCarouselCtrl', ['$scope', function($scope) {
   
 }]);
 
+olippControllers.controller('OlippCarouselSalonCtrl', ['$scope', function($scope) {
+  
+}]);
+
 olippControllers.controller('OlippFooterCtrl', ['$scope','dataWebServices', function($scope, dataWebServices) {
   dataWebServices.contact().then(function(results){
     console.log(results);
@@ -51,3 +55,18 @@ olippControllers.controller('OlippArticleCtrl', ['$scope','$routeParams', functi
   $scope.ArticleTitle = "Article AngularJS Page";
   $scope.Id = $routeParams.id;
 }]);
+
+olippControllers.controller('OlippMovieCtrl', ['$scope','$routeParams','dataWebServices', function($scope, $routeParams, dataWebServices) {
+  $scope.MovieTitle = "Movie AngularJS Page";
+  $scope.Id = $routeParams.id;
+
+  dataWebServices.movies($scope.Id).
+                        success(function(results, status, headers, config) {
+                          console.log(results);
+                          $scope.movies = results;
+                        }).
+                        error(function(results, status, headers, config) {
+                          console.log(results);
+                        });
+}]);
+

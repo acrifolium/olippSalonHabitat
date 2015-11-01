@@ -5,6 +5,7 @@
 var olippApp = angular.module('olippApp', [
   'ngRoute',
   'olippDirectives',
+  'olippFilters',
   'olippControllers',
   'olippServices'
 ]);
@@ -31,6 +32,10 @@ olippApp.config(['$routeProvider',
         templateUrl: 'partials/Article.html',
         controller: 'OlippArticleCtrl'
       }).
+      when('/movie/:id', {
+        templateUrl: 'partials/Movie.html',
+        controller: 'OlippMovieCtrl'
+      }).      
       otherwise({
         redirectTo: '/dashboard',
       });

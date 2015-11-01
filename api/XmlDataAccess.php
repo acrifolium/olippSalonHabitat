@@ -13,6 +13,9 @@
 		private $xmlFileExposant;
 		private $xmlRootExposant;
 
+		private $xmlFileMovie;
+		private $xmlRootMovie;
+
 		private $xmlFileUsers;
 		private $xmlRootUsers;
 
@@ -21,6 +24,7 @@
 			$this->xmlFileConfig = DataFileEnum::Config;
 			$this->xmlFileStructure = DataFileEnum::Structure;
 			$this->xmlFileExposant = DataFileEnum::Exposant;
+			$this->xmlFileMovie = DataFileEnum::Movie;
 			$this->xmlFileUsers = DataFileEnum::Users;
 		}
 
@@ -73,6 +77,23 @@
 			}
 
 			return $this->xmlRootExposant;
+		}
+
+		public function GetXmlFileMovie(){
+			return $this->xmlFileMovie;
+		}
+
+		public function GetXmlRootMovie(){
+			// Movie file Creation if doesn't exist
+			if(file_exists($this->xmlFileMovie))
+				$this->xmlRootMovie = simplexml_load_file($this->xmlFileMovie);	
+			else 
+			{
+				$content = "<olipp></olipp>";
+				$this->xmlRootMovie = $this->CreateFile($this->xmlFileMovie, $content);
+			}
+
+			return $this->xmlRootMovie;
 		}
 
 		public function GetXmlFileUsers(){

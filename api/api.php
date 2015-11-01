@@ -2,6 +2,8 @@
  	require_once("libs/Rest.inc.php");	
 	require_once("Navigation.php");
 	require_once("Contact.php");
+	require_once("Exposant.php");
+	require_once("Movie.php");
 	require_once("Authentication.php");
 
 	class API extends REST {
@@ -45,6 +47,33 @@
 				$this->response('',406);
 			else
 				$this->response($this->json($cont->GetContact()), 200);
+		}
+
+		private function exposant(){
+			if($this->get_request_method() != "GET"){
+				$this->response('',406);
+			}
+
+			$exp = ExposantFactory::create();
+			if(is_null($exp))
+				$this->response('',406);
+			else
+				$this->response($this->json($exp->GetExposant()), 200);
+		}
+
+		private function movies(){
+			if($this->get_request_method() != "POST"){
+				$this->response('',406);
+			}
+
+			$data = json_decode(file_get_contents("php://input"),true);
+			$id = $data['id'];
+
+			$mov = MovieFactory::create();
+			if(is_null($mov))
+				$this->response('',406);
+			else
+				$this->response($this->json($mov->GetMovies($id)), 200);
 		}
 
 		private function session(){

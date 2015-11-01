@@ -1,17 +1,34 @@
-<h1>{{DashboardTitle}}</h1>
-<h2 ng-If="authenticated">Administrateur logged</h2>
-<h2 ng-If="!authenticated">Administrateur not logged</h2>
-<h3>full</h3>
-<h3>full</h3>
-<h3>full</h3>
-<h3>full</h3>
-<h3>full</h3>
-<h3>full</h3>
-<h3>full</h3>
-<h3>full</h3>
-<h3>full</h3>
-<h3>full</h3>
-<h3>full</h3>
-<h3>full</h3>
-<h3>full</h3>
-<h3>full</h3>
+
+	<div class="row-fluid">
+
+		<div class="col-xs-12 col-sm-6 col-lg-8">
+			<div class="panel panel-default">
+				<div class="panel-heading"><h3 class="panel-title">Salon Tout pour l’Habitat 2016</h3></div>
+				<div class="panel-body">Le salon régional de référence sur 2500 m2 couverts pour équiper, éco-concevoir, rénover, meubler, décorer... votre habitat.</div>
+
+				<div ng-controller="OlippCarouselSalonCtrl" ng-include="'partials/carousel-salon-panel.html'"></div>
+
+				<div class="panel-body">Nous avons le plaisir de vous annoncer la date du Salon « Tout pour l’Habitat 2016 » qui se déroulera les 18, 19 et 20 Mars 2016 à la Salle polyvalente de St-Rambert d’Albon. Reconnu comme le salon régional de référence dans le domaine du développement durable et des nouvelles technologies pour l’habitat, cette manifestation attire toujours plus de visiteurs et clients potentiels chaque année. Avec une surface couverte de plus de 2500 m2 ses 80 exposants et une magnifique zone de restauration, il garde un potentiel de développement très important.</div>
+			</div>	
+		</div>
+
+		<div class="col-xs-6 col-lg-4">
+			<div class="panel panel-default">
+				<div class="panel-heading"><h3 class="panel-title content-center">Dossier de participation</h3></div>
+				<div class="panel-body content-center">
+					<a ng-href="download/Dossier inscription salon habitat 2016.pdf" target="_blank"><img class="dashboard-download" src="img/icones/PDF-Icone.jpg" alt="Download"><br /><span class="label label-success">Download</span></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="span9">
+			<img class="dashboard-plan" src="img/plan/plan.png">
+		</div>
+
+	</div>
+
+
+
+
+	
+
