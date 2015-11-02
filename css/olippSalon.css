@@ -98,6 +98,10 @@
 	font-size: 20px;
 }
 
+.dashboard-description{
+	text-align: justify;
+}
+
 .dashboard-plan{
 	width: 100%;
 	margin-top: 5px;
@@ -107,6 +111,16 @@
 .dashboard-download{
 	width: 50px;
 	height: 50px;
+}
+
+.dashboard-horaire{
+	font-size: 14px;
+}
+
+.dashboard-event{
+	margin-left: 15px;
+	font-style: italic;
+	font-size: 14px;
 }
 
 .content-center{

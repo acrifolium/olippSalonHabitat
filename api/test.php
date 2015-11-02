@@ -7,44 +7,25 @@
 
 <?php
 
-	require_once('Navigation.php');
-	require_once('Authentication.php');
+	require_once('Dashboard.php');
 
 	/*
 	 *	Encode array into JSON
 	*/
 	function json($data){
 		if(is_array($data)){
-			return json_encode($data);
+			return json_encode($data, JSON_UNESCAPED_UNICODE);
 		}
 	}
 
-	$func = AuthenticationFactory::create();
+	$func = DashboardFactory::create();
 	if(is_null($func))
-		echo "Nothing in login";
+		echo "Nothing in dashboard";
 	else
 	{
-		$result = $func->RecoverAccount("olivier.azevedo@gmail.com");
+		$result = $func->GetDashboard();
 		echo json($result);
 	}
-
-	// $func = AuthenticationFactory::create();
-	// if(is_null($func))
-	// 	echo "Nothing in login";
-	// else
-	// 	echo json($func->IsAdminRegister());
-
-	// $nav = NavigationFactory::create();
-	// if(is_null($nav))
-	// 	echo "Nothing in Navigation";
-	// else
-	// 	echo json($nav->GetNavigation());
-
-	// $session = SessionFactory::create();
-	// if(is_null($session))
-	// 	echo 'session is null';
-	// else
-	// 	echo json($session->GetSession());
 
 ?>
 

@@ -3,27 +3,67 @@
 
 		<div class="col-xs-12 col-sm-6 col-lg-8">
 			<div class="panel panel-default">
-				<div class="panel-heading"><h3 class="panel-title">Salon Tout pour l’Habitat 2016</h3></div>
-				<div class="panel-body">Le salon régional de référence sur 2500 m2 couverts pour équiper, éco-concevoir, rénover, meubler, décorer... votre habitat.</div>
+				<div class="panel-heading"><h3 class="panel-title">{{dashboard.panelTitlePrincipal}}</h3></div>
+				<div class="panel-body alert alert-success content-center"><h4>{{dashboard.panelBodyTitle}}</h4></div>
 
 				<div ng-controller="OlippCarouselSalonCtrl" ng-include="'partials/carousel-salon-panel.html'"></div>
 
-				<div class="panel-body">Nous avons le plaisir de vous annoncer la date du Salon « Tout pour l’Habitat 2016 » qui se déroulera les 18, 19 et 20 Mars 2016 à la Salle polyvalente de St-Rambert d’Albon. Reconnu comme le salon régional de référence dans le domaine du développement durable et des nouvelles technologies pour l’habitat, cette manifestation attire toujours plus de visiteurs et clients potentiels chaque année. Avec une surface couverte de plus de 2500 m2 ses 80 exposants et une magnifique zone de restauration, il garde un potentiel de développement très important.</div>
+				<div class="panel-body"><p class="alert alert-success dashboard-description">{{dashboard.panelBodyDescription}}</p></div>
 			</div>	
 		</div>
 
 		<div class="col-xs-6 col-lg-4">
 			<div class="panel panel-default">
-				<div class="panel-heading"><h3 class="panel-title content-center">Dossier de participation</h3></div>
+				<div class="panel-heading"><h3 class="panel-title content-center">{{dashboard.panelTitleRightFirst}}</h3></div>
 				<div class="panel-body content-center">
-					<a ng-href="download/Dossier inscription salon habitat 2016.pdf" target="_blank"><img class="dashboard-download" src="img/icones/PDF-Icone.jpg" alt="Download"><br /><span class="label label-success">Download</span></a>
+					<a ng-href="download/Dossier inscription salon habitat 2016.pdf" target="_blank"><img class="dashboard-download" src="img/icones/PDF-Icone.jpg" alt="Download"><br /><span class="label label-success">{{dashboard.panelLabelRightFirst}}</span></a>
+				</div>
+				<div class="panel-body"><p class="alert alert-success dashboard-description">{{dashboard.panelBodyRightFirst}}</p></div>
+			</div>
+		</div>
+
+		<div class="col-xs-6 col-lg-4">
+			<div class="panel panel-default">
+				<div class="panel-heading"><h3 class="panel-title content-center">{{dashboard.panelTitleRightSecond}}</h3></div>
+				<div class="panel-body">
+					<p class="label label-info dashboard-horaire">{{dashboard.panelBodyRightSecondLine1}}</p><br />
+					<p class="label label-warning dashboard-event">{{dashboard.panelBodyRightSecondLine2}}</p><br />
+					<p class="label label-info dashboard-horaire">{{dashboard.panelBodyRightSecondLine3}}</p><br />
+					<p class="label label-info dashboard-horaire">{{dashboard.panelBodyRightSecondLine4}}</p><br />
+					<p class="label label-warning dashboard-event">{{dashboard.panelBodyRightSecondLine5}}</p>
 				</div>
 			</div>
 		</div>
 
-		<div class="span9">
+		<div class="col-xs-6 col-lg-4">
+			<div class="panel panel-default">
+				<div class="panel-heading"><h3 class="panel-title content-center">{{dashboard.panelTitleRightThird}}</h3></div>
+				<div class="panel-body">
+					<p class="label label-primary dashboard-horaire">{{dashboard.panelBodyRightThirdLine1}}</p><br />
+					<p class="label label-primary dashboard-horaire">{{dashboard.panelBodyRightThirdLine2}}</p><br />
+					<p class="label label-success dashboard-event">{{dashboard.panelBodyRightThirdLine3}}</p><br />
+					<p class="label label-success dashboard-event">{{dashboard.panelBodyRightThirdLine4}}</p>
+				</div>
+			</div>
+		</div>
+
+		<div>
 			<img class="dashboard-plan" src="img/plan/plan.png">
 		</div>
+
+		<div class="row">
+		  <div ng-repeat="movie in dashboard.movies" class="col-xs-6 col-sm-4">
+
+		    <div class="thumbnail">
+		    	<div class="embed-responsive embed-responsive-16by9">
+		    		<iframe width="420" height="315" ng-src="{{movie | trusted}}"></iframe>
+				</div>
+		  	</div>
+		  </div>
+		</div>		
+
+  </div>
+</div>
 
 	</div>
 

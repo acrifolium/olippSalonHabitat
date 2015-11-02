@@ -37,8 +37,11 @@ olippControllers.controller('OlippFooterCtrl', ['$scope','dataWebServices', func
 }]);
 
 
-olippControllers.controller('OlippDashboardCtrl', ['$scope', function($scope) {
-  $scope.DashboardTitle = "Dashboard AngularJS Page";
+olippControllers.controller('OlippDashboardCtrl', ['$scope', 'dataWebServices', function($scope, dataWebServices) {
+  dataWebServices.dashboard().then(function(results){
+    console.log(results);
+    $scope.dashboard = results.data;
+  });
 }]);
 
 olippControllers.controller('OlippServiceCtrl', ['$scope','$routeParams', function($scope, $routeParams) {

@@ -10,6 +10,9 @@
 		private $xmlFileStructure;
 		private $xmlRootStructure;
 
+		private $xmlFileDashboard;
+		private $xmlRootDashboard;
+
 		private $xmlFileExposant;
 		private $xmlRootExposant;
 
@@ -23,6 +26,7 @@
 
 			$this->xmlFileConfig = DataFileEnum::Config;
 			$this->xmlFileStructure = DataFileEnum::Structure;
+			$this->xmlFileDashboard = DataFileEnum::Dashboard;
 			$this->xmlFileExposant = DataFileEnum::Exposant;
 			$this->xmlFileMovie = DataFileEnum::Movie;
 			$this->xmlFileUsers = DataFileEnum::Users;
@@ -60,6 +64,23 @@
 			}
 
 			return $this->xmlRootStructure;
+		}
+
+		public function GetXmlFileDashboard(){
+			return $this->xmlFileDashboard;
+		}
+		
+		public function GetXmlRootDashboard(){
+			// Dashboard file Creation if doesn't exist
+			if(file_exists($this->xmlFileDashboard))
+				$this->xmlRootDashboard = simplexml_load_file($this->xmlFileDashboard);	
+			else 
+			{
+				$content = "<olipp></olipp>";
+				$this->xmlRootDashboard = $this->CreateFile($this->xmlFileDashboard, $content);
+			}
+
+			return $this->xmlRootDashboard;
 		}
 
 		public function GetXmlFileExposant(){

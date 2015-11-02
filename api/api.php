@@ -1,6 +1,7 @@
 <?php
  	require_once("libs/Rest.inc.php");	
 	require_once("Navigation.php");
+	require_once("Dashboard.php");
 	require_once("Contact.php");
 	require_once("Exposant.php");
 	require_once("Movie.php");
@@ -47,6 +48,18 @@
 				$this->response('',406);
 			else
 				$this->response($this->json($cont->GetContact()), 200);
+		}
+
+		private function dashboard(){
+			if($this->get_request_method() != "GET"){
+				$this->response('',406);
+			}
+
+			$dash = DashboardFactory::create();
+			if(is_null($dash))
+				$this->response('',406);
+			else
+				$this->response($this->json($dash->GetDashboard()), 200);
 		}
 
 		private function exposant(){
@@ -179,7 +192,7 @@
 		*/
 		private function json($data){
 			if(is_array($data)){
-				return json_encode($data);
+				return json_encode($data, JSON_UNESCAPED_UNICODE);
 			}
 		}
 	}
