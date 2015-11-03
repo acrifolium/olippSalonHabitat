@@ -16,6 +16,9 @@
 		private $xmlFileExposant;
 		private $xmlRootExposant;
 
+		private $xmlFileService;
+		private $xmlRootservice;
+
 		private $xmlFileMovie;
 		private $xmlRootMovie;
 
@@ -31,6 +34,7 @@
 			$this->xmlFileStructure = DataFileEnum::Structure;
 			$this->xmlFileDashboard = DataFileEnum::Dashboard;
 			$this->xmlFileExposant = DataFileEnum::Exposant;
+			$this->xmlFileService = DataFileEnum::Service;
 			$this->xmlFileContact = DataFileEnum::Contact;
 			$this->xmlFileMovie = DataFileEnum::Movie;
 			$this->xmlFileUsers = DataFileEnum::Users;
@@ -102,6 +106,23 @@
 			}
 
 			return $this->xmlRootExposant;
+		}
+
+		public function GetXmlFileService(){
+			return $this->xmlFileService;
+		}
+
+		public function GetXmlRootService(){
+			// Service file Creation if doesn't exist
+			if(file_exists($this->xmlFileService))
+				$this->xmlRootService = simplexml_load_file($this->xmlFileService);	
+			else 
+			{
+				$content = "<olipp></olipp>";
+				$this->xmlRootService = $this->CreateFile($this->xmlFileService, $content);
+			}
+
+			return $this->xmlRootService;
 		}
 
 		public function GetXmlFileMovie(){

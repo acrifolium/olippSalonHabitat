@@ -44,6 +44,16 @@ olippServices.factory('dataWebServices', ['$http',
                 });
     }
 
+    obj.exposantForm = function($id){     
+      return $http({
+                    method: "post",
+                    url: serviceBase + "exposantForm",
+                    data: {
+                        'id': $id
+                    }
+                });
+    }
+
     obj.sendMail = function($lastname, $firstname, $email, $company, $telephone, $message){
       return $http({
                     method: "post",

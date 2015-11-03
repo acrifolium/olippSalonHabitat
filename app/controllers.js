@@ -40,9 +40,18 @@ olippControllers.controller('OlippDashboardCtrl', ['$scope', 'dataWebServices', 
   });
 }]);
 
-olippControllers.controller('OlippServiceCtrl', ['$scope','$routeParams', function($scope, $routeParams) {
-  $scope.ServiceTitle = "Service AngularJS Page";
+olippControllers.controller('OlippServiceCtrl', ['$scope','$routeParams', 'dataWebServices', function($scope, $routeParams, dataWebServices) {
   $scope.Id = $routeParams.id;
+
+  dataWebServices.exposant().then(function(results){
+      console.log(results);
+      $scope.exposants = results.data;
+    });
+
+  dataWebServices.exposantForm($scope.Id).then(function(results){
+      console.log(results);
+      $scope.exposantForm = results.data;
+    });
 }]);
 
 olippControllers.controller('OlippContactCtrl', ['$scope','$routeParams', 'dataWebServices', function($scope, $routeParams, dataWebServices) {

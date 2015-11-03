@@ -75,6 +75,21 @@
 				$this->response($this->json($exp->GetExposant()), 200);
 		}
 
+		private function exposantForm(){
+			if($this->get_request_method() != "POST"){
+				$this->response('',406);
+			}
+
+			$data = json_decode(file_get_contents("php://input"),true);
+			$id = $data['id'];
+
+			$exp = ExposantFactory::create();
+			if(is_null($exp))
+				$this->response('',406);
+			else
+				$this->response($this->json($exp->GetExposantForm($id)), 200);
+		}
+
 		private function contact(){
 			if($this->get_request_method() != "POST"){
 				$this->response('',406);

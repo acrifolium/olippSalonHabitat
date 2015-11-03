@@ -176,7 +176,7 @@
 		<mail>arkade.fr@gmail.com</mail>
 	</exposant>	
 	<exposant>
-		<name>ART & FENETRES / Menuiserie COMBE</name>
+		<name>ART et FENETRES / Menuiserie COMBE</name>
 		<type>Menuiserie</type>
 		<description></description>
 		<address>
@@ -943,7 +943,7 @@
 		<fax>04 74 84 31 30</fax>
 		<mail>b.fauriat@wanadoo.fr</mail>
 	</exposant>	
-	exposant>
+	<exposant>
 		<name>GEDATEL</name>
 		<type>Bureau d'études thermiques</type>
 		<description></description>
@@ -1181,7 +1181,7 @@
 		<telephone>04 75 82 94 11</telephone>
 		<portable></portable>
 		<fax>04 75 82 93 56</fax>
-		<mail>isolardeche@yahoo.fr/mail>
+		<mail>isolardeche@yahoo.fr</mail>
 	</exposant>	
 	<exposant>
 		<name>ITH (isolation et traitement)</name>
@@ -1584,7 +1584,7 @@
 		<mail>mechaud.johan@orange.fr</mail>
 	</exposant>	
 	<exposant>
-		<name>MENUISERIE COMBE / ART & FENETRES</name>
+		<name>MENUISERIE COMBE / ART et FENETRES</name>
 		<type>Menuiserie</type>
 		<description></description>
 		<address>

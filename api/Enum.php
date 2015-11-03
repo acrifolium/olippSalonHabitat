@@ -37,6 +37,7 @@ abstract class DataFileEnum extends BasicEnum  {
     const Structure = "./data/structure.xml";
     const Dashboard = "./data/dashboard.xml";
     const Exposant = "./data/exposant.xml";
+    const Service = "./data/service.xml";
     const Contact = "./data/contact.xml";
     const Movie = "./data/movie.xml";
     const Users = "./data/users.xml";

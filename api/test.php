@@ -7,7 +7,7 @@
 
 <?php
 
-	require_once('Contact.php');
+	require_once('Exposant.php');
 
 	/*
 	 *	Encode array into JSON
@@ -18,12 +18,12 @@
 		}
 	}
 
-	$func = ContactFactory::create();
+	$func = ExposantFactory::create();
 	if(is_null($func))
 		echo "Nothing in dashboard";
 	else
 	{
-		$result = $func->GetContactForm(5);
+		$result = $func->GetExposant();
 		echo json($result);
 	}
 

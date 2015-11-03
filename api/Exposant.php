@@ -44,6 +44,33 @@ class Exposant extends XmlDataAccess {
 		}
 		return $response;
 	}
+
+	public function GetExposantForm($id)
+	{
+		$response = array();
+
+		if(is_null($this->GetXmlRootService())){
+			$response["status"] = "error";
+	        $response["message"] = "Technical error - Service's data are not accessible!";
+	        return $response;
+		}
+
+		if (isset($this->GetXmlRootService()->service['id']) && $this->GetXmlRootService()->service['id'] == $id)
+		{
+			$response["panelTitleCenter"] = (string)$this->GetXmlRootService()->service->panelTitleCenter;
+			$response["labelSearchToolbar"] = (string)$this->GetXmlRootService()->service->labelSearchToolbar;
+			$response["panelRightTitle"] = (string)$this->GetXmlRootService()->service->panelRightTitle;
+			$response["panelRightLabelDownload"] = (string)$this->GetXmlRootService()->service->panelRightLabelDownload;
+			$response["panelRightDescription"] = (string)$this->GetXmlRootService()->service->panelRightDescription;
+		}
+		else 
+		{
+            $response['status'] = "error";
+            $response['message'] = 'No such Services exposant have been stored';
+        }
+
+		return $response;		
+	}
 }
 
 class ExposantFactory
