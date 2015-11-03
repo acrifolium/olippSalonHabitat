@@ -40,6 +40,19 @@ olippApp.config(['$routeProvider',
         redirectTo: '/dashboard',
       });
   }])
-  .run(function($rootScope, $location){
-    
+  .run(function($rootScope, $location, dataWebServices){
+
+        // Data displayed in the footer and Contact page
+        if($rootScope.config === undefined)
+        {
+          dataWebServices.config().then(function(results){
+            console.log(results);
+            $rootScope.config = results.data;
+          });
+        }
+
+        $rootScope.$on("$routeChangeStart", function (event, next, current) {
+            console.log("routeChangeStart");
+        });    
+
   });

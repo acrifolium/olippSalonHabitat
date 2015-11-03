@@ -16,10 +16,20 @@ olippServices.factory('dataWebServices', ['$http',
       return $http.get(serviceBase + 'dashboard');
     }
 
-    obj.contact = function(){
-      return $http.get(serviceBase + 'contact');
+    obj.config = function(){
+      return $http.get(serviceBase + 'config');
     }
     
+    obj.contact = function($id){     
+      return $http({
+                    method: "post",
+                    url: serviceBase + "contact",
+                    data: {
+                        'id': $id
+                    }
+                });
+    }
+
     obj.exposant = function(){
       return $http.get(serviceBase + 'exposant');      
     }
@@ -34,6 +44,20 @@ olippServices.factory('dataWebServices', ['$http',
                 });
     }
 
+    obj.sendMail = function($lastname, $firstname, $email, $company, $telephone, $message){
+      return $http({
+                    method: "post",
+                    url: serviceBase + 'sendMail', 
+                    data: {
+                      'lastname': $lastname, 
+                      'firstname': $firstname, 
+                      'email': $email,
+                      'company': $company,
+                      'telephone': $telephone,
+                      'message': $message
+                    }
+                  });
+    }
 	return obj; 
 	
   }]);

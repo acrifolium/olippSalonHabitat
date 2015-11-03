@@ -29,11 +29,7 @@ olippControllers.controller('OlippCarouselSalonCtrl', ['$scope', function($scope
 }]);
 
 olippControllers.controller('OlippFooterCtrl', ['$scope','dataWebServices', function($scope, dataWebServices) {
-  dataWebServices.contact().then(function(results){
-    console.log(results);
-    $scope.contact = results.data;
-    $scope.date = new Date();
-  });
+  $scope.date = new Date();
 }]);
 
 
@@ -49,9 +45,46 @@ olippControllers.controller('OlippServiceCtrl', ['$scope','$routeParams', functi
   $scope.Id = $routeParams.id;
 }]);
 
-olippControllers.controller('OlippContactCtrl', ['$scope','$routeParams', function($scope, $routeParams) {
-  $scope.ContactTitle = "Contact AngularJS Page";
+olippControllers.controller('OlippContactCtrl', ['$scope','$routeParams', 'dataWebServices', function($scope, $routeParams, dataWebServices) {
   $scope.Id = $routeParams.id;
+
+  dataWebServices.contact($scope.Id).
+                        success(function(results, status, headers, config) {
+                          console.log(results);
+                          $scope.contact = results;
+                        }).
+                        error(function(results, status, headers, config) {
+                          console.log(results);
+                        });
+
+  $scope.status = 0;
+
+  $scope.Send = function(){
+    console.log("Send methode");
+  dataWebServices.sendMail($scope.contact.lastname, 
+                           $scope.contact.firstname, 
+                           $scope.contact.email,
+                           $scope.contact.company,
+                           $scope.contact.telephone,
+                           $scope.contact.message).
+                        success(function(results, status, headers, config) {
+                                console.log(results);
+                                $scope.status = 1; 
+                                $scope.successMessage = results.message;    
+                                $scope.contact.lastname = ""; 
+                                $scope.contact.firstname = "";
+                                $scope.contact.email = "";
+                                $scope.contact.company = "";
+                                $scope.contact.telephone = "";
+                                $scope.contact.message = "";                      
+                        }).
+                        error(function(results, status, headers, config) {
+                                console.log(results);
+                                $scope.status = 2;
+                                $scope.errorMessage = results.message; 
+                        });
+                      };
+
 }]);
 
 olippControllers.controller('OlippArticleCtrl', ['$scope','$routeParams', function($scope, $routeParams) {

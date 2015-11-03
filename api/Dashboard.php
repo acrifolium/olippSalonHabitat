@@ -36,6 +36,12 @@ class Dashboard extends XmlDataAccess {
 		$response["panelBodyRightThirdLine2"] = (string)$this->GetXmlRootDashboard()->panelBodyRightThirdLine2;
 		$response["panelBodyRightThirdLine3"] = (string)$this->GetXmlRootDashboard()->panelBodyRightThirdLine3;
 		$response["panelBodyRightThirdLine4"] = (string)$this->GetXmlRootDashboard()->panelBodyRightThirdLine4;
+		$response["addressTitle"] = (string)$this->GetXmlRootDashboard()->addressTitle;
+		$response["addressLine1"] = (string)$this->GetXmlRootDashboard()->addressLine1;
+		$response["addressLine2"] = (string)$this->GetXmlRootDashboard()->addressLine2;
+		$response["codePostal"] = (string)$this->GetXmlRootDashboard()->codePostal;
+		$response["city"] = (string)$this->GetXmlRootDashboard()->city;
+		$response["country"] = (string)$this->GetXmlRootDashboard()->country;
 
 		foreach($this->GetXmlRootDashboard()->movies->children() as $youtube)
 		{

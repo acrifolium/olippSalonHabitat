@@ -5,6 +5,7 @@
 	require_once("Contact.php");
 	require_once("Exposant.php");
 	require_once("Movie.php");
+	require_once("Contact.php");
 	require_once("Authentication.php");
 
 	class API extends REST {
@@ -38,7 +39,7 @@
 				$this->response($this->json($nav->GetNavigation()), 200);
 		}
 
-		private function contact(){
+		private function config(){
 			if($this->get_request_method() != "GET"){
 				$this->response('',406);
 			}
@@ -74,6 +75,21 @@
 				$this->response($this->json($exp->GetExposant()), 200);
 		}
 
+		private function contact(){
+			if($this->get_request_method() != "POST"){
+				$this->response('',406);
+			}
+
+			$data = json_decode(file_get_contents("php://input"),true);
+			$id = $data['id'];
+
+			$cont = ContactFactory::create();
+			if(is_null($cont))
+				$this->response('',406);
+			else
+				$this->response($this->json($cont->GetContactForm($id)), 200);
+		}
+
 		private function movies(){
 			if($this->get_request_method() != "POST"){
 				$this->response('',406);
@@ -87,6 +103,31 @@
 				$this->response('',406);
 			else
 				$this->response($this->json($mov->GetMovies($id)), 200);
+		}
+
+		private function sendMail(){
+			if($this->get_request_method() != "POST"){
+				$this->response('',406);
+			}
+
+			$data = json_decode(file_get_contents("php://input"),true);
+			$lastname = $data['lastname'];
+			$firstname = $data['firstname'];
+			$email = $data['email'];
+			$company = $data['company'];
+			$telephone = $data['telephone'];
+			$message = $data['message'];
+
+			$func = ContactFactory::create();
+			if(is_null($func))
+				$this->response('',406);
+			else{
+				$result = $func->SendMail($lastname, $firstname, $email, $company, $telephone, $message);
+
+				if($result['status'] == "success")
+					$this->response($this->json($result), 200);
+				else $this->response($this->json($result), 406);
+			}
 		}
 
 		private function session(){

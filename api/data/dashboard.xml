@@ -16,6 +16,12 @@
 	<panelBodyRightThirdLine2>26140 Saint Rambert d'Albon</panelBodyRightThirdLine2>
 	<panelBodyRightThirdLine3>Entrée gratuite</panelBodyRightThirdLine3>
 	<panelBodyRightThirdLine4>Restauration sur le salon</panelBodyRightThirdLine4>
+	<addressTitle>Adresse du Salon</addressTitle>
+	<addressLine1>Salle Polyvalente et Omnisports</addressLine1>
+	<addressLine2>15 Rue Du Levant</addressLine2>
+	<codePostal>26140</codePostal>
+	<city>Saint Rambert d'Albon</city>
+	<country>France</country>
 	<movies>
 		<youtube>http://www.youtube.com/embed/JipnkPu08Vs</youtube>
 		<youtube>http://www.youtube.com/embed/Odu5VCcV0yU</youtube>

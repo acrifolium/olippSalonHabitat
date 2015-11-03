@@ -126,3 +126,23 @@
 .content-center{
 	text-align: center;
 }
+
+#map-container{ 
+	height: 300px;
+}
+
+#map-outer {  
+	padding: 20px; 
+	margin-bottom: 20px; 
+	background-color:#FFF; 
+}
+
+#map-container-contact{
+	height: 250px;
+	width: 243px;
+}
+
+.required{
+	color: red;
+	font-size: 18px;
+}

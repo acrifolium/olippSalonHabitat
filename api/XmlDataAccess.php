@@ -19,6 +19,9 @@
 		private $xmlFileMovie;
 		private $xmlRootMovie;
 
+		private $xmlFileContact;
+		private $xmlRootContact;
+
 		private $xmlFileUsers;
 		private $xmlRootUsers;
 
@@ -28,6 +31,7 @@
 			$this->xmlFileStructure = DataFileEnum::Structure;
 			$this->xmlFileDashboard = DataFileEnum::Dashboard;
 			$this->xmlFileExposant = DataFileEnum::Exposant;
+			$this->xmlFileContact = DataFileEnum::Contact;
 			$this->xmlFileMovie = DataFileEnum::Movie;
 			$this->xmlFileUsers = DataFileEnum::Users;
 		}
@@ -115,6 +119,23 @@
 			}
 
 			return $this->xmlRootMovie;
+		}
+
+		public function GetXmlFileContact(){
+			return $this->xmlFileContact;
+		}
+
+		public function GetXmlRootContact(){
+			// Contact file Creation if doesn't exist
+			if(file_exists($this->xmlFileContact))
+				$this->xmlRootContact = simplexml_load_file($this->xmlFileContact);	
+			else 
+			{
+				$content = "<olipp></olipp>";
+				$this->xmlRootContact = $this->CreateFile($this->xmlFileContact, $content);
+			}
+
+			return $this->xmlRootContact;
 		}
 
 		public function GetXmlFileUsers(){

@@ -1,4 +1,4 @@
-<div class="navbar navbar-inverse " role="navigation">
+<div class="navbar navbar-inverse" role="navigation">
 	<div class="container-fluid">
 
 		<div class="col-xs-6 col-sm-4">
@@ -14,12 +14,12 @@
 			<div class="panel panel-default footer-panel">
 				<div class="panel-heading"><h3 class="panel-title">Siège</h3></div>
 				<div class="panel-body footer-body">
-					<p>{{contact.headquarter}}<br />
-					{{contact.address.firstLine}}<br />
-					{{contact.address.secondLine}}<br />
-					{{contact.address.postalCode}} {{contact.address.city}}<br /></p>
-					<p>{{contact.site}}</p>
-					<p>{{contact.mail}}</p>
+					<p>{{config.headquarter}}<br />
+					{{config.address.firstLine}}<br />
+					{{config.address.secondLine}}<br />
+					{{config.address.postalCode}} {{config.address.city}}<br /></p>
+					<p>{{config.site}}</p>
+					<p>{{config.mail}}</p>
 				</div>
 			</div>
 		</div>
@@ -28,7 +28,7 @@
 			<div class="panel panel-default footer-panel">
 				<div class="panel-heading"><h3 class="panel-title">Contact pour le salon</h3></div>
 				<div class="panel-body footer-body">			
-					<div ng-repeat="member in contact.members">
+					<div ng-repeat="member in config.members">
 						<p>{{member.name}} - {{member.telephone}}</p>
 					</div>
 				</div>
@@ -36,7 +36,7 @@
 		</div>
 
 		<div class="col-xs-6 col-sm-4">
-			<span class="footer-copyright">Copyright © {{date | date:'yyyy'}} - {{contact.headquarter}}</span>
+			<span class="footer-copyright">Copyright © {{date | date:'yyyy'}} - {{config.headquarter}}</span>
 		</div>
 
 	</div>

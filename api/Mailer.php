@@ -4,17 +4,13 @@ require_once("XmlDataAccess.php");
 
 class Mailer extends XmlDataAccess {
 
-	private $host;
-	private $smtp_usernme;
-	private $smtp_password;
+	private $mailFrom;
 
 	public function __construct()
     {
     	parent::__construct();
 
-    	$this->host = $this->GetXmlRootConfig()->mailer->host;
-    	$this->user = $this->GetXmlRootConfig()->mailer->smtp_username;
-    	$this->password = $this->GetXmlRootConfig()->mailer->smtp_password;
+    	$this->mailFrom = $this->GetXmlRootConfig()->contact->mail;
     }
 
     public function SendMail($type, $to, $content){
@@ -22,6 +18,26 @@ class Mailer extends XmlDataAccess {
     	if(MailTypeEnum::isValidValue($type)){
 
     		switch ($type) {
+    		case MailTypeEnum::ContactForm:
+
+    			$subject = "Site Web Salon Tout Pour L'Habitat";
+				$body = "<html>";
+				$body .= "<head>";
+				$body .= "<title>Salon Tout pour l'Habitat</title>";
+				$body .= "</head>";
+				$body .= "<body>";
+				$body .= "<h1>Site Web Salon Tout Pour L'Habitat</h1>";
+				$body .= "<h3>" . $content . "</h3>";
+				$body .= "</body>";
+				$body .= "</html>";
+
+				$headers = "MIME-Version: 1.0" . "\r\n";
+				$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+				$headers .= "From: <".$this->mailFrom.">" . "\r\n";
+
+				return mail($to, $subject, $body, $headers);
+
+    			break;
     		case MailTypeEnum::RecoverPassword:
 
 				$subject = "Olipp Recover password";

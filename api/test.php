@@ -7,7 +7,7 @@
 
 <?php
 
-	require_once('Dashboard.php');
+	require_once('Contact.php');
 
 	/*
 	 *	Encode array into JSON
@@ -18,12 +18,12 @@
 		}
 	}
 
-	$func = DashboardFactory::create();
+	$func = ContactFactory::create();
 	if(is_null($func))
 		echo "Nothing in dashboard";
 	else
 	{
-		$result = $func->GetDashboard();
+		$result = $func->GetContactForm(5);
 		echo json($result);
 	}
 
