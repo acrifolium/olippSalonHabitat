@@ -83,5 +83,4 @@ class MailerFactory
         return new Mailer();
     }
 }
-
-?>	
+?>

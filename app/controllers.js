@@ -69,7 +69,6 @@ olippControllers.controller('OlippContactCtrl', ['$scope','$routeParams', 'dataW
   $scope.status = 0;
 
   $scope.Send = function(){
-    console.log("Send methode");
   dataWebServices.sendMail($scope.contact.lastname, 
                            $scope.contact.firstname, 
                            $scope.contact.email,
@@ -77,7 +76,8 @@ olippControllers.controller('OlippContactCtrl', ['$scope','$routeParams', 'dataW
                            $scope.contact.telephone,
                            $scope.contact.message).
                         success(function(results, status, headers, config) {
-                                console.log(results);
+                                console.log("success");
+                                console.log(results.data);
                                 $scope.status = 1; 
                                 $scope.successMessage = results.message;    
                                 $scope.contact.lastname = ""; 
@@ -88,9 +88,10 @@ olippControllers.controller('OlippContactCtrl', ['$scope','$routeParams', 'dataW
                                 $scope.contact.message = "";                      
                         }).
                         error(function(results, status, headers, config) {
-                                console.log(results);
+                                console.log("error");
+                                console.log(results.data);
                                 $scope.status = 2;
-                                $scope.errorMessage = results.message; 
+                                $scope.errorMessage = results.data.message; 
                         });
                       };
 

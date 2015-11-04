@@ -6,26 +6,27 @@
 <body>
 
 <?php
-
-	require_once('Exposant.php');
+//phpinfo();
+	require_once('Contact.php');
 
 	/*
 	 *	Encode array into JSON
 	*/
 	function json($data){
 		if(is_array($data)){
-			return json_encode($data, JSON_UNESCAPED_UNICODE);
+			return json_encode($data);
 		}
 	}
 
-	$func = ExposantFactory::create();
-	if(is_null($func))
-		echo "Nothing in dashboard";
-	else
-	{
-		$result = $func->GetExposant();
-		echo json($result);
-	}
+$response = array();
+	$func = ContactFactory::create();
+
+		$result = $func->SendMail("azevedo", "olivier", "olivier.azevedo@gmail.com", "", "", "testtest");
+		if($result['status'] == "success")
+			$response = json($result);
+		else $response = json($result);
+
+echo $response;
 
 ?>
 
