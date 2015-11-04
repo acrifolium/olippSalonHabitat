@@ -1,6 +1,4 @@
 <?php
-	require_once("Enum.php"); 
-
 	// Give an access to the dedicated XML file
 	class XmlDataAccess {
 
@@ -29,15 +27,14 @@
 		private $xmlRootUsers;
 
 		public function __construct() {
-
-			$this->xmlFileConfig = DataFileEnum::Config;
-			$this->xmlFileStructure = DataFileEnum::Structure;
-			$this->xmlFileDashboard = DataFileEnum::Dashboard;
-			$this->xmlFileExposant = DataFileEnum::Exposant;
-			$this->xmlFileService = DataFileEnum::Service;
-			$this->xmlFileContact = DataFileEnum::Contact;
-			$this->xmlFileMovie = DataFileEnum::Movie;
-			$this->xmlFileUsers = DataFileEnum::Users;
+			$this->xmlFileConfig = "./data/config.xml";
+    		$this->xmlFileStructure = "./data/structure.xml";
+    		$this->xmlFileDashboard = "./data/dashboard.xml";
+    		$this->xmlFileExposant = "./data/exposant.xml";
+    		$this->xmlFileService = "./data/service.xml";
+    		$this->xmlFileContact = "./data/contact.xml";
+    		$this->xmlFileMovie = "./data/movie.xml";
+    		$this->xmlFileUsers = "./data/users.xml";
 		}
 
 		public function GetXmlFileConfig(){

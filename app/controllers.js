@@ -69,6 +69,11 @@ olippControllers.controller('OlippContactCtrl', ['$scope','$routeParams', 'dataW
   $scope.status = 0;
 
   $scope.Send = function(){
+
+  if($scope.company == undefined) $scope.company = "";
+  if($scope.telephone == undefined) $scope.telephone = ""; 
+  if($scope.message == undefined) $scope.message = "";
+
   dataWebServices.sendMail($scope.contact.lastname, 
                            $scope.contact.firstname, 
                            $scope.contact.email,

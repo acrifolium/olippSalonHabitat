@@ -199,7 +199,7 @@ class Authentication extends XmlDataAccess {
 				$content = "New Password: " . $newPassword;
 
 				$mailer = MailerFactory::create();
-				if($mailer->SendMail(MailTypeEnum::RecoverPassword, $email, $content)){
+				if($mailer->SendMail("RecoverPassword", $email, $content)){
 
 					$rootUsers->users->admin->password = md5($newPassword);
 					$rootUsers->asXML($this->GetXmlFileUsers());

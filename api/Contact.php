@@ -96,7 +96,7 @@ class Contact extends XmlDataAccess {
       	$content .= "<br>Message: " .$message;
 
 		$mailer = MailerFactory::create();
-		if($mailer->SendMail(MailTypeEnum::ContactForm, $email, $content)){
+		if($mailer->SendMail("ContactForm", $email, $content)){
 
 			$response["status"] = "success";
 		    $response["message"] = "L'Email a bien été envoyé.";

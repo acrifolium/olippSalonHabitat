@@ -15,10 +15,9 @@ class Mailer extends XmlDataAccess {
 
     public function SendMail($type, $to, $content){
 
-    	if(MailTypeEnum::isValidValue($type)){
+    	switch ($type) {
 
-    		switch ($type) {
-    		case MailTypeEnum::ContactForm:
+    		case "ContactForm":
 
     			$subject = "Site Web Salon Tout Pour L'Habitat";
 				$body = "<html>";
@@ -38,7 +37,7 @@ class Mailer extends XmlDataAccess {
 				return mail($to, $subject, $body, $headers);
 
     			break;
-    		case MailTypeEnum::RecoverPassword:
+    		case "RecoverPassword":
 
 				$subject = "Olipp Recover password";
 				$body = "<html>";
@@ -65,12 +64,11 @@ class Mailer extends XmlDataAccess {
 	 			return mail($to, $subject, $body, $headers);
 
     			break;
-    		case MailTypeEnum::CheckEmail:
+    		case "CheckEmail":
     		default:
     			# code...
     			break;
     		}
-    	}
 
     	return false;
     }
