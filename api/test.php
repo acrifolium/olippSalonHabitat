@@ -1,34 +1,17 @@
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>PHP Test</title>
-</head>
-<body>
-
 <?php
-//phpinfo();
-	require_once('Contact.php');
+if (isset($_POST['lastname']) && 
+	isset($_POST['firstname']) && 
+	isset($_POST['email']) && 
+	isset($_POST['subject']) && 
+	isset($_POST['message'])) {
 
-	/*
-	 *	Encode array into JSON
-	*/
-	function json($data){
-		if(is_array($data)){
-			return json_encode($data);
-		}
-	}
-
-$response = array();
-	$func = ContactFactory::create();
-
-		$result = $func->SendMail("azevedo", "olivier", "olivier.azevedo@gmail.com", "", "", "testtest");
-		if($result['status'] == "success")
-			$response = json($result);
-		else $response = json($result);
-
-echo $response;
+	$data = array('success' => true, 'message' => 'email sent');
+    echo json_encode($data);
+}
+else {
+	$data = array('success' => false, 'message' => 'email not sent');
+    echo json_encode($data);
+}
 
 ?>
 
-</body>
-</html>

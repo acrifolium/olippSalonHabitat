@@ -1,0 +1,191 @@
+@import '../bower_components/components-font-awesome/less/font-awesome.less';
+@import '../bower_components/bootstrap/less/bootstrap.less';
+@import 'font-museo-sans.less';
+
+@fa-font-path: "../fonts";
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/glyphicons-halflings-regular.woff') format('woff'),
+       url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+       url('../fonts/glyphicons-halflings-regular.svg#@{icon-font-svg-id}') format('svg');
+}
+
+/*******************************/
+/*          VARIABLES          */
+/*******************************/
+/****** COLORS ******/
+@brown-salon-color: #8cc63e;
+@green-salon-color: #401600;
+
+/****** FONTS ******/
+.font-navbar-inverse {
+	font-family: @museo-font-name;
+	font-weight: 500;
+	color: white;
+	font-size: 15px;
+}
+
+.font-panel-title {
+	font-family: @museo-font-name;
+	font-weight: 500;
+	color: white;
+	font-size: 20px;	
+}
+
+.font-body {
+	font-family: @museo-font-name;
+	font-weight: 300;
+	font-size: 15px;	
+}
+/*******************************/
+
+body {
+	.font-body;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.banniere-header{
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+.navbar-inverse{
+	border-color: @brown-salon-color;
+	background-color: @brown-salon-color;
+	.navbar-nav {
+		li {
+			a {				
+				.font-navbar-inverse;
+				&:focus {
+					background-color: @green-salon-color;
+				}
+			}			
+		}
+		open {
+			&:focus {
+				background-color: @green-salon-color;
+			}
+			&:hover {
+				background-color: @green-salon-color;
+			}
+		}
+	}
+	.navbar-text{
+		color: @green-salon-color;
+	}
+}
+
+.dropdown-menu{
+	background-color: @brown-salon-color;
+	li {
+		a {
+			&:hover, &:focus {
+				color: white;
+				background-color: transparent;
+			}
+		}
+	}
+}
+
+.glyphicon{
+	color: @green-salon-color;
+}
+
+.footer-panel{
+	background-color: @brown-salon-color;
+	border: none;
+	color: white;
+}
+
+.footer-sponsor{
+	width: 150px;
+	height: 77px;
+}
+
+.footer-body{
+	color: @green-salon-color;
+	font-size: 12px;
+}
+
+.footer-copyright{
+	color: white;
+	font-size: 10px;
+}
+
+.footer-address{
+	text-indent: 18px;
+}
+
+.glyphicon-footer{
+	color: white;
+}
+
+.panel-default{
+	margin-top: 20px;
+}
+
+.panel-default > .panel-heading{
+	background-color: @brown-salon-color;
+	color: @green-salon-color;
+}
+
+.panel-title {
+	color: white;
+	font-size: 20px;
+}
+
+.dashboard-description{
+	text-align: justify;
+}
+
+.dashboard-plan{
+	width: 100%;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.dashboard-download{
+	width: 50px;
+	height: 50px;
+}
+
+.dashboard-horaire{
+	font-size: 14px;
+}
+
+.dashboard-event{
+	margin-left: 15px;
+	font-style: italic;
+	font-size: 14px;
+}
+
+.content-center{
+	text-align: center;
+}
+
+.required{
+	color: red;
+	font-size: 18px;
+}
+
+.glyphicon-exposant{
+	color: white;
+}
+
+.notice-salon-success {
+	background-color: @brown-salon-color;
+}
+
+.map {
+	width: 100%;
+	max-height: 500px;
+}
+
+.movie-page{
+	margin-top: 20px;
+}
+

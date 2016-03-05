@@ -1,0 +1,41 @@
+<div class="container">
+	<div class="row">
+
+		<div class="col-xs-12 col-sm-4 col-lg-4">
+			<div class="panel panel-default footer-panel">
+				<div class="panel-heading"><img src="img/nav/logo.png"></div>
+				<div class="panel-body content-center">
+				<img class="footer-sponsor" src="img/sponsor/saint-rambert-d-albon.png">
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xs-12 col-sm-4 col-lg-4">
+			<aside><h3><span class="glyphicon glyphicon-align-left glyphicon-footer" aria-hidden="true"></span> <span>{{ 'CONFIG.TITLE' | translate }}</span></h3>
+				<ul>
+					<li><span class="glyphicon glyphicon-home glyphicon-footer" aria-hidden="true"></span>{{ 'CONFIG.HEADQUARTER' | translate }}</li>
+					<li class=" footer-address">{{ 'CONFIG.ADDRESS.FIRSTLINE' | translate }}</li>
+					<li class=" footer-address">{{ 'CONFIG.ADDRESS.SECONDLINE' | translate }}</li>
+					<li class=" footer-address">{{ 'CONFIG.ADDRESS.POSTALCODE' | translate }} {{ 'CONFIG.ADDRESS.CITY' | translate }}</li>
+					<li><span class="glyphicon glyphicon-envelope glyphicon-footer" aria-hidden="true"></span> {{ 'CONFIG.SITE' | translate }}</li>
+					<li><span class="glyphicon glyphicon-envelope glyphicon-footer" aria-hidden="true"></span> {{ 'CONFIG.MAIL' | translate }}</li>
+				</ul>		
+			</aside>
+		</div>
+
+		<div class="col-xs-12 col-sm-4 col-lg-4">
+			<aside><h3><span class="glyphicon glyphicon-align-left glyphicon-footer" aria-hidden="true"></span> <span>{{ 'CONFIG.CONTACT' | translate }}</span></h3>	<ul>
+					<li><span class="glyphicon glyphicon-user glyphicon-footer" aria-hidden="true"></span>{{ 'CONFIG.MEMBER_ONE.NAME' | translate }} - {{ 'CONFIG.MEMBER_ONE.TELEPHONE' | translate }}</li>
+					<li><span class="glyphicon glyphicon-user glyphicon-footer" aria-hidden="true"></span>{{ 'CONFIG.MEMBER_TWO.NAME' | translate }} - {{ 'CONFIG.MEMBER_TWO.PORTABLE' | translate }} - {{ 'CONFIG.MEMBER_TWO.FIXE' | translate }}</li>
+					<li><span class="glyphicon glyphicon-user glyphicon-footer" aria-hidden="true"></span>{{ 'CONFIG.MEMBER_THREE.NAME' | translate }} - {{ 'CONFIG.MEMBER_THREE.TELEPHONE' | translate }}</li>
+					<li><span class="glyphicon glyphicon-user glyphicon-footer" aria-hidden="true"></span>{{ 'CONFIG.MEMBER_FOUR.NAME' | translate }} - {{ 'CONFIG.MEMBER_FOUR.TELEPHONE' | translate }}</li>
+				</ul>					
+			</aside>
+		</div>
+
+		<div class="row">
+			<span class="footer-copyright">Copyright © {{date | date:'yyyy'}} - {{'CONFIG.HEADQUARTER' | translate}}</span> 
+		</div>
+
+	</div>
+</div>

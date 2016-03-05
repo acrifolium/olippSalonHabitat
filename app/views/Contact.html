@@ -1,0 +1,122 @@
+<div class="container-fluid">
+
+	<div class="col-xs-12 col-sm-8 col-lg-8">
+		<div class="panel panel-default">
+			<div class="panel-heading panel-center"><span class="panel-title title-email">{{ 'CONTACT_FORM.TITLE' | translate }}</span></div>
+			<div class="panel-body">
+				
+				<form name="contactForm" ng-submit="Send(contactForm.$valid)" novalidate>
+
+					    <div class="form-group has-feedback" ng-class="{ 'has-error' : contactForm.lastname.$invalid && !contactForm.lastname.$pristine , 'has-success': contactForm.lastname.$valid}">
+					    	<label for="inputName">{{ 'CONTACT_FORM.FIELD_LASTNAME' | translate }}<span class="required">*</span></label>
+					        <input type="text" name="lastname" tabindex="1" class="form-control" placeholder="{{ 'CONTACT_FORM.FIELD_LASTNAME' | translate }}" ng-model="contact.lastname"  required />
+					        <span ng-show="contactForm.lastname.$valid" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                            <span ng-show="contactForm.lastname.$invalid && !contactForm.lastname.$pristine" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+					        <div class="error-container" ng-show="contactForm.lastname.$invalid && !contactForm.lastname.$pristine">
+						    <small class="error" 
+						        ng-show="contactForm.lastname.$error.required">
+						        {{ 'CONTACT_FORM.REQUIRED_FIELD_LASTNAME' | translate }}.
+						    </small>
+						  </div>		        
+					    </div>
+
+					    <div class="form-group has-feedback" ng-class="{ 'has-error' : contactForm.firstname.$invalid && !contactForm.firstname.$pristine, 'has-success': contactForm.firstname.$valid }">
+					        <label for="inputName">{{ 'CONTACT_FORM.FIELD_FIRSTNAME' | translate }}<span class="required">*</span></label>
+					        <input type="text" name="firstname" tabindex="1" class="form-control" placeholder="{{ 'CONTACT_FORM.FIELD_FIRSTNAME' | translate }}" ng-model="contact.firstname"  required />
+					        <span ng-show="contactForm.firstname.$valid" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                            <span ng-show="contactForm.firstname.$invalid && !contactForm.firstname.$pristine" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+					        <div class="error-container" ng-show="contactForm.firstname.$invalid && !contactForm.firstname.$pristine">
+						    <small class="error" 
+						        ng-show="contactForm.firstname.$error.required">
+						        {{ 'CONTACT_FORM.REQUIRED_FIELD_FIRSTNAME' | translate }}
+						    </small>
+						  </div>		        
+					    </div>
+
+					    <div class="form-group has-feedback" ng-class="{ 'has-error' : contactForm.email.$invalid && !contactForm.email.$pristine, 'has-success': contactForm.email.$valid}">
+					        <label for="inputEmail">{{ 'CONTACT_FORM.FIELD_MAIL' | translate }}<span class="required">*</span></label>
+					        <input type="email" name="email" tabindex="1" class="form-control" placeholder="{{ 'CONTACT_FORM.FIELD_MAIL' | translate }}" ng-model="contact.email" required />
+					        <span ng-show="contactForm.email.$valid" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                            <span ng-show="contactForm.email.$invalid && !contactForm.email.$pristine" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+					        <div class="error-container" ng-show="contactForm.email.$invalid && !contactForm.email.$pristine">
+						    <small class="error" 
+						        ng-show="contactForm.email.$error.required">
+						        {{ 'CONTACT_FORM.REQUIRED_FIELD_MAIL' | translate }}
+						    </small>
+			 				<small class="error" ng-show="contactForm.email.$error.email">
+			             		{{ 'CONTACT_FORM.VALID_FIELD_MAIL' | translate }}
+			      			</small>
+						  </div>		        
+					    </div>
+
+					    <div class="form-group">
+					        <label for="inputName">{{ 'CONTACT_FORM.FIELD_COMPANY' | translate }}</label>
+					        <input type="text" name="company" tabindex="1" class="form-control" placeholder="{{ 'CONTACT_FORM.FIELD_COMPANY' | translate }}" ng-model="contact.company" />		        
+					    </div>
+
+					    <div class="form-group">
+					        <label for="inputName">{{ 'CONTACT_FORM.FIELD_PHONE' | translate }}</label>
+					        <input type="text" name="telephone" tabindex="1" class="form-control" placeholder="{{ 'CONTACT_FORM.FIELD_PHONE' | translate }}" ng-model="contact.telephone" />		        
+					    </div>
+
+					    <div class="form-group has-feedback" ng-class="{ 'has-error' : contactForm.subject.$invalid && !contactForm.subject.$pristine, 'has-success': contactForm.subject.$valid}">
+					        <label for="inputName">{{ 'CONTACT_FORM.FIELD_SUBJECT' | translate }}<span class="required">*</span></label>
+					        <input type="text" name="subject" tabindex="1" class="form-control" placeholder="{{ 'CONTACT_FORM.FIELD_SUBJECT' | translate }}" ng-model="contact.subject"  required />
+					        <span ng-show="contactForm.subject.$valid" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                            <span ng-show="contactForm.subject.$invalid && !contactForm.subject.$pristine" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+					        <div class="error-container" ng-show="contactForm.subject.$invalid && !contactForm.subject.$pristine">
+						    <small class="error" 
+						        ng-show="contactForm.subject.$error.required">
+						        {{ 'CONTACT_FORM.REQUIRED_FIELD_SUBJECT' | translate }}
+						    </small>
+						  </div>		        
+					    </div>
+
+					    <div class="form-group has-feedback" ng-class="{ 'has-error' : contactForm.message.$invalid && !contactForm.message.$pristine, 'has-success': contactForm.message.$valid}">
+					        <label for="inputName">{{ 'CONTACT_FORM.FIELD_MESSAGE' | translate }}<span class="required">*</span></label>
+					        <textarea rows="4" name="message" tabindex="1" class="form-control" placeholder="{{ 'CONTACT_FORM.FIELD_MESSAGE' | translate }}" ng-model="contact.message" required/>
+					        <span ng-show="contactForm.message.$valid" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                            <span ng-show="contactForm.message.$invalid && !contactForm.message.$pristine" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>		
+					        <div class="error-container" ng-show="contactForm.message.$invalid && !contactForm.message.$pristine">
+						    <small class="error" 
+						        ng-show="contactForm.message.$error.required">
+						        {{ 'CONTACT_FORM.REQUIRED_FIELD_MESSAGE' | translate }}
+						    </small>
+						  </div>       
+					    </div>
+
+					    <button type="submit" class="btn btn-primary btnContact" ng-disabled="contactForm.$invalid">{{ 'CONTACT_FORM.BUTTON' | translate }}</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-xs-12 col-sm-4 col-lg-4">
+		<div class="panel panel-default">
+			<div class="panel-heading"><h3 class="panel-title">{{ 'CONFIG.CONTACT' | translate }}</h3></div>
+			<div class="panel-body">	 
+				<p class="label label-info dashboard-horaire">{{ 'CONFIG.MEMBER_ONE.NAME' | translate }}</p><br />
+				<P class="label label-warning dashboard-event">{{ 'CONFIG.MEMBER_ONE.TELEPHONE' | translate }}</p><br />
+				<p class="label label-info dashboard-horaire">{{ 'CONFIG.MEMBER_TWO.NAME' | translate }}</p><br />
+				<P class="label label-warning dashboard-event">{{ 'CONFIG.MEMBER_TWO.PORTABLE' | translate }} - {{ 'CONFIG.MEMBER_TWO.FIXE' | translate }}</p><br />
+				<p class="label label-info dashboard-horaire">{{ 'CONFIG.MEMBER_THREE.NAME' | translate }}</p><br />
+				<P class="label label-warning dashboard-event">{{ 'CONFIG.MEMBER_THREE.TELEPHONE' | translate }}</p><br />
+				<p class="label label-info dashboard-horaire">{{ 'CONFIG.MEMBER_FOUR.NAME' | translate }}</p><br />
+				<P class="label label-warning dashboard-event">{{ 'CONFIG.MEMBER_FOUR.TELEPHONE' | translate }}</p><br />
+			</div>
+	    	<div class="panel-body">
+			    <address>
+			        <strong>{{ 'CONFIG.SALON.LIEU' | translate }}</strong><br />
+			            	{{ 'CONFIG.SALON.ADDRESS.FIRSTLINE' | translate }}<br />	                
+			                {{ 'CONFIG.SALON.ADDRESS.POSTALCODE' | translate }}<br />
+			                {{ 'CONFIG.SALON.ADDRESS.CITY' | translate }}<br />
+			                {{ 'CONFIG.SALON.ADDRESS.COUNTRY' | translate }}<br>
+			    </address>
+				<div>
+	    		<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2806.723151185784!2d4.818553150638102!3d45.29381585271558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f53db8e741fe4d%3A0x4ed660684ff29aff!2s15+Rue+du+Levant%2C+26140+Saint-Rambert-d&#39;Albon!5e0!3m2!1sfr!2sfr!4v1457193257153" frameborder="0" style="border:0" allowfullscreen></iframe>
+	    	</div>
+			</div>			
+		</div>
+	</div>	
+
+</div>

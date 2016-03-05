@@ -4,55 +4,105 @@
 
 var olippApp = angular.module('olippApp', [
   'ngRoute',
-  'olippDirectives',
-  'olippFilters',
-  'olippControllers',
-  'olippServices'
+   'blockUI',
+   'ngNotify',
+   'pascalprecht.translate',
+   'olippDirectives',
+   'olippFilters',
+   'olippControllers',
+   'salonServices'
 ]);
 
-var olippServices = angular.module('olippServices', ['ngResource']);
-
-olippApp.config(['$routeProvider',
-  function($routeProvider) {    
+ olippApp.config(['$routeProvider', 'blockUIConfig', '$translateProvider',
+   function($routeProvider, blockUIConfig, $translateProvider) {
 
     $routeProvider.
       when('/dashboard', {
-        templateUrl: 'partials/Dashboard.html',
-        controller: 'OlippDashboardCtrl'
+        templateUrl: 'Dashboard.html'
       }).
-      when('/service/:id', {
-        templateUrl: 'partials/Service.html',
-        controller: 'OlippServiceCtrl'
+      when('/exposant', {
+        templateUrl: 'Exposant.html'
       }).
-      when('/contact/:id', {
-        templateUrl: 'partials/Contact.html',
-        controller: 'OlippContactCtrl'
+      when('/contact', {
+         templateUrl: 'Contact.html',
+         controller: 'OlippContactCtrl'
       }).
-      when('/article/:id', {
-        templateUrl: 'partials/Article.html',
-        controller: 'OlippArticleCtrl'
-      }).
-      when('/movie/:id', {
-        templateUrl: 'partials/Movie.html',
-        controller: 'OlippMovieCtrl'
+      when('/movie', {
+        templateUrl: 'Movie.html'
       }).      
       otherwise({
-        redirectTo: '/dashboard',
+        redirectTo: '/dashboard'
       });
+
+      // Change the default overlay message
+      blockUIConfig.message = 'Loading';
+
+      //Angular translate
+      $translateProvider.useUrlLoader('App_Data/Languages/fr.json');
+      $translateProvider.preferredLanguage('fr');
+      //$translateProvider.fallbackLanguage('fr');
+
+      // Enable escaping of HTML
+      $translateProvider.useSanitizeValueStrategy('escapeParameters');
+
   }])
-  .run(function($rootScope, $location, dataWebServices){
+   .run(['$rootScope', '$location', '$translate',
+    function($rootScope, $location, $translate){
+    
+      // Manage Dashboard Movies
+      $rootScope.DashMovies = [];
+      $translate('DASHBOARD.MOVIES.ONE').then(function (translation) {
+        $rootScope.DashMovies.push(translation);
+      });
+      $translate('DASHBOARD.MOVIES.TWO').then(function (translation) {
+        $rootScope.DashMovies.push(translation);
+      });
+      $translate('DASHBOARD.MOVIES.THREE').then(function (translation) {
+        $rootScope.DashMovies.push(translation);
+      });
 
-        // Data displayed in the footer and Contact page
-        if($rootScope.config === undefined)
-        {
-          dataWebServices.config().then(function(results){
-            console.log(results);
-            $rootScope.config = results.data;
-          });
-        }
+      // Manage Movies page
+      $rootScope.Movies = [];
+      $translate('MOVIES.ONE').then(function (translation) {
+        $rootScope.Movies.push(translation);
+      });
+      $translate('MOVIES.TWO').then(function (translation) {
+        $rootScope.Movies.push(translation);
+      });
+      $translate('MOVIES.THREE').then(function (translation) {
+        $rootScope.Movies.push(translation);
+      });
+      $translate('MOVIES.FOUR').then(function (translation) {
+        $rootScope.Movies.push(translation);
+      });
+      $translate('MOVIES.FIVE').then(function (translation) {
+        $rootScope.Movies.push(translation);
+      });
+      $translate('MOVIES.SIX').then(function (translation) {
+        $rootScope.Movies.push(translation);
+      });
+      $translate('MOVIES.SEVEN').then(function (translation) {
+        $rootScope.Movies.push(translation);
+      });
+      $translate('MOVIES.HEIGHT').then(function (translation) {
+        $rootScope.Movies.push(translation);
+      });
+      $translate('MOVIES.NINE').then(function (translation) {
+        $rootScope.Movies.push(translation);
+      });
+      $translate('MOVIES.TEN').then(function (translation) {
+        $rootScope.Movies.push(translation);
+      });
+      $translate('MOVIES.ELEVEN').then(function (translation) {
+        $rootScope.Movies.push(translation);
+      });
+      $translate('MOVIES.TWELVE').then(function (translation) {
+        $rootScope.Movies.push(translation);
+      });
+      $translate('MOVIES.THIRTEEN').then(function (translation) {
+        $rootScope.Movies.push(translation);
+      });
 
-        $rootScope.$on("$routeChangeStart", function (event, next, current) {
-            console.log("routeChangeStart");
-        });    
+      $rootScope.date = new Date();         
 
-  });
+  }]);
