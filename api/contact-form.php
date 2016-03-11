@@ -16,11 +16,11 @@ if (isset($_POST['lastname']) && isset($_POST['firstname']) && isset($_POST['ema
     $mail = new PHPMailer();
 
     $mail->IsSMTP();
-    $mail->Host = 'mail.fauchery.com';
+    $mail->Host = 'mail.salonhabitatsaintrambert.com';
     $mail->Port = 25;
     $mail->SMTPAuth   = true;
-    $mail->Username = 'website@fauchery.com';
-    $mail->Password = 'T%vff759';
+    $mail->Username = 'contact@salonhabitatsaintrambert.com';
+    $mail->Password = 'tm2k18';
 
     // Expediteur
     $mail->From = $_POST['email'];
