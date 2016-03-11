@@ -11,7 +11,7 @@ module.exports = {
         partialsWatch : "./app/views/partials/**/*.html",
         assets: [],
         download: "./download/**/*",
-        api: ["./api/**/*.{php,xml,}", "./api/.htaccess"],
+        api: ["./api/**/*.{php,csv}"],
         fonts: ["./fonts/**/*.{ttf,woff,woff2,eof,svg}"],
         images: "./img/**/*",
         bower: "./bower_components/",

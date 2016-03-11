@@ -21,7 +21,12 @@ var olippApp = angular.module('olippApp', [
         templateUrl: 'Dashboard.html'
       }).
       when('/exposant', {
-        templateUrl: 'Exposant.html'
+        templateUrl: 'Exposant.html',
+         controller: 'OlippExposantCtrl'
+      }).
+      when('/annonceur', {
+        templateUrl: 'Annonceur.html',
+         controller: 'OlippAnnonceurCtrl'
       }).
       when('/contact', {
          templateUrl: 'Contact.html',

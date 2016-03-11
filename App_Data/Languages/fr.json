@@ -94,6 +94,14 @@
 		"TWELVE": "http://www.youtube.com/embed/ee8Mw5q4oow",
 		"THIRTEEN": "http://www.youtube.com/embed/Lbg7R1xFgZg"
 	},
+	"EXPOSANT_FORM": {
+		"PANEL_TITLE": "Annuaire des exposants",
+		"LABEL_SEARCH": "Rechercher un eposant"
+	},
+	"ANNONCEUR_FORM": {
+		"PANEL_TITLE": "Annuaire des annonceurs",
+		"LABEL_SEARCH": "Rechercher un annonceur"
+	},
 	"CONTACT_FORM": {
 		"TITLE": "CONTACT@SALONHABITATSAINTRAMBERT.COM",
 		"FIELD_LASTNAME": "Nom",

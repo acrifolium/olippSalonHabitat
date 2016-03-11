@@ -1,84 +1,55 @@
 <?php
 
-require_once("XmlDataAccess.php");
+	error_reporting(E_ALL);
+	set_time_limit(0);
 
-class Exposant extends XmlDataAccess {
+	date_default_timezone_set('Europe/London');
 
-	public function __construct()
-    {
-    	parent::__construct();
-    }
 
-	public function GetExposant()
+	/** Include path **/
+	set_include_path(get_include_path() . PATH_SEPARATOR . './PHPExcel/Classes/');
+
+	/** PHPExcel_IOFactory */
+	include 'PHPExcel/IOFactory.php';
+
+	$inputFileName = './data/EXPOSANTS.csv';
+
+	//  Read your Excel workbook
+	try {
+		$objPHPExcel = PHPExcel_IOFactory::load($inputFileName);
+	} catch(Exception $e) {
+		$response = array('success' => false, 'message' => 'Fichier des exposants invalide');
+    	echo json_encode($response);
+	    exit;
+	}
+	
+	$sheetData = $objPHPExcel->getActiveSheet()->toArray(null,true,true,true);
+
+	$exposants = array();
+
+	for ($row = 2; $row <= $objPHPExcel->getSheet(0)->getHighestRow(); $row++)
 	{
-		$response = array();
+		$node = array(); 
+		
+		$node["name"] = (string)$sheetData[$row]["C"];
+		$node["description"] = (string)$sheetData[$row]["I"];
 
-		if(is_null($this->GetXmlRootExposant())){
-			$response["status"] = "error";
-	        $response["message"] = "Technical error - Exposant's data are not accessible!";
-	        return $response;
-		}
+		$address = array();
+		$address["contact"] = (string)$sheetData[$row]["J"];
+		$address["firstline"] = (string)$sheetData[$row]["K"];
+		$address["postalCode"] = (string)$sheetData[$row]["L"];
+		$address["city"] = (string)$sheetData[$row]["M"];
+		$node["address"] = $address;
 
-		foreach($this->GetXmlRootExposant()->children() as $exposant)
-		{
-			$node = array();
+		$node["webSite"] = (string)$sheetData[$row]["Q"];
+		$node["telephone"] = (string)$sheetData[$row]["N"];
+		$node["portable"] = (string)$sheetData[$row]["O"];
+		$node["mail"] = (string)$sheetData[$row]["P"];
 
-			$node["name"] = (string)$exposant->name;
-			$node["type"] = (string)$exposant->type;
-			$node["description"] = (string)$exposant->description;
-
-			$address = array();
-			$address["firstLine"] = (string)$exposant->address->firstLine;
-			$address["secondLine"] = (string)$exposant->address->secondLine;
-			$address["postalCode"] = (string)$exposant->address->postalCode;
-			$address["city"] = (string)$exposant->address->city;
-			$node["address"] = $address;
-
-			$node["webSite"] = (string)$exposant->webSite;
-			$node["telephone"] = (string)$exposant->telephone;
-			$node["portable"] = (string)$exposant->portable;
-			$node["fax"] = (string)$exposant->fax;
-			$node["mail"] = (string)$exposant->mail;
-
-			$response[] = $node;
-		}
-		return $response;
+		$exposants[] = $node;
 	}
 
-	public function GetExposantForm($id)
-	{
-		$response = array();
+	$response = array('success' => true, 'message' => 'Exposants loaded', 'exposants' => $exposants);
 
-		if(is_null($this->GetXmlRootService())){
-			$response["status"] = "error";
-	        $response["message"] = "Technical error - Service's data are not accessible!";
-	        return $response;
-		}
-
-		if (isset($this->GetXmlRootService()->service['id']) && $this->GetXmlRootService()->service['id'] == $id)
-		{
-			$response["panelTitleCenter"] = (string)$this->GetXmlRootService()->service->panelTitleCenter;
-			$response["labelSearchToolbar"] = (string)$this->GetXmlRootService()->service->labelSearchToolbar;
-			$response["panelRightTitle"] = (string)$this->GetXmlRootService()->service->panelRightTitle;
-			$response["panelRightLabelDownload"] = (string)$this->GetXmlRootService()->service->panelRightLabelDownload;
-			$response["panelRightDescription"] = (string)$this->GetXmlRootService()->service->panelRightDescription;
-		}
-		else 
-		{
-            $response['status'] = "error";
-            $response['message'] = 'No such Services exposant have been stored';
-        }
-
-		return $response;		
-	}
-}
-
-class ExposantFactory
-{
-    public static function create()
-    {
-        return new Exposant();
-    }
-}
-
+    echo json_encode($response);
 ?>

@@ -18,6 +18,14 @@ salonServices.factory('salonServices', ['$http',
                         });
              }
 
+    obj.GetExposants = function(){
+      return $http.get(serviceBase + 'Exposant.php');
+    }
+
+    obj.GetAnnonceurs = function(){
+      return $http.get(serviceBase + 'Annonceur.php');
+    }
+
 	  return obj; 
 	
   }]);

@@ -20,8 +20,8 @@ module.exports = function () {
     // Dist local scripts
     var scripts = gulp.src([paths.sources.scripts])
                       .pipe(opts.plumber ? plumber() : util.noop())
-                      .pipe(concat('salon.js'))
-                      .pipe(uglify())
+                      //.pipe(concat('salon.js'))
+                      //.pipe(uglify())
                       .pipe(gulp.dest(paths.dist.libs))
 
     // Dist external scripts

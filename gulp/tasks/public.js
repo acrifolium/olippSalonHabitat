@@ -68,5 +68,12 @@ module.exports = function () {
                     return file.contents.toString('utf8')
                 }
             }))
+            .pipe(inject(gulp.src([paths.sources.partials + '/partial-contact-panel.html']), {
+                starttag: '<!-- inject:contact-panel -->',
+                transform: function (filePath, file) {
+                    // return file contents as string 
+                    return file.contents.toString('utf8')
+                }
+            }))
             .pipe(gulp.dest(paths.dist.public));
 }
