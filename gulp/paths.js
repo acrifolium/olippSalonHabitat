@@ -1,7 +1,7 @@
 ﻿/**
  * paths configuration
  */
- var path = "/var/www/html/salon/";
+ var path = "./dist/";
 
 module.exports = {
  

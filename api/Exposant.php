@@ -27,24 +27,24 @@
 
 	$exposants = array();
 
-	for ($row = 2; $row <= $objPHPExcel->getSheet(0)->getHighestRow(); $row++)
+	for ($row = 1; $row <= $objPHPExcel->getSheet(0)->getHighestRow(); $row++)
 	{
 		$node = array(); 
 		
-		$node["name"] = (string)$sheetData[$row]["C"];
-		$node["description"] = (string)$sheetData[$row]["I"];
+		$node["name"] = (string)$sheetData[$row]["A"];
+		$node["description"] = (string)$sheetData[$row]["B"];
 
 		$address = array();
-		$address["contact"] = (string)$sheetData[$row]["J"];
-		$address["firstline"] = (string)$sheetData[$row]["K"];
-		$address["postalCode"] = (string)$sheetData[$row]["L"];
-		$address["city"] = (string)$sheetData[$row]["M"];
+		$address["contact"] = (string)$sheetData[$row]["C"];
+		$address["firstline"] = (string)$sheetData[$row]["D"];
+		$address["postalCode"] = (string)$sheetData[$row]["E"];
+		$address["city"] = (string)$sheetData[$row]["F"];
 		$node["address"] = $address;
 
-		$node["webSite"] = (string)$sheetData[$row]["Q"];
-		$node["telephone"] = (string)$sheetData[$row]["N"];
-		$node["portable"] = (string)$sheetData[$row]["O"];
-		$node["mail"] = (string)$sheetData[$row]["P"];
+		$node["webSite"] = (string)$sheetData[$row]["J"];
+		$node["telephone"] = (string)$sheetData[$row]["G"];
+		$node["portable"] = (string)$sheetData[$row]["H"];
+		$node["mail"] = (string)$sheetData[$row]["I"];
 
 		$exposants[] = $node;
 	}
