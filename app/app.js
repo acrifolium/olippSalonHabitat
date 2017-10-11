@@ -13,8 +13,10 @@ var olippApp = angular.module('olippApp', [
    'salonServices'
 ]);
 
- olippApp.config(['$routeProvider', 'blockUIConfig', '$translateProvider',
-   function($routeProvider, blockUIConfig, $translateProvider) {
+ olippApp.config(['$routeProvider', 'blockUIConfig', '$translateProvider', '$locationProvider',
+   function($routeProvider, blockUIConfig, $translateProvider, $locationProvider) {
+
+    $locationProvider.hashPrefix('');
 
     $routeProvider.
       when('/dashboard', {

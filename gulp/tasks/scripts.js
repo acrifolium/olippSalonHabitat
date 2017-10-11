@@ -16,7 +16,7 @@ var bundleConfig = require("../bundleConfig")
  * Dist scripts to public folder
  */
 module.exports = function () {
-
+console.log('path', paths.sources.scripts);
     // Dist local scripts
     var scripts = gulp.src([paths.sources.scripts])
                       .pipe(opts.plumber ? plumber() : util.noop())

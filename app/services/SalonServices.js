@@ -8,7 +8,7 @@ salonServices.factory('salonServices', ['$http',
   	var serviceBase = 'api/';
     var obj = {};
 
-    obj.sendMail = 
+    obj.sendMail =  
     function($contact){
              return $http({
                           method: "POST",
