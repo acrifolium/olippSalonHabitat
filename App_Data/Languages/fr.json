@@ -50,26 +50,26 @@
 		}
 	},
 	"DASHBOARD": {
-		"MAIN_TITLE": "Salon Tout pour l'Habitat 2018",
+		"MAIN_TITLE": "Salon Tout pour l'Habitat 2019",
 		"BODY_TITLE": "Le salon régional de référence sur 2500 m2 couverts pour équiper, éco-concevoir, rénover, meubler, décorer... votre habitat.",
-		"BODY_TEXT": "Nous avons le plaisir de vous annoncer la date du Salon « Tout pour l'Habitat 2018 » qui se déroulera les 16, 17 et 18 Mars 2018 à la Salle polyvalente de St-Rambert d'Albon. Reconnu comme le salon régional de référence dans le domaine du développement durable et des nouvelles technologies pour l'habitat, cette manifestation attire toujours plus de visiteurs et clients potentiels chaque année. Avec une surface couverte de plus de 2500 m2 ses 80 exposants et une magnifique zone de restauration, il garde un potentiel de développement très important.",
+		"BODY_TEXT": "Nous avons le plaisir de vous annoncer la date du Salon « Tout pour l'Habitat 2019 » qui se déroulera les 15, 16 et 17 Mars 2019 à la Salle polyvalente de St-Rambert d'Albon. Reconnu comme le salon régional de référence dans le domaine du développement durable et des nouvelles technologies pour l'habitat, cette manifestation attire toujours plus de visiteurs et clients potentiels chaque année. Avec une surface couverte de plus de 2500 m2 ses 80 exposants et une magnifique zone de restauration, il garde un potentiel de développement très important.",
 		"MOVIES": {
-			"ONE": "http://www.youtube.com/embed/JipnkPu08Vs",
-			"TWO": "http://www.youtube.com/embed/Odu5VCcV0yU",
-			"THREE": "http://www.youtube.com/embed/sxolNuvLWyc"
+			"ONE": "http://www.youtube.com/embed/X2wx1NORnck",
+			"TWO": "http://www.youtube.com/embed/veMintQoXQk",
+			"THREE": "http://www.youtube.com/embed/qwUArWYpKMs"
 		}
 	},
 	"DOWNLOAD-PANEL": {
 		"TITLE": "Dossier de participation",
 		"BUTTON": "Télécharger",
-		"TEXT": "Pensez à nous retourner votre bulletin d'inscription à télécharger ci-dessus dûment rempli et accompagné de votre réglement avant le 15 Janvier 2018."
+		"TEXT": "Pensez à nous retourner votre bulletin d'inscription à télécharger ci-dessus dûment rempli et accompagné de votre réglement avant le 16 Janvier 2019."
 	},
 	"TIME": {
 		"TITLE": "Horaires d'ouverture",
-		"LINE1": "Vendredi 16 Mars de 14h à 19h",
+		"LINE1": "Vendredi 15 Mars de 14h à 19h",
 		"LINE2": "Inauguration officielle à 17h",
-		"LINE3": "Samedi 17 Mars de 10h à 19h",
-		"LINE4": "Dimanche 18 Mars de 10h à 18h",
+		"LINE3": "Samedi 16 Mars de 10h à 19h",
+		"LINE4": "Dimanche 17 Mars de 10h à 18h",
 		"LINE5": "Tirage officiel du jeu salon à 18h"
 	},
 	"INFO": {
@@ -80,10 +80,10 @@
 		"LINE4": "Restauration sur le salon"
 	},
 	"MOVIES": {
-		"ONE": "http://www.youtube.com/embed/JipnkPu08Vs",
-		"TWO": "http://www.youtube.com/embed/Odu5VCcV0yU",
-		"THREE": "http://www.youtube.com/embed/sxolNuvLWyc",
-		"FOUR": "http://www.youtube.com/embed/ILWiyDctp28",
+		"ONE": "http://www.youtube.com/embed/X2wx1NORnck",
+		"TWO": "http://www.youtube.com/embed/veMintQoXQk",
+		"THREE": "http://www.youtube.com/embed/qwUArWYpKMs",
+		"FOUR": "http://www.youtube.com/embed/5v8Tdd9I7ig",
 		"FIVE": "http://www.youtube.com/embed/gjXJLEyhB1I",
 		"SIX": "http://www.youtube.com/embed/pCJ40Oa_WOM",
 		"SEVEN": "http://www.youtube.com/embed/ClWzU0QPY-A",
