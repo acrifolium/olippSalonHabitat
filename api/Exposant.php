@@ -4,7 +4,7 @@ $fileHandle = fopen("./data/EXPOSANTS.csv", "r");
  
 $exposants = array();
 
-while (($row = fgetcsv($fileHandle, 0, ";")) !== FALSE) {
+while (($row = fgetcsv($fileHandle, 0, ",")) !== FALSE) {
 	$node = array(); 
 	$node["name"] = $row[0];
 	$node["description"] = $row[1];
