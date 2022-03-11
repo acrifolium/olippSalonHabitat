@@ -10,14 +10,14 @@ while (($row = fgetcsv($fileHandle, 0, ",")) !== FALSE) {
 	$node["description"] = $row[1];
 
 	$address = array();
-	$address["contact"] = $row[2];
-	$address["firstline"] = $row[3];
-	$address["postalCode"] = $row[4];
-	$address["city"] = $row[5];
+	// $address["contact"] = $row[2];
+	// $address["firstline"] = $row[3];
+	$address["postalCode"] = $row[2];
+	$address["city"] = $row[3];
 	$node["address"] = $address;
 
-	$node["telephone"] = $row[6];
-	$node["mail"] = $row[7];
+	$node["telephone"] = $row[4];
+	// $node["mail"] = $row[7];
 	
 	$annonceurs[] = $node;
 }
