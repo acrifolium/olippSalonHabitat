@@ -19,14 +19,14 @@ if (isset($_POST['lastname']) && isset($_POST['firstname']) && isset($_POST['ema
     $mail->Host = 'mail.salonhabitatsaintrambert.com';
     $mail->Port = 25;
     $mail->SMTPAuth   = true;
-    $mail->Username = 'contact@salonhabitatsaintrambert.com';
+    $mail->Username = 'info@salonhabitatsaintrambert.com';
     $mail->Password = 'tm2k18';
 
     // Expediteur
     $mail->From = $_POST['email'];
     $mail->FromName = $_POST['firstname'] + " " + $_POST['lastname'];
     // Destinataire
-    $mail->AddAddress('CONTACT@SALONHABITATSAINTRAMBERT.COM');
+    $mail->AddAddress('info@salonhabitatsaintrambert.com');
     // Modifier l'encodage du mail
     $mail->CharSet = "utf-8";
     // Modifier l'adresse de réponse
@@ -54,7 +54,7 @@ if (isset($_POST['lastname']) && isset($_POST['firstname']) && isset($_POST['ema
     $header .= "<body>";
 
     $footer = "<div style=\"color: white; height: 60px; background-color: #1E3E14; margin-top: 20px; padding: 5px 5px 5px 5px; text-align: center;\">";
-    $footer .= "Comité Salon Tout Pout l'Habitat - Menuiserie COMBE - ZI du Cappa 26140 Saint Rambert d'Albon - Mail: contact@salonhabitatsaintrambert.com";
+    $footer .= "Comité Salon Tout Pout l'Habitat - Menuiserie COMBE - ZI du Cappa 26140 Saint Rambert d'Albon - Mail: info@salonhabitatsaintrambert.com";
     $footer .= " - Françoise SANFILIPPO - Mobile: 06 89 41 14 90";
     $footer .= "</div>";
     $footer .= "</body>";
@@ -139,7 +139,7 @@ if (isset($_POST['lastname']) && isset($_POST['firstname']) && isset($_POST['ema
 
     // Envoi du mail de confirmation à l'internaute
     // Expediteur
-    $mail->From = "contact@salonhabitatsaintrambert.com";
+    $mail->From = "info@salonhabitatsaintrambert.com";
     $mail->FromName = "Salon Tout Pour l'Habitat";
     // Destinataire
     $mail->ClearAllRecipients(); // clear all
@@ -147,7 +147,7 @@ if (isset($_POST['lastname']) && isset($_POST['firstname']) && isset($_POST['ema
     // Modifier l'encodage du mail
     $mail->CharSet = "utf-8";
     // Modifier l'adresse de réponse
-    $mail->AddReplyTo("contact@salonhabitatsaintrambert.com", $mail->FromName); 
+    $mail->AddReplyTo("info@salonhabitatsaintrambert.com", $mail->FromName); 
 
     $mail->Subject = "Récapitulatif de votre demande";
 

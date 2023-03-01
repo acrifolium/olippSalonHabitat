@@ -29,7 +29,7 @@
       "CITY": "ALBON"
     },
     "SITE": "http://www.salonhabitatsaintrambert.com",
-    "MAIL": "contact@salonhabitatsaintrambert.com",
+    "MAIL": "info@salonhabitatsaintrambert.com",
     "MEMBER_ONE": {
       "NAME": "Laurent TARDY",
       "TELEPHONE": "04 74 84 26 13"
@@ -103,7 +103,7 @@
     "LABEL_SEARCH": "Rechercher un annonceur"
   },
   "CONTACT_FORM": {
-    "TITLE": "CONTACT@SALONHABITATSAINTRAMBERT.COM",
+    "TITLE": "info@salonhabitatsaintrambert.com",
     "FIELD_LASTNAME": "Nom",
     "REQUIRED_FIELD_LASTNAME": "Votre nom est requis.",
     "FIELD_FIRSTNAME": "Prénom",
