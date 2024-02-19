@@ -53,9 +53,9 @@
     "BODY_TITLE": "Le salon régional de référence sur 2500 m2 couverts pour équiper, éco-concevoir, rénover, meubler, décorer... votre habitat.",
     "BODY_TEXT": "Nous avons le plaisir de vous annoncer la date du Salon « Tout pour l'Habitat 2024 » qui se déroulera les 8, 9 et 10 Mars 2024 à la Salle polyvalente de St-Rambert d'Albon. Reconnu comme le salon régional de référence dans le domaine du développement durable et des nouvelles technologies pour l'habitat, cette manifestation attire toujours plus de visiteurs et clients potentiels chaque année. Avec une surface couverte de plus de 2500 m2 ses 80 exposants et une magnifique zone de restauration, il garde un potentiel de développement très important.",
     "MOVIES": {
-      "ONE": "http://www.youtube.com/embed/X2wx1NORnck",
-      "TWO": "http://www.youtube.com/embed/veMintQoXQk",
-      "THREE": "http://www.youtube.com/embed/qwUArWYpKMs"
+      "ONE": "https://www.youtube.com/embed/X2wx1NORnck",
+      "TWO": "https://www.youtube.com/embed/veMintQoXQk",
+      "THREE": "https://www.youtube.com/embed/qwUArWYpKMs"
     }
   },
   "DOWNLOAD-PANEL": {
@@ -80,19 +80,19 @@
     "LINE4": "Restauration sur le salon"
   },
   "MOVIES": {
-    "ONE": "http://www.youtube.com/embed/X2wx1NORnck",
-    "TWO": "http://www.youtube.com/embed/veMintQoXQk",
-    "THREE": "http://www.youtube.com/embed/qwUArWYpKMs",
-    "FOUR": "http://www.youtube.com/embed/5v8Tdd9I7ig",
-    "FIVE": "http://www.youtube.com/embed/gjXJLEyhB1I",
-    "SIX": "http://www.youtube.com/embed/pCJ40Oa_WOM",
-    "SEVEN": "http://www.youtube.com/embed/ClWzU0QPY-A",
-    "HEIGHT": "http://www.youtube.com/embed/0py4u3xReJM",
-    "NINE": "http://www.youtube.com/embed/6pdPl_gYNTA",
-    "TEN": "http://www.youtube.com/embed/FM9MOXgS05Y",
-    "ELEVEN": "http://www.youtube.com/embed/1JJF1O6mhFY",
-    "TWELVE": "http://www.youtube.com/embed/ee8Mw5q4oow",
-    "THIRTEEN": "http://www.youtube.com/embed/Lbg7R1xFgZg"
+    "ONE": "https://www.youtube.com/embed/X2wx1NORnck",
+    "TWO": "https://www.youtube.com/embed/veMintQoXQk",
+    "THREE": "https://www.youtube.com/embed/qwUArWYpKMs",
+    "FOUR": "https://www.youtube.com/embed/5v8Tdd9I7ig",
+    "FIVE": "https://www.youtube.com/embed/gjXJLEyhB1I",
+    "SIX": "https://www.youtube.com/embed/pCJ40Oa_WOM",
+    "SEVEN": "https://www.youtube.com/embed/ClWzU0QPY-A",
+    "HEIGHT": "https://www.youtube.com/embed/0py4u3xReJM",
+    "NINE": "https://www.youtube.com/embed/6pdPl_gYNTA",
+    "TEN": "https://www.youtube.com/embed/FM9MOXgS05Y",
+    "ELEVEN": "https://www.youtube.com/embed/1JJF1O6mhFY",
+    "TWELVE": "https://www.youtube.com/embed/ee8Mw5q4oow",
+    "THIRTEEN": "https://www.youtube.com/embed/Lbg7R1xFgZg"
   },
   "EXPOSANT_FORM": {
     "PANEL_TITLE": "Annuaire des exposants",
