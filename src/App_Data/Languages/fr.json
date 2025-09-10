@@ -28,8 +28,8 @@
       "POSTALCODE": "26140",
       "CITY": "ALBON"
     },
-    "SITE": "http://www.salonhabitatsaintrambert.com",
-    "MAIL": "info@salonhabitatsaintrambert.com",
+    "SITE": "https://salonhabitatstrambert.fr",
+    "MAIL": "salonhabitatstrambert@gmail.com",
     "MEMBER_ONE": {
       "NAME": "Laurent TARDY",
       "TELEPHONE": "04 74 84 26 13"
@@ -62,7 +62,7 @@
     "TITLE": "Dossier de participation",
     "BUTTON": "Télécharger",
     "PLAQUETTE": "Plaquette",
-    "TEXT": "Pensez à nous retourner votre bulletin d'inscription à télécharger ci-dessus dûment rempli et accompagné de votre réglement avant le 17 Janvier 2026."
+    "TEXT": "Pensez à nous retourner votre bulletin d'inscription à télécharger ci-dessus dûment rempli et accompagné de votre réglement avant le 16 Janvier 2026."
   },
   "TIME": {
     "TITLE": "Horaires d'ouverture",
@@ -103,7 +103,7 @@
     "LABEL_SEARCH": "Rechercher un annonceur"
   },
   "CONTACT_FORM": {
-    "TITLE": "info@salonhabitatsaintrambert.com",
+    "TITLE": "salonhabitatstrambert@gmail.com",
     "FIELD_LASTNAME": "Nom",
     "REQUIRED_FIELD_LASTNAME": "Votre nom est requis.",
     "FIELD_FIRSTNAME": "Prénom",
