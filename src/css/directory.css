@@ -3,6 +3,31 @@
 .directory-container {
   padding: 30px 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  max-width: 100%; /* Pour éviter tout débordement potentiel */
+}
+
+/* Assurer la cohérence visuelle entre les pages */
+.container.directory-container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 1200px) {
+  .container.directory-container {
+    width: 1170px; /* Même largeur que les autres pages en grand écran */
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container.directory-container {
+    width: 970px; /* Même largeur que les autres pages en écran moyen */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .container.directory-container {
+    width: 750px; /* Même largeur que les autres pages en petit écran */
+  }
 }
 
 /* Header de la page */
