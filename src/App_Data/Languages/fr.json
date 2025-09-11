@@ -62,8 +62,15 @@
   },
   "DASHBOARD": {
     "MAIN_TITLE": "Salon Tout pour l'Habitat 2026",
+    "SUBTITLE": "Le salon régional de référence pour votre habitat",
     "BODY_TITLE": "Le salon régional de référence sur 2500 m2 couverts pour équiper, éco-concevoir, rénover, meubler, décorer... votre habitat.",
     "BODY_TEXT": "Nous avons le plaisir de vous annoncer la date du Salon « Tout pour l'Habitat 2026 » qui se déroulera les 27, 28 et 29 Mars 2026 à la Salle polyvalente de St-Rambert d'Albon. Reconnu comme le salon régional de référence dans le domaine du développement durable et des nouvelles technologies pour l'habitat, cette manifestation attire toujours plus de visiteurs et clients potentiels chaque année. Avec une surface couverte de plus de 2500 m2 ses 80 exposants et une magnifique zone de restauration, il garde un potentiel de développement très important.",
+    "DATE": "27, 28 et 29 Mars 2026",
+    "LOCATION": "Salle polyvalente de St-Rambert d'Albon",
+    "GALLERY_TITLE": "Découvrez notre salon en images",
+    "LOCATION_SECTION_TITLE": "Lieu du salon",
+    "VIDEOS_SECTION_TITLE": "Découvrez nos vidéos",
+    "VIDEO_TITLE": "Vidéo du salon",
     "MOVIES": {
       "ONE": "https://www.youtube.com/embed/X2wx1NORnck",
       "TWO": "https://www.youtube.com/embed/veMintQoXQk",
@@ -73,8 +80,10 @@
   "DOWNLOAD-PANEL": {
     "TITLE": "Dossier de participation",
     "BUTTON": "Télécharger",
+    "BUTTON_TITLE": "Télécharger le dossier d'inscription",
     "PLAQUETTE": "Plaquette",
-    "TEXT": "Pensez à nous retourner votre bulletin d'inscription à télécharger ci-dessus dûment rempli et accompagné de votre réglement avant le 16 Janvier 2026."
+    "TEXT": "Pensez à nous retourner votre bulletin d'inscription à télécharger ci-dessus dûment rempli et accompagné de votre réglement avant le 16 Janvier 2026.",
+    "DEADLINE": "Date limite: 16 Janvier 2026"
   },
   "TIME": {
     "TITLE": "Horaires d'ouverture",
@@ -108,11 +117,29 @@
   },
   "EXPOSANT_FORM": {
     "PANEL_TITLE": "Annuaire des exposants",
-    "LABEL_SEARCH": "Rechercher un eposant"
+    "LABEL_SEARCH": "Rechercher un exposant",
+    "DESCRIPTION": "Trouvez facilement tous les exposants du salon et leurs coordonnées"
   },
   "ANNONCEUR_FORM": {
     "PANEL_TITLE": "Annuaire des annonceurs",
-    "LABEL_SEARCH": "Rechercher un annonceur"
+    "LABEL_SEARCH": "Rechercher un annonceur",
+    "DESCRIPTION": "Découvrez tous les partenaires et annonceurs du salon"
+  },
+  "SHARED_COMPONENTS": {
+    "SIDEBAR_TITLE": "Informations salon",
+    "CONTACT_CARD_TITLE": "Contactez-nous",
+    "LOCATION_CARD_TITLE": "Lieu du salon"
+  },
+  "DIRECTORY": {
+    "NO_RESULTS": "Aucun résultat trouvé",
+    "TRY_ANOTHER_SEARCH": "Veuillez essayer une autre recherche",
+    "CONTACT": "Contact",
+    "TELEPHONE": "Téléphone",
+    "ADDRESS": "Adresse",
+    "MOBILE": "Portable",
+    "CITY": "Ville",
+    "EMAIL": "Email",
+    "WEBSITE": "Site web"
   },
   "CONTACT_FORM": {
     "TITLE": "salonhabitatstrambert@gmail.com",

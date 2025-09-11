@@ -1,199 +1,156 @@
-<div class="container-fluid">
-	
-	<div class="row">
+<!-- Annonceur.html (Version moderne) -->
+<div class="container-fluid directory-container">
+  <div class="row">
+    <!-- Section principale - Liste des annonceurs -->
+    <div class="col-xs-12 col-sm-8 col-lg-8">
+      <div class="directory-header">
+        <h2 class="directory-title">{{ 'ANNONCEUR_FORM.PANEL_TITLE' | translate }}</h2>
+        <p class="directory-subtitle">{{ 'ANNONCEUR_FORM.DESCRIPTION' | translate }}</p>
+      </div>
 
-		<div class="col-xs-12 col-sm-6 col-lg-8">
-		<div class="panel panel-default">
-			<div class="panel-heading"><h3 class="panel-title content-center">{{ 'ANNONCEUR_FORM.PANEL_TITLE' | translate }}</h3></div>
-			
-			<div class="panel-body">
-				<h2 class="label label-success">{{ 'ANNONCEUR_FORM.LABEL_SEARCH' | translate }}</h2>
-				<input type="text" class="form-control" ng-model="query">
-			</div>
+      <!-- Barre de recherche -->
+      <div class="search-container">
+        <span class="glyphicon glyphicon-search search-icon" aria-hidden="true"></span>
+        <input type="text" class="form-control search-input" ng-model="query" placeholder="{{ 'ANNONCEUR_FORM.LABEL_SEARCH' | translate }}">
+      </div>
 
-			<div class="panel-body">
-				<div ng-repeat="item in annonceurs | filter:query" class="col-xs-12 col-sm-12 col-lg-12">
-						<h3>{{item.name}}</h3>
-						<div class="table-responsive">
-						    <table class="table">
-						      <tbody>
-						      	<tr>
-						      		<td colspan="2">
-						      			<span class="glyphicon glyphicon-hand-right" aria-hidden="true"> {{item.description}}</span>
-						      		</td>
-						      	</tr>
-						        <tr class="success">
-						          <!-- <td>
-						          	<span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{item.address.contact}}
-						          </td> -->
-						          <td>
-						          	<span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> {{item.telephone}}
-						          </td>
-						        </tr>
-						        <!-- <tr class="danger">
-						          <td>
-						          	<span class="glyphicon glyphicon-home" aria-hidden="true"></span> {{item.address.firstline}}
-						          </td>
-						          <td>
-						          	<span class="glyphicon glyphicon-phone" aria-hidden="true"></span> {{item.portable}}
-						          </td>
-						        </tr> -->
-						        <tr class="info">
-						          <td>
-						          	{{item.address.postalCode}} {{item.address.city}}
-						          </td>
-						          <!-- <td>
-						          	<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> {{item.mail}}
-						          </td> -->
-						        </tr>
-						      </tbody>
-						    </table>
-						</div>
-					</div>
-			</div>
-		</div>
-		</div>
+      <!-- Message aucun résultat -->
+      <div class="no-results" ng-if="(annonceurs | filter:query).length === 0">
+        <div class="no-results-icon">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        </div>
+        <h4>{{ 'DIRECTORY.NO_RESULTS' | translate }}</h4>
+        <p>{{ 'DIRECTORY.TRY_ANOTHER_SEARCH' | translate }}</p>
+      </div>
 
-		<!-- inject:download-panel -->
-		<div class="col-xs-12 col-sm-4 col-lg-4">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title content-center">
-        {{ "DOWNLOAD-PANEL.TITLE" | translate }}
-      </h3>
+      <!-- Liste des annonceurs -->
+      <div class="row">
+        <div class="col-xs-12" ng-repeat="item in annonceurs | filter:query">
+          <div class="entity-card">
+            <div class="entity-header">
+              <h3 class="entity-title">{{item.name}}</h3>
+              <p class="entity-description" ng-if="item.description">{{item.description}}</p>
+            </div>
+            <div class="entity-body">
+              <div class="info-grid">
+                <!-- Téléphone -->
+                <div class="info-item" ng-if="item.telephone">
+                  <div class="info-label">{{ 'DIRECTORY.TELEPHONE' | translate }}</div>
+                  <div class="info-value">
+                    <span class="glyphicon glyphicon-phone-alt info-icon" aria-hidden="true"></span>
+                    {{item.telephone}}
+                  </div>
+                </div>
+
+                <!-- Ville -->
+                <div class="info-item" ng-if="item.address.postalCode || item.address.city">
+                  <div class="info-label">{{ 'DIRECTORY.CITY' | translate }}</div>
+                  <div class="info-value">
+                    <span class="glyphicon glyphicon-map-marker info-icon" aria-hidden="true"></span>
+                    {{item.address.postalCode}} {{item.address.city}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="panel-body content-center">
-		<div class="col-xs-12">
-			<a
-			  ng-href="download/Dossier inscription salon habitat 2026.pdf"
-			  target="_blank"
-			  ><img
-				class="dashboard-download"
-				src="img/icones/PDF-Icone.jpg"
-				alt="Download"
-			  /><br /><span class="label label-success"
-				>{{ "DOWNLOAD-PANEL.BUTTON" | translate }}</span
-			  ></a
-			>
-		</div>
-		<!--<div class="col-xs-6">
-			<a
-				ng-href="download/PLAQUETTE SALON HABITAT 2025.pdf"
-				target="_blank"
-				><img
-				class="dashboard-download"
-				src="img/icones/Icone-plaquette.png"
-				alt="Download"
-				/><br /><span class="label label-success"
-				>{{ "DOWNLOAD-PANEL.PLAQUETTE" | translate }}</span
-				></a
-			>
-		</div> -->
-    </div>
-    <div class="panel-body">
-      <p class="alert alert-success dashboard-description">
-        {{ "DOWNLOAD-PANEL.TEXT" | translate }}
-      </p>
-    </div>
-  </div>
-</div>
 
-		<!-- endinject -->
+    <!-- Sidebar -->
+    <div class="col-xs-12 col-sm-4 col-lg-4 sidebar-container">
+      <!-- Carte de téléchargement -->
+      <div class="shared-card">
+        <div class="shared-card-header">
+          <h3>{{ 'DOWNLOAD-PANEL.TITLE' | translate }}</h3>
+        </div>
+        <div class="download-card">
+          <img src="img/icones/PDF-Icone.jpg" alt="Download" class="download-icon">
+          <div>
+            <a ng-href="download/Dossier inscription salon habitat 2026.pdf" target="_blank" class="download-button">
+              {{ 'DOWNLOAD-PANEL.BUTTON' | translate }}
+            </a>
+          </div>
+          <p class="download-text">{{ 'DOWNLOAD-PANEL.TEXT' | translate }}</p>
+        </div>
+      </div>
 
-		<!-- inject:time-panel -->
-		<div class="col-xs-12 col-sm-4 col-lg-4">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title content-center">{{ 'TIME.TITLE' | translate }}</h3>
-    </div>
-    <div class="panel-body">
-      <aside>
-        <ul class="footer-ul">
-          <li class="label-horaire label-info dashboard-horaire">
-            {{ 'TIME.LINE1' | translate }}
-          </li>
-          <li class="label-horaire label-warning dashboard-event">
-            {{ 'TIME.LINE2' | translate }}
-          </li>
-          <li class="label-horaire label-info dashboard-horaire">
-            {{ 'TIME.LINE3' | translate }}
-          </li>
-          <li class="label-horaire label-info dashboard-horaire">
-            {{ 'TIME.LINE4' | translate }}
-          </li>
-          <li class="label-horaire label-warning dashboard-event">
-            {{ 'TIME.LINE5' | translate }}
-          </li>
-        </ul>
-      </aside>
-    </div>
-  </div>
-</div>
+      <!-- Horaires -->
+      <div class="shared-card">
+        <div class="shared-card-header">
+          <h3>{{ 'TIME.TITLE' | translate }}</h3>
+        </div>
+        <div class="shared-card-body">
+          <ul class="schedule-list">
+            <li class="schedule-item schedule-item-info">{{ 'TIME.LINE1' | translate }}</li>
+            <li class="schedule-item schedule-item-warning">{{ 'TIME.LINE2' | translate }}</li>
+            <li class="schedule-item schedule-item-info">{{ 'TIME.LINE3' | translate }}</li>
+            <li class="schedule-item schedule-item-info">{{ 'TIME.LINE4' | translate }}</li>
+            <li class="schedule-item schedule-item-warning">{{ 'TIME.LINE5' | translate }}</li>
+          </ul>
+        </div>
+      </div>
 
-		<!-- endinject -->
+      <!-- Informations -->
+      <div class="shared-card">
+        <div class="shared-card-header">
+          <h3>{{ 'INFO.TITLE' | translate }}</h3>
+        </div>
+        <div class="shared-card-body">
+          <ul class="schedule-list">
+            <li class="schedule-item schedule-item-primary">{{ 'INFO.LINE1' | translate }}</li>
+            <li class="schedule-item schedule-item-primary">{{ 'INFO.LINE2' | translate }}</li>
+            <li class="schedule-item schedule-item-success">{{ 'INFO.LINE3' | translate }}</li>
+            <li class="schedule-item schedule-item-success">{{ 'INFO.LINE4' | translate }}</li>
+          </ul>
+        </div>
+      </div>
 
-		<!-- inject:info-panel -->
-		<div class="col-xs-12 col-sm-4 col-lg-4">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title content-center">{{ 'INFO.TITLE' | translate }}</h3>
-    </div>
-    <div class="panel-body">
-      <aside>
-        <ul class="footer-ul">
-          <li class="label-horaire label-primary dashboard-horaire">
-            {{ 'INFO.LINE1' | translate }}
-          </li>
-          <li class="label-horaire label-primary dashboard-horaire">
-            {{ 'INFO.LINE2' | translate }}
-          </li>
-          <li class="label-horaire label-success dashboard-event">
-            {{ 'INFO.LINE3' | translate }}
-          </li>
-          <li class="label-horaire label-success dashboard-event">
-            {{ 'INFO.LINE4' | translate }}
-          </li>
-        </ul>
-      </aside>
+      <!-- Contacts -->
+      <div class="shared-card">
+        <div class="shared-card-header">
+          <h3>{{ 'CONFIG.CONTACT' | translate }}</h3>
+        </div>
+        <div class="shared-card-body">
+          <ul class="contact-list">
+            <li class="contact-item">
+              <div class="contact-name">{{ 'CONFIG.MEMBER_ONE.NAME' | translate }}</div>
+              <div class="contact-phone">
+                <a href="tel:{{ 'CONFIG.MEMBER_ONE.TELEPHONE' | translate }}">{{ 'CONFIG.MEMBER_ONE.TELEPHONE' | translate }}</a>
+              </div>
+            </li>
+            <li class="contact-item">
+              <div class="contact-name">{{ 'CONFIG.MEMBER_TWO.NAME' | translate }}</div>
+              <div class="contact-phone">
+                <a href="tel:{{ 'CONFIG.MEMBER_TWO.PORTABLE' | translate }}">{{ 'CONFIG.MEMBER_TWO.PORTABLE' | translate }}</a>
+              </div>
+            </li>
+            <li class="contact-item">
+              <div class="contact-name">{{ 'CONFIG.MEMBER_THREE.NAME' | translate }}</div>
+              <div class="contact-phone">
+                <a href="tel:{{ 'CONFIG.MEMBER_THREE.TELEPHONE' | translate }}">{{ 'CONFIG.MEMBER_THREE.TELEPHONE' | translate }}</a>
+              </div>
+            </li>
+            <li class="contact-item">
+              <div class="contact-name">{{ 'CONFIG.MEMBER_FOUR.NAME' | translate }}</div>
+              <div class="contact-phone">
+                <a href="tel:{{ 'CONFIG.MEMBER_FOUR.TELEPHONE' | translate }}">{{ 'CONFIG.MEMBER_FOUR.TELEPHONE' | translate }}</a>
+              </div>
+            </li>
+          </ul>
+          
+          <address>
+            <strong>{{ 'CONFIG.SALON.LIEU' | translate }}</strong><br>
+            {{ 'CONFIG.SALON.ADDRESS.FIRSTLINE' | translate }}<br>
+            {{ 'CONFIG.SALON.ADDRESS.POSTALCODE' | translate }} {{ 'CONFIG.SALON.ADDRESS.CITY' | translate }}<br>
+            {{ 'CONFIG.SALON.ADDRESS.COUNTRY' | translate }}
+          </address>
+          
+          <div class="location-map-container">
+            <iframe class="location-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2806.723151185784!2d4.818553150638102!3d45.29381585271558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f53db8e741fe4d%3A0x4ed660684ff29aff!2s15+Rue+du+Levant%2C+26140+Saint-Rambert-d&#39;Albon!5e0!3m2!1sfr!2sfr!4v1457193257153" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-
-		<!-- endinject -->
-
-		<!-- inject:contact-panel -->
-		<div class="col-xs-12 col-sm-4 col-lg-4">
-		<div class="panel panel-default">
-			<div class="panel-heading"><h3 class="panel-title">{{ 'CONFIG.CONTACT' | translate }}</h3></div>
-			<div class="panel-body">
-				<aside>
-					<ul class="footer-ul">
-						<li class="label-horaire label-info dashboard-horaire">{{ 'CONFIG.MEMBER_ONE.NAME' | translate }}</li>
-						<li class="label-horaire label-warning dashboard-event">{{ 'CONFIG.MEMBER_ONE.TELEPHONE' | translate }}</li>
-						<li class="label-horaire label-info dashboard-horaire">{{ 'CONFIG.MEMBER_TWO.NAME' | translate }}</li>
-						<li class="label-horaire label-warning dashboard-event">{{ 'CONFIG.MEMBER_TWO.PORTABLE' | translate }}</li>
-						<li class="label-horaire label-info dashboard-horaire">{{ 'CONFIG.MEMBER_THREE.NAME' | translate }}</li>
-						<li class="label-horaire label-warning dashboard-event">{{ 'CONFIG.MEMBER_THREE.TELEPHONE' | translate }}</li>
-						<li class="label-horaire label-info dashboard-horaire">{{ 'CONFIG.MEMBER_FOUR.NAME' | translate }}</li>
-						<li class="label-horaire label-warning dashboard-event">{{ 'CONFIG.MEMBER_FOUR.TELEPHONE' | translate }}</li>
-					</ul>
-				</aside>
-			</div>
-	    	<div class="panel-body">
-			    <address>
-			        <strong>{{ 'CONFIG.SALON.LIEU' | translate }}</strong><br />
-			            	{{ 'CONFIG.SALON.ADDRESS.FIRSTLINE' | translate }}<br />	                
-			                {{ 'CONFIG.SALON.ADDRESS.POSTALCODE' | translate }}<br />
-			                {{ 'CONFIG.SALON.ADDRESS.CITY' | translate }}<br />
-			                {{ 'CONFIG.SALON.ADDRESS.COUNTRY' | translate }}<br>
-			    </address>
-				<div>
-	    		<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2806.723151185784!2d4.818553150638102!3d45.29381585271558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f53db8e741fe4d%3A0x4ed660684ff29aff!2s15+Rue+du+Levant%2C+26140+Saint-Rambert-d&#39;Albon!5e0!3m2!1sfr!2sfr!4v1457193257153" frameborder="0" style="border:0" allowfullscreen></iframe>
-	    	</div>
-			</div>			
-		</div>
-</div>
-		<!-- endinject -->
-		
-	</div>
 </div>

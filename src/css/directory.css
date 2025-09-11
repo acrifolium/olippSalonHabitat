@@ -1,0 +1,364 @@
+/* Styles pour les pages Exposant et Annonceur */
+
+.directory-container {
+  padding: 30px 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Header de la page */
+.directory-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.directory-title {
+  font-size: 28px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.directory-subtitle {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Barre de recherche */
+.search-container {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.search-input {
+  padding-left: 40px;
+  height: 45px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.search-input:focus {
+  border-color: #5cb85c;
+  box-shadow: 0 2px 8px rgba(92,184,92,0.2);
+  outline: none;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 13px;
+  color: #777;
+}
+
+/* Message aucun résultat */
+.no-results {
+  text-align: center;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  color: #777;
+}
+
+.no-results-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: #ddd;
+}
+
+/* Cartes pour les exposants/annonceurs */
+.entity-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  margin-bottom: 25px;
+}
+
+.entity-card:hover {
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.entity-header {
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+  background-color: #f8f8f8;
+}
+
+.entity-title {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+}
+
+.entity-description {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #555;
+  font-style: italic;
+}
+
+.entity-body {
+  padding: 20px;
+}
+
+/* Grille d'information */
+.info-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: -15px;
+}
+
+.info-item {
+  flex: 0 0 50%;
+  padding-right: 15px;
+  margin-bottom: 15px;
+}
+
+.info-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #777;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.info-value {
+  color: #333;
+  word-break: break-word;
+}
+
+.info-icon {
+  margin-right: 8px;
+  color: #5cb85c;
+  width: 16px;
+  text-align: center;
+}
+
+/* Liens */
+.entity-link {
+  color: #337ab7;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  word-break: break-word;
+}
+
+.entity-link:hover {
+  color: #23527c;
+  text-decoration: underline;
+}
+
+/* Composants partagés */
+.sidebar-container {
+  margin-bottom: 30px;
+}
+
+.sidebar-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Components partagés */
+.shared-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  margin-bottom: 25px;
+}
+
+.shared-card-header {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  background-color: #f8f8f8;
+}
+
+.shared-card-header h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+}
+
+.shared-card-body {
+  padding: 15px;
+}
+
+/* Carte de téléchargement */
+.download-card {
+  text-align: center;
+  padding: 20px 15px;
+}
+
+.download-icon {
+  max-width: 60px;
+  margin-bottom: 15px;
+}
+
+.download-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #5cb85c;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 10px;
+  transition: all 0.2s ease;
+}
+
+.download-button:hover {
+  background-color: #4cae4c;
+  text-decoration: none;
+  color: white;
+}
+
+.download-text {
+  margin-top: 15px;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Liste d'horaires */
+.schedule-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.schedule-item {
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.schedule-item-info {
+  background-color: #5bc0de;
+}
+
+.schedule-item-warning {
+  background-color: #f0ad4e;
+}
+
+.schedule-item-success {
+  background-color: #5cb85c;
+}
+
+.schedule-item-primary {
+  background-color: #337ab7;
+}
+
+/* Contacts */
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+
+.contact-item {
+  display: flex;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.contact-item:last-child {
+  border-bottom: none;
+}
+
+.contact-name {
+  flex: 1;
+  color: #333;
+  font-weight: 500;
+}
+
+.contact-phone {
+  color: #337ab7;
+}
+
+.contact-phone a {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+.contact-phone a:hover {
+  text-decoration: underline;
+}
+
+/* Carte Google Maps */
+.location-map-container {
+  margin-top: 15px;
+}
+
+.location-map {
+  width: 100%;
+  height: 200px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: none;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .sidebar-container {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .directory-title {
+    font-size: 24px;
+  }
+  
+  .directory-subtitle {
+    font-size: 15px;
+  }
+  
+  .info-item {
+    flex: 0 0 100%;
+  }
+  
+  .search-input {
+    height: 40px;
+    font-size: 15px;
+  }
+  
+  .search-icon {
+    top: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .directory-container {
+    padding: 20px 0;
+  }
+  
+  .entity-header {
+    padding: 12px 15px;
+  }
+  
+  .entity-body {
+    padding: 15px;
+  }
+  
+  .entity-title {
+    font-size: 16px;
+  }
+  
+  .shared-card-header h3 {
+    font-size: 15px;
+  }
+}

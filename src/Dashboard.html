@@ -1,231 +1,202 @@
-<div class="container">
-
-	<div class="row">
-
-		<div class="col-xs-12 col-sm-8 col-lg-8">
-			<div class="panel panel-default">
-				<div class="panel-heading"><h3 class="panel-title content-center">{{ 'DASHBOARD.MAIN_TITLE' | translate }}</h3></div> 
-				<div class="panel-body alert alert-success content-center"><h4>{{ 'DASHBOARD.BODY_TITLE' | translate }}</h4></div>
-
-				<!-- inject:carousel-salon -->
-	    		<div id="myCarouselSalon" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarouselSalon" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarouselSalon" data-slide-to="1"></li>
-    <li data-target="#myCarouselSalon" data-slide-to="2"></li>
-    <li data-target="#myCarouselSalon" data-slide-to="3"></li>
-    <li data-target="#myCarouselSalon" data-slide-to="4"></li>
-    <li data-target="#myCarouselSalon" data-slide-to="5"></li>
-    <li data-target="#myCarouselSalon" data-slide-to="6"></li>
-    <li data-target="#myCarouselSalon" data-slide-to="7"></li>
-    <li data-target="#myCarouselSalon" data-slide-to="8"></li>
-    <li data-target="#myCarouselSalon" data-slide-to="9"></li>
-    <li data-target="#myCarouselSalon" data-slide-to="10"></li>
-    <li data-target="#myCarouselSalon" data-slide-to="11"></li>
-    <li data-target="#myCarouselSalon" data-slide-to="12"></li>
-    <li data-target="#myCarouselSalon" data-slide-to="13"></li>
-    <li data-target="#myCarouselSalon" data-slide-to="14"></li>                  
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img class="img-responsive center-block" src="img/salon/1.jpg">
+<div class="container dashboard-container">
+  <div class="dashboard-header">
+    <h1 class="dashboard-title">{{ 'DASHBOARD.MAIN_TITLE' | translate }}</h1>
+    <p class="dashboard-subtitle">{{ 'DASHBOARD.SUBTITLE' | translate }}</p>
+    <div class="date-badge">
+      <span class="date-badge-text">{{ 'DASHBOARD.DATE' | translate }}</span>
     </div>
-    <div class="item">
-      <img class="img-responsive center-block" src="img/salon/2.jpg">
-    </div>
-    <div class="item">
-      <img class="img-responsive center-block" src="img/salon/3.jpg">
-    </div>
-    <div class="item">
-      <img class="img-responsive center-block" src="img/salon/4.jpg">
-    </div>
-    <div class="item">
-      <img class="img-responsive center-block" src="img/salon/5.jpg">
-    </div>
-    <div class="item">
-      <img class="img-responsive center-block" src="img/salon/6.jpg">
-    </div>
-    <div class="item">
-      <img class="img-responsive center-block" src="img/salon/7.jpg">
-    </div>
-    <div class="item">
-      <img class="img-responsive center-block" src="img/salon/8.jpg">
-    </div>
-    <div class="item">
-      <img class="img-responsive center-block" src="img/salon/9.jpg">
-    </div>
-    <div class="item">
-      <img class="img-responsive center-block" src="img/salon/10.jpg">
-    </div>
-    <div class="item">
-      <img class="img-responsive center-block" src="img/salon/11.jpg">
-    </div>
-    <div class="item">
-      <img class="img-responsive center-block" src="img/salon/12.jpg">
-    </div>
-    <div class="item">
-      <img class="img-responsive center-block" src="img/salon/13.jpg">
-    </div>
-    <div class="item">
-      <img class="img-responsive center-block" src="img/salon/14.jpg">
-    </div>
-    <div class="item">
-      <img class="img-responsive center-block" src="img/salon/15.jpg">
-    </div>                                    
   </div>
 
-  <!-- Left and right controls -->
-<!--   <a class="left carousel-control" href="#myCarouselSalon" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarouselSalon" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a> -->
-</div>
-	    		<!-- endinject -->			
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+      <!-- Description principale -->
+      <div class="info-card">
+        <div class="info-card-header">
+          <h3>{{ 'DASHBOARD.GALLERY_TITLE' | translate }}</h3>
+        </div>
+        <div class="info-card-body p-0">
+          <!-- Carousel moderne -->
+          <div id="myCarouselSalon" class="carousel slide carousel-modern" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarouselSalon" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarouselSalon" data-slide-to="1"></li>
+              <li data-target="#myCarouselSalon" data-slide-to="2"></li>
+              <li data-target="#myCarouselSalon" data-slide-to="3"></li>
+              <li data-target="#myCarouselSalon" data-slide-to="4"></li>
+              <li data-target="#myCarouselSalon" data-slide-to="5"></li>
+              <li data-target="#myCarouselSalon" data-slide-to="6"></li>
+              <li data-target="#myCarouselSalon" data-slide-to="7"></li>
+              <li data-target="#myCarouselSalon" data-slide-to="8"></li>
+              <li data-target="#myCarouselSalon" data-slide-to="9"></li>
+              <li data-target="#myCarouselSalon" data-slide-to="10"></li>
+              <li data-target="#myCarouselSalon" data-slide-to="11"></li>
+              <li data-target="#myCarouselSalon" data-slide-to="12"></li>
+              <li data-target="#myCarouselSalon" data-slide-to="13"></li>
+              <li data-target="#myCarouselSalon" data-slide-to="14"></li>
+            </ol>
 
-				<div class="panel-body"><p class="alert alert-success dashboard-description">{{ 'DASHBOARD.BODY_TEXT' | translate }}</p></div>
-			</div>	
-		</div>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <img class="img-responsive center-block" src="img/salon/1.jpg" alt="Image du salon 1">
+              </div>
+              <div class="item">
+                <img class="img-responsive center-block" src="img/salon/2.jpg" alt="Image du salon 2">
+              </div>
+              <div class="item">
+                <img class="img-responsive center-block" src="img/salon/3.jpg" alt="Image du salon 3">
+              </div>
+              <div class="item">
+                <img class="img-responsive center-block" src="img/salon/4.jpg" alt="Image du salon 4">
+              </div>
+              <div class="item">
+                <img class="img-responsive center-block" src="img/salon/5.jpg" alt="Image du salon 5">
+              </div>
+              <div class="item">
+                <img class="img-responsive center-block" src="img/salon/6.jpg" alt="Image du salon 6">
+              </div>
+              <div class="item">
+                <img class="img-responsive center-block" src="img/salon/7.jpg" alt="Image du salon 7">
+              </div>
+              <div class="item">
+                <img class="img-responsive center-block" src="img/salon/8.jpg" alt="Image du salon 8">
+              </div>
+              <div class="item">
+                <img class="img-responsive center-block" src="img/salon/9.jpg" alt="Image du salon 9">
+              </div>
+              <div class="item">
+                <img class="img-responsive center-block" src="img/salon/10.jpg" alt="Image du salon 10">
+              </div>
+              <div class="item">
+                <img class="img-responsive center-block" src="img/salon/11.jpg" alt="Image du salon 11">
+              </div>
+              <div class="item">
+                <img class="img-responsive center-block" src="img/salon/12.jpg" alt="Image du salon 12">
+              </div>
+              <div class="item">
+                <img class="img-responsive center-block" src="img/salon/13.jpg" alt="Image du salon 13">
+              </div>
+              <div class="item">
+                <img class="img-responsive center-block" src="img/salon/14.jpg" alt="Image du salon 14">
+              </div>
+              <div class="item">
+                <img class="img-responsive center-block" src="img/salon/15.jpg" alt="Image du salon 15">
+              </div>
+            </div>
 
-		<!-- inject:download-panel -->
-	    <div class="col-xs-12 col-sm-4 col-lg-4">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title content-center">
-        {{ "DOWNLOAD-PANEL.TITLE" | translate }}
-      </h3>
-    </div>
-    <div class="panel-body content-center">
-      <div class="col-xs-12">
-        <a
-          ng-href="download/Dossier inscription salon habitat 2026.pdf"
-          target="_blank"
-          ><img
-            class="dashboard-download"
-            src="img/icones/PDF-Icone.jpg"
-            alt="Download"
-          /><br /><span class="label label-success"
-            >{{ "DOWNLOAD-PANEL.BUTTON" | translate }}</span
-          ></a
-        >
+            <!-- Controls -->
+            <a class="left carousel-control" href="#myCarouselSalon" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarouselSalon" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          
+          <div class="info-card-body">
+            <p class="dashboard-description">{{ 'DASHBOARD.BODY_TEXT' | translate }}</p>
+          </div>
+        </div>
       </div>
-      <!--  <div class="col-xs-6">
-        <a
-          ng-href="download/PLAQUETTE SALON HABITAT 2026.pdf"
-          target="_blank"
-          ><img
-            class="dashboard-download"
-            src="img/icones/Icone-plaquette.png"
-            alt="Download"
-          /><br /><span class="label label-success"
-            >{{ "DOWNLOAD-PANEL.PLAQUETTE" | translate }}</span
-          ></a
-        >
-      </div>  -->
     </div>
-    <div class="panel-body">
-      <p class="alert alert-success dashboard-description">
-        {{ "DOWNLOAD-PANEL.TEXT" | translate }}
-      </p>
-    </div>
-  </div>
-</div>
 
-	    <!-- endinject -->		
+    <div class="col-xs-12 col-md-4">
+      <div class="row equal-height-row">
+        <!-- Téléchargement -->
+        <div class="col-xs-12">
+          <div class="info-card">
+            <div class="info-card-header">
+              <h3>{{ 'DOWNLOAD-PANEL.TITLE' | translate }}</h3>
+            </div>
+            <div class="info-card-body download-card">
+              <img class="download-icon" src="img/icones/PDF-Icone.jpg" alt="PDF">
+              <div>
+                <a class="download-button" href="download/Dossier inscription salon habitat 2026.pdf" target="_blank" title="{{ 'DOWNLOAD-PANEL.BUTTON_TITLE' | translate }}">
+                  {{ 'DOWNLOAD-PANEL.BUTTON' | translate }}
+                </a>
+              </div>
+              <p class="download-text">{{ 'DOWNLOAD-PANEL.TEXT' | translate }}</p>
+              <div class="deadline-badge">{{ 'DOWNLOAD-PANEL.DEADLINE' | translate }}</div>
+            </div>
+          </div>
+        </div>
 
-		<!-- inject:time-panel -->
-	    <div class="col-xs-12 col-sm-4 col-lg-4">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title content-center">{{ 'TIME.TITLE' | translate }}</h3>
-    </div>
-    <div class="panel-body">
-      <aside>
-        <ul class="footer-ul">
-          <li class="label-horaire label-info dashboard-horaire">
-            {{ 'TIME.LINE1' | translate }}
-          </li>
-          <li class="label-horaire label-warning dashboard-event">
-            {{ 'TIME.LINE2' | translate }}
-          </li>
-          <li class="label-horaire label-info dashboard-horaire">
-            {{ 'TIME.LINE3' | translate }}
-          </li>
-          <li class="label-horaire label-info dashboard-horaire">
-            {{ 'TIME.LINE4' | translate }}
-          </li>
-          <li class="label-horaire label-warning dashboard-event">
-            {{ 'TIME.LINE5' | translate }}
-          </li>
-        </ul>
-      </aside>
-    </div>
-  </div>
-</div>
+        <!-- Horaires -->
+        <div class="col-xs-12">
+          <div class="info-card">
+            <div class="info-card-header">
+              <h3>{{ 'TIME.TITLE' | translate }}</h3>
+            </div>
+            <div class="info-card-body">
+              <ul class="schedule-list">
+                <li class="schedule-item schedule-item-info">{{ 'TIME.LINE1' | translate }}</li>
+                <li class="schedule-item schedule-item-warning">{{ 'TIME.LINE2' | translate }}</li>
+                <li class="schedule-item schedule-item-info">{{ 'TIME.LINE3' | translate }}</li>
+                <li class="schedule-item schedule-item-info">{{ 'TIME.LINE4' | translate }}</li>
+                <li class="schedule-item schedule-item-warning">{{ 'TIME.LINE5' | translate }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-	    <!-- endinject -->
-		
-		<!-- inject:info-panel -->
-	    <div class="col-xs-12 col-sm-4 col-lg-4">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title content-center">{{ 'INFO.TITLE' | translate }}</h3>
-    </div>
-    <div class="panel-body">
-      <aside>
-        <ul class="footer-ul">
-          <li class="label-horaire label-primary dashboard-horaire">
-            {{ 'INFO.LINE1' | translate }}
-          </li>
-          <li class="label-horaire label-primary dashboard-horaire">
-            {{ 'INFO.LINE2' | translate }}
-          </li>
-          <li class="label-horaire label-success dashboard-event">
-            {{ 'INFO.LINE3' | translate }}
-          </li>
-          <li class="label-horaire label-success dashboard-event">
-            {{ 'INFO.LINE4' | translate }}
-          </li>
-        </ul>
-      </aside>
+        <!-- Informations -->
+        <div class="col-xs-12">
+          <div class="info-card">
+            <div class="info-card-header">
+              <h3>{{ 'INFO.TITLE' | translate }}</h3>
+            </div>
+            <div class="info-card-body">
+              <ul class="schedule-list">
+                <li class="schedule-item schedule-item-primary">{{ 'INFO.LINE1' | translate }}</li>
+                <li class="schedule-item schedule-item-primary">{{ 'INFO.LINE2' | translate }}</li>
+                <li class="schedule-item schedule-item-success">{{ 'INFO.LINE3' | translate }}</li>
+                <li class="schedule-item schedule-item-success">{{ 'INFO.LINE4' | translate }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-	    <!-- endinject -->		
-	</div>
+  <!-- Section Lieu du salon -->
+  <div class="location-section">
+    <h2 class="section-title">{{ 'DASHBOARD.LOCATION_SECTION_TITLE' | translate }}</h2>
+    <div class="row">
+      <div class="col-xs-12 col-md-3">
+        <div class="location-address">
+          <h3 class="location-title">{{ 'CONFIG.SALON.TITLE' | translate }}</h3>
+          <address>
+            <strong>{{ 'CONFIG.SALON.LIEU' | translate }}</strong><br>
+            {{ 'CONFIG.SALON.ADDRESS.FIRSTLINE' | translate }}<br>
+            {{ 'CONFIG.SALON.ADDRESS.POSTALCODE' | translate }} {{ 'CONFIG.SALON.ADDRESS.CITY' | translate }}<br>
+            {{ 'CONFIG.SALON.ADDRESS.COUNTRY' | translate }}
+          </address>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-9">
+        <iframe class="location-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2806.723151185784!2d4.818553150638102!3d45.29381585271558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f53db8e741fe4d%3A0x4ed660684ff29aff!2s15+Rue+du+Levant%2C+26140+Saint-Rambert-d&#39;Albon!5e0!3m2!1sfr!2sfr!4v1457193257153" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
 
-	<div class="row">
-	    <div class="col-xs-12 col-md-12 col-lg-12">
-	        <div class="col-md-3">
-		        <h3>{{ 'CONFIG.SALON.TITLE' | translate }}</h3>
-			    <address>
-			        <strong>{{ 'CONFIG.SALON.LIEU' | translate }}</strong><br />
-			            	{{ 'CONFIG.SALON.ADDRESS.FIRSTLINE' | translate }}<br />	                
-			                {{ 'CONFIG.SALON.ADDRESS.POSTALCODE' | translate }}<br />
-			                {{ 'CONFIG.SALON.ADDRESS.CITY' | translate }}<br />
-			                {{ 'CONFIG.SALON.ADDRESS.COUNTRY' | translate }}<br>
-			    </address>
-	        </div>
-	        <div class="col-md-9">
-	    		<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2806.723151185784!2d4.818553150638102!3d45.29381585271558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f53db8e741fe4d%3A0x4ed660684ff29aff!2s15+Rue+du+Levant%2C+26140+Saint-Rambert-d&#39;Albon!5e0!3m2!1sfr!2sfr!4v1457193257153" frameborder="0" style="border:0" allowfullscreen></iframe>
-	    	</div>
-	    </div>
-	</div>
-
-	<div class="row">
-		<div ng-repeat="movie in DashMovies" class="col-xs-12 col-sm-4">
-		  	<div class="thumbnail">
-		    	<div class="embed-responsive embed-responsive-16by9">
-		    		<iframe width="420" height="315" ng-src="{{ movie | trusted }}"></iframe>
-				</div>
-		  	</div>
-		</div>
-	</div>		
+  <!-- Section Vidéos -->
+  <div class="videos-section">
+    <h2 class="section-title">{{ 'DASHBOARD.VIDEOS_SECTION_TITLE' | translate }}</h2>
+    <div class="row">
+      <div ng-repeat="movie in DashMovies" class="col-xs-12 col-sm-4 video-container">
+        <div class="video-card">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe width="420" height="315" ng-src="{{ movie | trusted }}" allowfullscreen></iframe>
+          </div>
+          <div class="video-card-footer text-center">
+            {{ 'DASHBOARD.VIDEO_TITLE' | translate }} {{$index + 1}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
