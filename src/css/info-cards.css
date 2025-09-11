@@ -1,0 +1,304 @@
+/* Styles partagés pour les cartes d'information
+   À inclure dans toutes les pages concernées */
+
+/* Container principal des cartes */
+.info-cards-row {
+  margin: 30px 0;
+}
+
+/* Style de base des cartes */
+.info-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  margin-bottom: 25px;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #eaeaea;
+}
+
+.info-card:hover {
+  box-shadow: 0 6px 25px rgba(0,0,0,0.12);
+  transform: translateY(-3px);
+}
+
+/* En-tête des cartes */
+.info-card-header {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+.info-card-header:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+}
+
+.info-card-header.download-header:before {
+  background-color: #5cb85c;
+}
+
+.info-card-header.time-header:before {
+  background-color: #5bc0de;
+}
+
+.info-card-header.info-header:before {
+  background-color: #337ab7;
+}
+
+.info-card-header .icon-title {
+  display: flex;
+  align-items: center;
+}
+
+.info-card-header .icon-title .glyphicon {
+  margin-right: 10px;
+  color: #337ab7;
+  font-size: 16px;
+}
+
+.info-card-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Corps des cartes */
+.info-card-body {
+  padding: 22px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style de téléchargement */
+.download-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.download-icon {
+  max-width: 65px;
+  margin-bottom: 18px;
+  transition: all 0.3s ease;
+}
+
+.info-card:hover .download-icon {
+  transform: scale(1.05);
+}
+
+.download-button {
+  display: inline-block;
+  padding: 10px 25px;
+  background-color: #5cb85c;
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 15px 0;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 10px rgba(92,184,92,0.2);
+}
+
+.download-button:hover {
+  background-color: #4cae4c;
+  text-decoration: none;
+  color: white;
+  box-shadow: 0 5px 15px rgba(92,184,92,0.3);
+  transform: translateY(-2px);
+}
+
+.download-text {
+  margin: 5px 0 10px;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.deadline-badge {
+  background-color: #f0ad4e;
+  color: white;
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 13px;
+  margin-top: 15px;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(240,173,78,0.3);
+}
+
+/* Liste des horaires */
+.schedule-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.schedule-item {
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  color: white;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: all 0.2s ease;
+}
+
+.schedule-item:last-child {
+  margin-bottom: 0;
+}
+
+.schedule-item:hover {
+  transform: translateX(3px);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+}
+
+.schedule-item:before {
+  content: "\e023"; /* Glyphicon calendar */
+  font-family: 'Glyphicons Halflings';
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.schedule-item-info {
+  background-color: #5bc0de;
+}
+
+.schedule-item-warning {
+  background-color: #f0ad4e;
+}
+
+.schedule-item-success {
+  background-color: #5cb85c;
+}
+
+.schedule-item-primary {
+  background-color: #337ab7;
+}
+
+/* Styles pour les différentes tailles d'écran */
+@media (max-width: 991px) {
+  .info-card {
+    margin-bottom: 20px;
+  }
+  
+  .info-card-header {
+    padding: 15px 18px;
+  }
+  
+  .info-card-body {
+    padding: 18px;
+  }
+  
+  .schedule-item {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+  .info-card-header h3 {
+    font-size: 16px;
+  }
+  
+  .download-icon {
+    max-width: 55px;
+  }
+  
+  .download-button {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+  
+  .schedule-item {
+    padding: 8px 12px;
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+}
+
+/* Styles partagés pour Exposant/Annonceur */
+.shared-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  margin-bottom: 25px;
+  overflow: hidden;
+  border: 1px solid #eaeaea;
+}
+
+.shared-card:hover {
+  box-shadow: 0 6px 25px rgba(0,0,0,0.12);
+  transform: translateY(-3px);
+}
+
+.shared-card-header {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+.shared-card-header:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+}
+
+.shared-card-header.download-header:before {
+  background-color: #5cb85c;
+}
+
+.shared-card-header.time-header:before {
+  background-color: #5bc0de;
+}
+
+.shared-card-header.info-header:before {
+  background-color: #337ab7;
+}
+
+.shared-card-header.contact-header:before {
+  background-color: #f0ad4e;
+}
+
+.shared-card-header .icon-title {
+  display: flex;
+  align-items: center;
+}
+
+.shared-card-header .icon-title .glyphicon {
+  margin-right: 10px;
+  color: #337ab7;
+  font-size: 16px;
+}
+
+.shared-card-header h3 {
+  margin: 0;
+  font-size: 17px;
+  color: #333;
+  font-weight: 500;
+}
+
+.shared-card-body {
+  padding: 20px;
+}

@@ -10,6 +10,8 @@
 
 .footer-container {
   position: relative;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 /* Section branding */
@@ -19,7 +21,7 @@
 }
 
 .footer-sponsor {
-  max-width: 60%;
+  max-width: 80%;
   height: auto;
 }
 
@@ -92,12 +94,17 @@
   overflow-wrap: break-word;
   max-width: 100%;
   display: inline-block;
+  font-size: 15px; /* Taille de police légèrement plus grande */
 }
 
 .footer-link:hover {
   color: #23527c;
   text-decoration: underline;
-  text-decoration: none;
+}
+
+/* Style spécifique pour la colonne des liens */
+.col-sm-3 .footer-contact-item {
+  margin-bottom: 15px; /* Plus d'espace entre les éléments */
 }
 
 .email-link, .website-link {

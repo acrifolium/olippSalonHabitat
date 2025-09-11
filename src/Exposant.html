@@ -106,24 +106,32 @@
     <div class="col-xs-12 col-sm-4 col-lg-4 sidebar-container">
       <!-- Carte de téléchargement -->
       <div class="shared-card">
-        <div class="shared-card-header">
-          <h3>{{ 'DOWNLOAD-PANEL.TITLE' | translate }}</h3>
-        </div>
-        <div class="download-card">
-          <img src="img/icones/PDF-Icone.jpg" alt="Download" class="download-icon">
-          <div>
-            <a ng-href="download/Dossier inscription salon habitat 2026.pdf" target="_blank" class="download-button">
-              {{ 'DOWNLOAD-PANEL.BUTTON' | translate }}
-            </a>
+        <div class="shared-card-header download-header">
+          <div class="icon-title">
+            <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+            <h3>{{ 'DOWNLOAD-PANEL.TITLE' | translate }}</h3>
           </div>
-          <p class="download-text">{{ 'DOWNLOAD-PANEL.TEXT' | translate }}</p>
+        </div>
+        <div class="shared-card-body">
+          <div class="download-card">
+            <img src="img/icones/PDF-Icone.jpg" alt="Download" class="download-icon">
+            <div>
+              <a ng-href="download/Dossier inscription salon habitat 2026.pdf" target="_blank" class="download-button">
+                {{ 'DOWNLOAD-PANEL.BUTTON' | translate }}
+              </a>
+            </div>
+            <p class="download-text">{{ 'DOWNLOAD-PANEL.TEXT' | translate }}</p>
+          </div>
         </div>
       </div>
 
       <!-- Horaires -->
       <div class="shared-card">
-        <div class="shared-card-header">
-          <h3>{{ 'TIME.TITLE' | translate }}</h3>
+        <div class="shared-card-header time-header">
+          <div class="icon-title">
+            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+            <h3>{{ 'TIME.TITLE' | translate }}</h3>
+          </div>
         </div>
         <div class="shared-card-body">
           <ul class="schedule-list">
@@ -138,8 +146,11 @@
 
       <!-- Informations -->
       <div class="shared-card">
-        <div class="shared-card-header">
-          <h3>{{ 'INFO.TITLE' | translate }}</h3>
+        <div class="shared-card-header info-header">
+          <div class="icon-title">
+            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+            <h3>{{ 'INFO.TITLE' | translate }}</h3>
+          </div>
         </div>
         <div class="shared-card-body">
           <ul class="schedule-list">
@@ -153,46 +164,67 @@
 
       <!-- Contacts -->
       <div class="shared-card">
-        <div class="shared-card-header">
-          <h3>{{ 'CONFIG.CONTACT' | translate }}</h3>
+        <div class="shared-card-header contact-header">
+          <div class="icon-title">
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+            <h3>{{ 'CONFIG.CONTACT' | translate }}</h3>
+          </div>
         </div>
         <div class="shared-card-body">
-          <ul class="contact-list">
-            <li class="contact-item">
-              <div class="contact-name">{{ 'CONFIG.MEMBER_ONE.NAME' | translate }}</div>
-              <div class="contact-phone">
-                <a href="tel:{{ 'CONFIG.MEMBER_ONE.TELEPHONE' | translate }}">{{ 'CONFIG.MEMBER_ONE.TELEPHONE' | translate }}</a>
+          <div class="phone-contact-list">
+            <div class="phone-contact-item">
+              <div class="phone-contact-name">{{ 'CONFIG.MEMBER_ONE.NAME' | translate }}</div>
+              <div class="phone-contact-number">
+                <a href="tel:{{ 'CONFIG.MEMBER_ONE.TELEPHONE' | translate }}">
+                  <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 
+                  {{ 'CONFIG.MEMBER_ONE.TELEPHONE' | translate }}
+                </a>
               </div>
-            </li>
-            <li class="contact-item">
-              <div class="contact-name">{{ 'CONFIG.MEMBER_TWO.NAME' | translate }}</div>
-              <div class="contact-phone">
-                <a href="tel:{{ 'CONFIG.MEMBER_TWO.PORTABLE' | translate }}">{{ 'CONFIG.MEMBER_TWO.PORTABLE' | translate }}</a>
+            </div>
+            
+            <div class="phone-contact-item">
+              <div class="phone-contact-name">{{ 'CONFIG.MEMBER_TWO.NAME' | translate }}</div>
+              <div class="phone-contact-number">
+                <a href="tel:{{ 'CONFIG.MEMBER_TWO.PORTABLE' | translate }}">
+                  <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 
+                  {{ 'CONFIG.MEMBER_TWO.PORTABLE' | translate }}
+                </a>
               </div>
-            </li>
-            <li class="contact-item">
-              <div class="contact-name">{{ 'CONFIG.MEMBER_THREE.NAME' | translate }}</div>
-              <div class="contact-phone">
-                <a href="tel:{{ 'CONFIG.MEMBER_THREE.TELEPHONE' | translate }}">{{ 'CONFIG.MEMBER_THREE.TELEPHONE' | translate }}</a>
+            </div>
+            
+            <div class="phone-contact-item">
+              <div class="phone-contact-name">{{ 'CONFIG.MEMBER_THREE.NAME' | translate }}</div>
+              <div class="phone-contact-number">
+                <a href="tel:{{ 'CONFIG.MEMBER_THREE.TELEPHONE' | translate }}">
+                  <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 
+                  {{ 'CONFIG.MEMBER_THREE.TELEPHONE' | translate }}
+                </a>
               </div>
-            </li>
-            <li class="contact-item">
-              <div class="contact-name">{{ 'CONFIG.MEMBER_FOUR.NAME' | translate }}</div>
-              <div class="contact-phone">
-                <a href="tel:{{ 'CONFIG.MEMBER_FOUR.TELEPHONE' | translate }}">{{ 'CONFIG.MEMBER_FOUR.TELEPHONE' | translate }}</a>
+            </div>
+            
+            <div class="phone-contact-item">
+              <div class="phone-contact-name">{{ 'CONFIG.MEMBER_FOUR.NAME' | translate }}</div>
+              <div class="phone-contact-number">
+                <a href="tel:{{ 'CONFIG.MEMBER_FOUR.TELEPHONE' | translate }}">
+                  <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 
+                  {{ 'CONFIG.MEMBER_FOUR.TELEPHONE' | translate }}
+                </a>
               </div>
-            </li>
-          </ul>
+            </div>
+          </div>
           
-          <address>
-            <strong>{{ 'CONFIG.SALON.LIEU' | translate }}</strong><br>
-            {{ 'CONFIG.SALON.ADDRESS.FIRSTLINE' | translate }}<br>
-            {{ 'CONFIG.SALON.ADDRESS.POSTALCODE' | translate }} {{ 'CONFIG.SALON.ADDRESS.CITY' | translate }}<br>
-            {{ 'CONFIG.SALON.ADDRESS.COUNTRY' | translate }}
-          </address>
-          
-          <div class="location-map-container">
-            <iframe class="directory-location-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2806.723151185784!2d4.818553150638102!3d45.29381585271558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f53db8e741fe4d%3A0x4ed660684ff29aff!2s15+Rue+du+Levant%2C+26140+Saint-Rambert-d&#39;Albon!5e0!3m2!1sfr!2sfr!4v1457193257153" frameborder="0" allowfullscreen></iframe>
+          <div class="address-container">
+            <div class="address-card">
+              <div class="address-content">
+                <div class="address-title">{{ 'CONFIG.SALON.LIEU' | translate }}</div>
+                <address>
+                  {{ 'CONFIG.SALON.ADDRESS.FIRSTLINE' | translate }}<br />                
+                  {{ 'CONFIG.SALON.ADDRESS.POSTALCODE' | translate }} {{ 'CONFIG.SALON.ADDRESS.CITY' | translate }}<br />
+                  {{ 'CONFIG.SALON.ADDRESS.COUNTRY' | translate }}
+                </address>
+              </div>
+              <iframe class="directory-location-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2806.723151185784!2d4.818553150638102!3d45.29381585271558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f53db8e741fe4d%3A0x4ed660684ff29aff!2s15+Rue+du+Levant%2C+26140+Saint-Rambert-d&#39;Albon!5e0!3m2!1sfr!2sfr!4v1457193257153" frameborder="0" allowfullscreen></iframe>
+            </div>
           </div>
         </div>
       </div>

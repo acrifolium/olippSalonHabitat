@@ -1,0 +1,7 @@
+/* Styles communs pour l'ensemble du site */
+
+/* Ajustement des conteneurs fluides pour réduire les marges latérales */
+.container-fluid {
+  padding-left: 5px;
+  padding-right: 5px;
+}
