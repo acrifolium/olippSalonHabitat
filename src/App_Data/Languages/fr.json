@@ -10,6 +10,16 @@
     "MENU_MOVIE": "VIDEOS",
     "MENU_CONTACT": "NOUS CONTACTER"
   },
+  "FOOTER": {
+    "HEADQUARTERS": "Siège social",
+    "CONTACT_US": "Nous contacter",
+    "COPYRIGHT": "Copyright",
+    "SOCIAL_MEDIA": "Suivez-nous"
+  },
+  "CONTACT_PAGE": {
+    "TITLE": "Nous contacter",
+    "SUBTITLE": "Pour toute question concernant le salon, n'hésitez pas à nous contacter via le formulaire ou directement par téléphone."
+  },
   "CONFIG": {
     "TITLE": "Siège",
     "HEADQUARTER": "Comité Salon Tout Pout l'Habitat",
@@ -132,7 +142,8 @@
       "BODY_MESSAGE": "Message",
       "NOT_SPECIFIED": "Non spécifié",
       "SUCCESS_MESSAGE": "Un email a été préparé dans votre client de messagerie. Veuillez l'envoyer pour compléter votre demande.",
-      "COPY_SUCCESS": "L'adresse email a été copiée dans le presse-papiers"
+      "COPY_SUCCESS": "L'adresse email a été copiée dans le presse-papiers",
+      "COPY_BUTTON": "Copier"
     }
   }
 }

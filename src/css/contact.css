@@ -1,47 +1,395 @@
-/* Style pour les liens email et téléphone */
-a[href^="mailto:"], a[href^="tel:"] {
-  color: inherit;
-  text-decoration: none;
-  transition: color 0.2s ease-in-out;
+/* Styles améliorés pour la page contact */
+
+/* Structure générale et responsive */
+.contact-container {
+  padding: 20px 0;
 }
 
-a[href^="mailto:"]:hover, a[href^="tel:"]:hover {
+.contact-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.contact-header h2 {
+  font-family: "Museo Sans", sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.contact-header p {
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+/* Carte de contact */
+.contact-card {
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+  overflow: hidden;
+  height: 100%;
+  background-color: #fff;
+}
+
+.contact-card:hover {
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.contact-card-header {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  background-color: #f9f9f9;
+}
+
+.contact-card-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+}
+
+.contact-card-header .icon-title {
+  display: flex;
+  align-items: center;
+}
+
+.contact-card-header .icon-title .glyphicon {
+  margin-right: 10px;
   color: #337ab7;
+}
+
+.contact-card-body {
+  padding: 20px;
+}
+
+/* Carte du formulaire */
+.form-card {
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  background-color: #fff;
+  padding: 0;
+}
+
+.form-card-header {
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+  background-color: #f9f9f9;
+  border-radius: 4px 4px 0 0;
+}
+
+.form-card-body {
+  padding: 20px;
+}
+
+/* Coordonnées de contact */
+.contact-info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-info-list li {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.contact-info-list li:last-child {
+  margin-bottom: 0;
+}
+
+.contact-info-list .contact-icon {
+  min-width: 25px;
+  margin-right: 10px;
+  color: #337ab7;
+}
+
+.contact-info-list .contact-text {
+  flex: 1;
+}
+
+.contact-info-list .contact-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.contact-info-list .contact-value {
+  color: #555;
+}
+
+.contact-info-list a {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+.contact-info-list a:hover {
+  text-decoration: underline;
+  color: #23527c;
+}
+
+/* Numéros de téléphone */
+.phone-contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -5px;
+}
+
+.phone-contact-item {
+  width: calc(50% - 10px);
+  margin: 5px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.phone-contact-name {
+  background-color: #337ab7;
+  color: white;
+  padding: 8px 10px;
+  font-size: 14px;
+}
+
+.phone-contact-number {
+  background-color: #f8f8f8;
+  padding: 8px 10px;
+  font-size: 14px;
+}
+
+.phone-contact-number a {
+  color: #333;
+  display: block;
+  text-decoration: none;
+}
+
+.phone-contact-number a:hover {
+  color: #337ab7;
+}
+
+/* Adresse */
+.address-container {
+  margin-top: 20px;
+}
+
+.address-card {
+  border: 1px solid #eee;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.address-content {
+  padding: 15px;
+}
+
+.address-content address {
+  margin-bottom: 0;
+}
+
+.address-title {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.address-map {
+  width: 100%;
+  height: 200px;
+  border: none;
+}
+
+/* Email de contact */
+.email-container {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+}
+
+.email-container .email-icon {
+  margin-right: 10px;
+  color: #337ab7;
+}
+
+.email-container .email-address {
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.email-container .email-address a {
+  color: #337ab7;
+  text-decoration: none;
+  width: 100%;
+  margin-bottom: 5px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.email-container .email-address a:hover {
   text-decoration: underline;
 }
 
-/* Style pour le bouton de copie d'email */
-.copy-email {
+.email-container .copy-email {
   background: none;
   border: none;
-  padding: 0;
-  margin-left: 6px;
-  color: inherit;
+  padding: 5px;
+  color: #777;
   cursor: pointer;
-  vertical-align: middle;
-  transition: color 0.2s ease-in-out;
+  transition: all 0.2s ease;
+  border-radius: 3px;
+  margin-left: 8px;
+  font-size: 18px;
 }
 
-.copy-email:hover {
+@media (min-width: 768px) {
+  .email-container .email-address a {
+    width: auto;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .email-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .email-container .email-address {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 5px;
+  }
+  
+  .email-container .copy-email {
+    margin-left: 0;
+    margin-top: 8px;
+    align-self: flex-start;
+    font-size: 20px;
+    padding: 8px 10px;
+  }
+}
+
+.email-container .copy-email:hover {
+  background-color: #eee;
   color: #337ab7;
 }
 
-/* Style supplémentaire pour rendre le bouton de copie plus visible */
-.copy-email:active {
-  transform: scale(0.95);
+/* Bouton du formulaire */
+.btn-contact-submit {
+  background-color: #337ab7;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
 }
 
-.glyphicon-copy {
-  font-size: 1.2em;
-  margin-left: 5px;
-  padding: 3px;
+.btn-contact-submit:hover {
+  background-color: #23527c;
 }
 
-/* Animation lors de la copie */
-.copy-animation {
-  animation: pulse 0.3s ease-in-out;
+.btn-contact-submit:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
 }
 
+/* Champs de formulaire améliorés */
+.form-control {
+  height: 40px;
+  border-radius: 4px;
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 120px;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #555;
+}
+
+.required-field {
+  color: #d9534f;
+  margin-left: 3px;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .contact-info-container {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .phone-contact-item {
+    width: 100%;
+  }
+  
+  .email-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 8px;
+  }
+  
+  .email-container .email-address {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin: 10px 0;
+    font-size: 15px;
+  }
+  
+  .email-container .copy-email {
+    margin-left: 0;
+    margin-top: 8px;
+    align-self: flex-start;
+    font-size: 20px; /* Slightly larger for touch targets on mobile */
+    padding: 8px 10px;
+  }
+  
+  .form-card, .contact-card {
+    margin-bottom: 20px;
+  }
+}
+
+/* Règles pour les très petits écrans mobiles */
+@media (max-width: 380px) {
+  .email-container {
+    padding: 8px 5px;
+  }
+  
+  .email-container .email-address {
+    font-size: 14px;
+  }
+  
+  .email-container .email-icon {
+    margin-right: 5px;
+  }
+  
+  /* Réduire le padding du conteneur du formulaire pour les petits écrans */
+  .form-card-header {
+    padding: 10px;
+  }
+  
+  .form-card-body {
+    padding: 15px 10px;
+  }
+}
+
+/* Style pour les animations et transitions */
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -54,8 +402,18 @@ a[href^="mailto:"]:hover, a[href^="tel:"]:hover {
   }
 }
 
-/* Style pour le titre email dans la page de contact */
-.panel-title.title-email {
-  display: inline-flex;
-  align-items: center;
+.copy-animation {
+  animation: pulse 0.3s ease-in-out;
+}
+
+/* Style pour les liens email et téléphone */
+a[href^="mailto:"], a[href^="tel:"] {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a[href^="mailto:"]:hover, a[href^="tel:"]:hover {
+  color: #337ab7;
+  text-decoration: underline;
 }
