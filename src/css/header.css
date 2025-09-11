@@ -86,60 +86,60 @@ header {
 }
 
 /* Modern Carousel Styling */
-.carousel-modern {
+.carousel-header {
   border-bottom: 4px solid #80cc28;
 }
 
-.carousel-modern .carousel-inner {
+.carousel-header .carousel-inner {
   background-color: #f8f8f8;
 }
 
-.carousel-modern .carousel-inner .item {
+.carousel-header .carousel-inner .item {
   max-height: 400px; /* Set a consistent height */
   overflow: hidden;
 }
 
-.carousel-modern .carousel-inner .item img {
+.carousel-header .carousel-inner .item img {
   width: 100%;
   object-fit: cover;
 }
 
-.carousel-modern .carousel-indicators {
+.carousel-header .carousel-indicators {
   bottom: 0;
 }
 
-.carousel-modern .carousel-indicators li {
+.carousel-header .carousel-indicators li {
   background-color: rgba(64, 22, 0, 0.5);
   border: 1px solid #80cc28;
   margin: 0 3px;
 }
 
-.carousel-modern .carousel-indicators li.active {
+.carousel-header .carousel-indicators li.active {
   background-color: #80cc28;
   width: 12px;
   height: 12px;
 }
 
-.carousel-modern .carousel-control {
+.carousel-header .carousel-control {
   width: 7%;
   opacity: 0;
   filter: alpha(opacity=0);
   transition: all 0.3s ease;
 }
 
-.carousel-modern:hover .carousel-control {
+.carousel-header:hover .carousel-control {
   opacity: 0.7;
   filter: alpha(opacity=70);
 }
 
-.carousel-modern .carousel-control:hover {
+.carousel-header .carousel-control:hover {
   opacity: 0.9;
   filter: alpha(opacity=90);
 }
 
 /* Make carousel responsive */
 @media (max-width: 767px) {
-  .carousel-modern .carousel-inner .item {
+  .carousel-header .carousel-inner .item {
     max-height: 200px;
   }
   
@@ -149,7 +149,7 @@ header {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  .carousel-modern .carousel-inner .item {
+  .carousel-header .carousel-inner .item {
     max-height: 300px;
   }
 }
@@ -166,6 +166,6 @@ header {
   }
 }
 
-.carousel-modern {
+.carousel-header {
   animation: fadeInUp 0.6s ease-out;
 }
