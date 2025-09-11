@@ -17,6 +17,7 @@
   <link href="css/salon.css" rel="stylesheet" media="screen">
   <link href="css/angular-block-ui.min.css" rel="stylesheet" media="screen">
   <link href="css/ng-notify.min.css" rel="stylesheet" media="screen">
+  <link href="css/contact.css" rel="stylesheet" media="screen">
 
   <script src="libs/angular.js"></script>
   <script src="libs/angular-route.js"></script>
@@ -26,6 +27,7 @@
   <script src="libs/angular-translate.js"></script>
   <script src="libs/angular-translate-loader-url.js"></script>
   <!-- <script src="libs/salon.js"></script> -->
+  <script src="libs/utils/csvParser.js"></script>
   <script src="libs/app.js"></script>
   <script src="libs/controllers/controllers.js"></script>
   <script src="libs/directives/directives.js"></script>
@@ -41,6 +43,18 @@
     ga('create', 'UA-47567840-3', 'auto');
     ga('send', 'pageview');
 
+  </script>
+  
+  <script>
+    // Initialiser la notification en dehors du contrôleur Angular
+    document.addEventListener('DOMContentLoaded', function() {
+      try {
+        var ngNotify = angular.element(document.body).injector().get('ngNotify');
+        ngNotify.addType('noticeSalonSuccess', 'notice-salon-success');
+      } catch(e) {
+        console.log('Notification service not yet available');
+      }
+    });
   </script>
 </head>
 <body>
@@ -159,18 +173,18 @@
 					<li class=" footer-address">{{ 'CONFIG.ADDRESS.FIRSTLINE' | translate }}</li>
 					<li class=" footer-address">{{ 'CONFIG.ADDRESS.SECONDLINE' | translate }}</li>
 					<li class=" footer-address">{{ 'CONFIG.ADDRESS.POSTALCODE' | translate }} {{ 'CONFIG.ADDRESS.CITY' | translate }}</li>
-					<li><span class="glyphicon glyphicon-cloud glyphicon-footer" aria-hidden="true"></span>{{ 'CONFIG.SITE' | translate }}</li>
-					<li><span class="glyphicon glyphicon-envelope glyphicon-footer" aria-hidden="true"></span>{{ 'CONFIG.MAIL' | translate }}</li>
+					<li><span class="glyphicon glyphicon-cloud glyphicon-footer" aria-hidden="true"></span><a href="{{ 'CONFIG.SITE' | translate }}" target="_blank">{{ 'CONFIG.SITE' | translate }}</a></li>
+					<li><span class="glyphicon glyphicon-envelope glyphicon-footer" aria-hidden="true"></span><a href="mailto:{{ 'CONFIG.MAIL' | translate }}">{{ 'CONFIG.MAIL' | translate }}</a></li>
 				</ul>		
 			</aside>
 		</div>
 
 		<div class="col-xs-12 col-sm-4 col-lg-4">
 			<aside><h3><span class="glyphicon glyphicon-align-left glyphicon-footer" aria-hidden="true"></span> <span>{{ 'CONFIG.CONTACT' | translate }}</span></h3>	<ul class="footer-ul">
-					<li><span class="glyphicon glyphicon-user glyphicon-footer" aria-hidden="true"></span>{{ 'CONFIG.MEMBER_ONE.NAME' | translate }} - {{ 'CONFIG.MEMBER_ONE.TELEPHONE' | translate }}</li>
-					<li><span class="glyphicon glyphicon-user glyphicon-footer" aria-hidden="true"></span>{{ 'CONFIG.MEMBER_TWO.NAME' | translate }} - {{ 'CONFIG.MEMBER_TWO.PORTABLE' | translate }}</li>
-					<li><span class="glyphicon glyphicon-user glyphicon-footer" aria-hidden="true"></span>{{ 'CONFIG.MEMBER_THREE.NAME' | translate }} - {{ 'CONFIG.MEMBER_THREE.TELEPHONE' | translate }}</li>
-					<li><span class="glyphicon glyphicon-user glyphicon-footer" aria-hidden="true"></span>{{ 'CONFIG.MEMBER_FOUR.NAME' | translate }} - {{ 'CONFIG.MEMBER_FOUR.TELEPHONE' | translate }}</li>
+					<li><span class="glyphicon glyphicon-user glyphicon-footer" aria-hidden="true"></span>{{ 'CONFIG.MEMBER_ONE.NAME' | translate }} - <a href="tel:{{ 'CONFIG.MEMBER_ONE.TELEPHONE' | translate }}">{{ 'CONFIG.MEMBER_ONE.TELEPHONE' | translate }}</a></li>
+					<li><span class="glyphicon glyphicon-user glyphicon-footer" aria-hidden="true"></span>{{ 'CONFIG.MEMBER_TWO.NAME' | translate }} - <a href="tel:{{ 'CONFIG.MEMBER_TWO.PORTABLE' | translate }}">{{ 'CONFIG.MEMBER_TWO.PORTABLE' | translate }}</a></li>
+					<li><span class="glyphicon glyphicon-user glyphicon-footer" aria-hidden="true"></span>{{ 'CONFIG.MEMBER_THREE.NAME' | translate }} - <a href="tel:{{ 'CONFIG.MEMBER_THREE.TELEPHONE' | translate }}">{{ 'CONFIG.MEMBER_THREE.TELEPHONE' | translate }}</a></li>
+					<li><span class="glyphicon glyphicon-user glyphicon-footer" aria-hidden="true"></span>{{ 'CONFIG.MEMBER_FOUR.NAME' | translate }} - <a href="tel:{{ 'CONFIG.MEMBER_FOUR.TELEPHONE' | translate }}">{{ 'CONFIG.MEMBER_FOUR.TELEPHONE' | translate }}</a></li>
 				</ul>					
 			</aside>
 		</div>

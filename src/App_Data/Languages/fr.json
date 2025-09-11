@@ -1,6 +1,8 @@
 {
   "BLOCKUI": {
-    "DEFAULT_MESSAGE_LOADING": "Chargement"
+    "DEFAULT_MESSAGE_LOADING": "Chargement",
+    "LOADING_EXPOSANTS": "Chargement des exposants...",
+    "LOADING_ANNONCEURS": "Chargement des annonceurs..."
   },
   "NAVBAR": {
     "MENU_EXPOSANT": "EXPOSANTS",
@@ -117,6 +119,20 @@
     "REQUIRED_FIELD_SUBJECT": "L'objet du mail est requis.",
     "FIELD_MESSAGE": "Message",
     "REQUIRED_FIELD_MESSAGE": "Le message est requis.",
-    "BUTTON": "Envoyer"
+    "BUTTON": "Envoyer",
+    "ERRORS": {
+      "INCOMPLETE_FORM": "Merci de remplir le formulaire complètement."
+    },
+    "EMAIL": {
+      "BODY_LASTNAME": "Nom",
+      "BODY_FIRSTNAME": "Prénom",
+      "BODY_EMAIL": "Email",
+      "BODY_COMPANY": "Société",
+      "BODY_TELEPHONE": "Téléphone",
+      "BODY_MESSAGE": "Message",
+      "NOT_SPECIFIED": "Non spécifié",
+      "SUCCESS_MESSAGE": "Un email a été préparé dans votre client de messagerie. Veuillez l'envoyer pour compléter votre demande.",
+      "COPY_SUCCESS": "L'adresse email a été copiée dans le presse-papiers"
+    }
   }
 }

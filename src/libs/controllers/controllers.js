@@ -1,58 +1,90 @@
 var olippControllers = angular.module('olippControllers', []);
 
-olippControllers.controller('OlippContactCtrl', ['$scope', 'blockUI', 'blockUIConfig', 'ngNotify', 'salonServices',
-  function($scope, blockUI, blockUIConfig, ngNotify, salonServices) {
+olippControllers.controller('OlippContactCtrl', ['$scope', 'ngNotify', '$window', '$translate',
+  function($scope, ngNotify, $window, $translate) {
 
-  $scope.resetForm = function() {
-    $scope.contact.lastname = undefined; 
-    $scope.contact.firstname = undefined;
-    $scope.contact.email = undefined;
-    $scope.contact.company = undefined;
-    $scope.contact.telephone = undefined;
-    $scope.contact.subject = undefined;
-    $scope.contact.message = undefined; 
-  }
+    $scope.contact = {};
 
-  $scope.Send = function(){
-
-    ngNotify.config(
-    {
+    ngNotify.config({
       position: 'bottom',
       duration: 3000,
       sticky: false,
       button: true,
       html: false
     });
-
-    ngNotify.addType('noticeSalonSuccess', 'notice-salon-success');
-
-    if($scope.contact.company == undefined) $scope.contact.company = "";
-    if($scope.contact.telephone == undefined) $scope.contact.telephone = ""; 
-
-    // Block the user interface
-    blockUIConfig.message = 'Envoi du mail en cours...';
-    blockUI.start();
-
-    salonServices.sendMail($scope.contact)
-                        .success(function(data){
-                            console.log(data);
-                            if (data.success) { //success comes from the return json object
-                              // Unblock the user interface
-                              blockUI.stop(); 
-                              $scope.resetForm();
-                              ngNotify.set(data.message, 'noticeSalonSuccess');
-                            } else {
-                              // Unblock the user interface
-                              blockUI.stop(); 
-                              ngNotify.set(data.message, 'error');
-                            }
-                        });
+    
+    // Fonction pour copier l'email dans le presse-papiers
+    $scope.copyEmailToClipboard = function() {
+      $translate(['CONTACT_FORM.TITLE', 'CONTACT_FORM.EMAIL.COPY_SUCCESS']).then(function(translations) {
+        // Créer un élément temporaire
+        var tempInput = document.createElement("input");
+        tempInput.value = translations['CONTACT_FORM.TITLE'];
+        document.body.appendChild(tempInput);
+        
+        // Sélectionner et copier le texte
+        tempInput.select();
+        document.execCommand("copy");
+        
+        // Supprimer l'élément temporaire
+        document.body.removeChild(tempInput);
+        
+        // Afficher une notification traduite
+        ngNotify.set(translations['CONTACT_FORM.EMAIL.COPY_SUCCESS'], 'noticeSalonSuccess');
+      });
     };
 
+    $scope.resetForm = function() {
+      $scope.contact = {};
+      $scope.contactForm.$setPristine();
+      $scope.contactForm.$setUntouched();
+    };
+
+    $scope.Send = function(isValid) {
+      if (!isValid) {
+        $translate('CONTACT_FORM.ERRORS.INCOMPLETE_FORM').then(function(translation) {
+          ngNotify.set(translation, 'error');
+        });
+        return;
+      }
+
+      // Get translations for email body
+      $translate([
+        'CONTACT_FORM.EMAIL.BODY_LASTNAME', 
+        'CONTACT_FORM.EMAIL.BODY_FIRSTNAME',
+        'CONTACT_FORM.EMAIL.BODY_EMAIL',
+        'CONTACT_FORM.EMAIL.BODY_COMPANY',
+        'CONTACT_FORM.EMAIL.BODY_TELEPHONE',
+        'CONTACT_FORM.EMAIL.BODY_MESSAGE',
+        'CONTACT_FORM.EMAIL.NOT_SPECIFIED',
+        'CONTACT_FORM.EMAIL.SUCCESS_MESSAGE'
+      ]).then(function(translations) {
+        // Format the email body with the form details
+        var body = translations['CONTACT_FORM.EMAIL.BODY_LASTNAME'] + ": " + $scope.contact.lastname + "\n" +
+                  translations['CONTACT_FORM.EMAIL.BODY_FIRSTNAME'] + ": " + $scope.contact.firstname + "\n" +
+                  translations['CONTACT_FORM.EMAIL.BODY_EMAIL'] + ": " + $scope.contact.email + "\n" +
+                  translations['CONTACT_FORM.EMAIL.BODY_COMPANY'] + ": " + ($scope.contact.company || translations['CONTACT_FORM.EMAIL.NOT_SPECIFIED']) + "\n" +
+                  translations['CONTACT_FORM.EMAIL.BODY_TELEPHONE'] + ": " + ($scope.contact.telephone || translations['CONTACT_FORM.EMAIL.NOT_SPECIFIED']) + "\n\n" +
+                  translations['CONTACT_FORM.EMAIL.BODY_MESSAGE'] + ": \n" + $scope.contact.message;
+
+        // Create the mailto link with all parameters
+        var mailtoLink = "mailto:salonhabitatstrambert@gmail.com" +
+                        "?subject=" + encodeURIComponent($scope.contact.subject) +
+                        "&body=" + encodeURIComponent(body);
+
+        // Open the default mail client with the prepared email
+        $window.location.href = mailtoLink;
+
+        // Show success message
+        ngNotify.set(translations['CONTACT_FORM.EMAIL.SUCCESS_MESSAGE'], 'noticeSalonSuccess');
+        
+        // Reset form
+        $scope.resetForm();
+      });
+    };
 }]);
 
-olippControllers.controller('OlippExposantCtrl', ['$scope', 'blockUI', 'blockUIConfig', 'ngNotify', 'salonServices',
-  function($scope, blockUI, blockUIConfig, ngNotify, salonServices) {
+olippControllers.controller('OlippExposantCtrl', ['$scope', 'blockUI', 'blockUIConfig', 'ngNotify', 'salonServices', '$translate',
+  function($scope, blockUI, blockUIConfig, ngNotify, salonServices, $translate) {
 
     $scope.exposants = [];
 
@@ -67,8 +99,10 @@ olippControllers.controller('OlippExposantCtrl', ['$scope', 'blockUI', 'blockUIC
 
     ngNotify.addType('noticeSalonSuccess', 'notice-salon-success');
 
-    blockUIConfig.message = 'Chargement des exposants...';
-    blockUI.start();
+    $translate('BLOCKUI.LOADING_EXPOSANTS').then(function(translation) {
+      blockUIConfig.message = translation;
+      blockUI.start();
+    });
 
     salonServices.GetExposants()
                   .then(function(result){
@@ -84,8 +118,8 @@ olippControllers.controller('OlippExposantCtrl', ['$scope', 'blockUI', 'blockUIC
                   });
 }]);
 
-olippControllers.controller('OlippAnnonceurCtrl', ['$scope', 'blockUI', 'blockUIConfig', 'ngNotify', 'salonServices',
-  function($scope, blockUI, blockUIConfig, ngNotify, salonServices) {
+olippControllers.controller('OlippAnnonceurCtrl', ['$scope', 'blockUI', 'blockUIConfig', 'ngNotify', 'salonServices', '$translate',
+  function($scope, blockUI, blockUIConfig, ngNotify, salonServices, $translate) {
 
     $scope.annonceurs = [];
 
@@ -100,8 +134,10 @@ olippControllers.controller('OlippAnnonceurCtrl', ['$scope', 'blockUI', 'blockUI
 
     ngNotify.addType('noticeSalonSuccess', 'notice-salon-success');
 
-    blockUIConfig.message = 'Chargement des annonceurs...';
-    blockUI.start();
+    $translate('BLOCKUI.LOADING_ANNONCEURS').then(function(translation) {
+      blockUIConfig.message = translation;
+      blockUI.start();
+    });
 
     salonServices.GetAnnonceurs()
                   .then(function(result){

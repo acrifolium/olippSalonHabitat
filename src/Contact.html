@@ -2,7 +2,17 @@
 
 	<div class="col-xs-12 col-sm-8 col-lg-8">
 		<div class="panel panel-default">
-			<div class="panel-heading panel-center"><span class="panel-title title-email">{{ 'CONTACT_FORM.TITLE' | translate }}</span></div>
+			<div class="panel-heading panel-center">
+				<span class="panel-title title-email">
+					<span class="glyphicon glyphicon-envelope glyphicon-footer" aria-hidden="true"></span>
+					<a href="mailto:{{ 'CONTACT_FORM.TITLE' | translate }}" title="Envoyer un email">
+						{{ 'CONTACT_FORM.TITLE' | translate }}
+					</a>
+					<button class="copy-email" ng-click="copyEmailToClipboard()" title="Copier l'adresse email">
+						<span class="glyphicon glyphicon-copy glyphicon-footer" aria-hidden="true"></span>
+					</button>
+				</span>
+			</div>
 			<div class="panel-body">
 				
 				<form name="contactForm" ng-submit="Send(contactForm.$valid)" novalidate>

@@ -1,0 +1,61 @@
+/* Style pour les liens email et téléphone */
+a[href^="mailto:"], a[href^="tel:"] {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a[href^="mailto:"]:hover, a[href^="tel:"]:hover {
+  color: #337ab7;
+  text-decoration: underline;
+}
+
+/* Style pour le bouton de copie d'email */
+.copy-email {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 6px;
+  color: inherit;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: color 0.2s ease-in-out;
+}
+
+.copy-email:hover {
+  color: #337ab7;
+}
+
+/* Style supplémentaire pour rendre le bouton de copie plus visible */
+.copy-email:active {
+  transform: scale(0.95);
+}
+
+.glyphicon-copy {
+  font-size: 1.2em;
+  margin-left: 5px;
+  padding: 3px;
+}
+
+/* Animation lors de la copie */
+.copy-animation {
+  animation: pulse 0.3s ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Style pour le titre email dans la page de contact */
+.panel-title.title-email {
+  display: inline-flex;
+  align-items: center;
+}
