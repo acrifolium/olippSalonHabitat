@@ -61,21 +61,16 @@
     }
   },
   "DASHBOARD": {
-    "MAIN_TITLE": "Salon Tout pour l'Habitat 2026",
-    "SUBTITLE": "Le salon régional de référence pour votre habitat",
-    "BODY_TITLE": "Le salon régional de référence sur 2500 m2 couverts pour équiper, éco-concevoir, rénover, meubler, décorer... votre habitat.",
-    "BODY_TEXT": "Nous avons le plaisir de vous annoncer la date du Salon « Tout pour l'Habitat 2026 » qui se déroulera les 27, 28 et 29 Mars 2026 à la Salle polyvalente de St-Rambert d'Albon. Reconnu comme le salon régional de référence dans le domaine du développement durable et des nouvelles technologies pour l'habitat, cette manifestation attire toujours plus de visiteurs et clients potentiels chaque année. Avec une surface couverte de plus de 2500 m2 ses 80 exposants et une magnifique zone de restauration, il garde un potentiel de développement très important.",
+    "MAIN_TITLE": "Salon Tout pour l'habitat",
+    "SUBTITLE": "Salon de l'habitat et de la construction",
     "DATE": "27, 28 et 29 Mars 2026",
-    "LOCATION": "Salle polyvalente de St-Rambert d'Albon",
-    "GALLERY_TITLE": "Découvrez notre salon en images",
+    "GALLERY_TITLE": "Galerie d'images du salon",
+    "GALLERY_IMAGE": "Image du salon",
+    "GALLERY_THUMBNAIL": "Miniature",
+    "BODY_TEXT": "Le salon de l'habitat et de la construction se tiendra les 27, 28 et 29 Mars 2026 à la salle Jean Ferrat de Saint-Rambert-d'Albon.",
     "LOCATION_SECTION_TITLE": "Lieu du salon",
-    "VIDEOS_SECTION_TITLE": "Découvrez nos vidéos",
-    "VIDEO_TITLE": "Vidéo du salon",
-    "MOVIES": {
-      "ONE": "https://www.youtube.com/embed/X2wx1NORnck",
-      "TWO": "https://www.youtube.com/embed/veMintQoXQk",
-      "THREE": "https://www.youtube.com/embed/qwUArWYpKMs"
-    }
+    "VIDEOS_SECTION_TITLE": "Vidéos du salon",
+    "VIDEO_NOT_SUPPORTED": "Votre navigateur ne prend pas en charge la lecture de vidéos."
   },
   "DOWNLOAD-PANEL": {
     "TITLE": "Dossier de participation",
@@ -101,19 +96,13 @@
     "LINE4": "Restauration sur le salon"
   },
   "MOVIES": {
-    "ONE": "https://www.youtube.com/embed/X2wx1NORnck",
-    "TWO": "https://www.youtube.com/embed/veMintQoXQk",
-    "THREE": "https://www.youtube.com/embed/qwUArWYpKMs",
-    "FOUR": "https://www.youtube.com/embed/5v8Tdd9I7ig",
-    "FIVE": "https://www.youtube.com/embed/gjXJLEyhB1I",
-    "SIX": "https://www.youtube.com/embed/pCJ40Oa_WOM",
-    "SEVEN": "https://www.youtube.com/embed/ClWzU0QPY-A",
-    "HEIGHT": "https://www.youtube.com/embed/0py4u3xReJM",
-    "NINE": "https://www.youtube.com/embed/6pdPl_gYNTA",
-    "TEN": "https://www.youtube.com/embed/FM9MOXgS05Y",
-    "ELEVEN": "https://www.youtube.com/embed/1JJF1O6mhFY",
-    "TWELVE": "https://www.youtube.com/embed/ee8Mw5q4oow",
-    "THIRTEEN": "https://www.youtube.com/embed/Lbg7R1xFgZg"
+    "PAGE_TITLE": "Vidéos du Salon",
+    "PAGE_SUBTITLE": "Découvrez nos nouvelles vidéos de présentation du Salon de l'Habitat",
+    "DRONE_VIDEO_1": "Vue aérienne du salon - Partie 1",
+    "DRONE_VIDEO_1_DESCRIPTION": "Une vue spectaculaire par drone des installations du Salon de l'Habitat 2024, montrant l'ampleur de l'événement et la diversité des exposants.",
+    "DRONE_VIDEO_2": "Vue aérienne du salon - Partie 2",
+    "DRONE_VIDEO_2_DESCRIPTION": "Découvrez les extérieurs et l'environnement du Salon de l'Habitat filmés par drone lors de l'édition 2024.",
+    "VIDEO_NOT_SUPPORTED": "Votre navigateur ne prend pas en charge la lecture de vidéos."
   },
   "EXPOSANT_FORM": {
     "PANEL_TITLE": "Annuaire des exposants",

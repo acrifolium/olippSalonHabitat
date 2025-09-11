@@ -92,8 +92,15 @@
 }
 
 /* Carrousel amélioré */
+.carousel-modern-container {
+  position: relative;
+  background-color: #f8f8f8;
+  border-radius: 8px 8px 0 0;
+  padding: 10px;
+}
+
 .carousel-modern {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -101,12 +108,21 @@
 
 .carousel-modern .carousel-inner {
   border-radius: 8px;
+  background-color: #000;
+}
+
+.carousel-modern .carousel-inner .item img {
+  max-height: 450px;
+  width: auto;
+  margin: 0 auto;
+  object-fit: contain;
 }
 
 .carousel-modern .carousel-control {
   background-image: none;
   opacity: 0;
   transition: all 0.3s ease;
+  width: 10%;
 }
 
 .carousel-modern:hover .carousel-control {
@@ -126,24 +142,63 @@
   background-color: rgba(0,0,0,0.5);
   border-radius: 50%;
   padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.carousel-modern .carousel-indicators {
-  bottom: 10px;
+.carousel-thumbnails {
+  position: relative;
+  margin-bottom: 10px;
 }
 
-.carousel-modern .carousel-indicators li {
-  width: 12px;
-  height: 12px;
-  border: 2px solid white;
-  margin: 0 3px;
+.thumbnails-container {
+  display: flex;
+  overflow-x: auto;
+  padding: 5px 0;
+  gap: 5px;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #aaa transparent;
 }
 
-.carousel-modern .carousel-indicators .active {
-  width: 14px;
-  height: 14px;
-  background-color: white;
-  margin: 0 3px;
+.thumbnails-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.thumbnails-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.thumbnails-container::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  border-radius: 20px;
+}
+
+.thumbnail-item {
+  flex: 0 0 80px;
+  height: 60px;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.thumbnail-item:hover {
+  opacity: 0.8;
+}
+
+.thumbnail-item.active {
+  opacity: 1;
+  border-color: #5cb85c;
+}
+
+.thumbnail-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Cartes d'information */
@@ -293,11 +348,12 @@
   border-radius: 8px 8px 0 0;
 }
 
-.video-card-footer {
-  padding: 10px 15px;
-  background-color: #f8f8f8;
-  font-size: 14px;
-  color: #777;
+/* Style pour la vidéo locale sans contrôles */
+.video-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #000;
 }
 
 /* Responsive */
@@ -339,5 +395,16 @@
   
   .schedule-item {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-modern .carousel-inner .item img {
+    max-height: 250px;
+  }
+  
+  .thumbnail-item {
+    flex: 0 0 50px;
+    height: 40px;
   }
 }

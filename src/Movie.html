@@ -1,12 +1,44 @@
-<div class="row movie-page">
-  <div ng-repeat="movie in Movies" class="col-sm-6 col-md-4">
+<div class="container movie-page">
+  <div class="video-header">
+    <h1 class="video-title">{{ 'MOVIES.PAGE_TITLE' | translate }}</h1>
+    <p class="video-subtitle">{{ 'MOVIES.PAGE_SUBTITLE' | translate }}</p>
+  </div>
 
-    <div class="thumbnail">
-    	<div class="embed-responsive embed-responsive-16by9">
-    		<iframe width="420" height="315" ng-src="{{movie | trusted}}"></iframe>
-		</div>
-  	</div>
+  <div class="row video-gallery">
+    <!-- Première vidéo -->
+    <div class="col-md-6 video-item">
+      <div class="video-card">
+        <div class="video-card-header">
+          <h3>{{ 'MOVIES.DRONE_VIDEO_1' | translate }}</h3>
+        </div>
+        <div class="embed-responsive embed-responsive-16by9 video-player">
+          <video class="embed-responsive-item" controls muted playsinline poster="img/carousel/banniere-1.png">
+            <source src="videos/vid-1-drone-2024.webm" type="video/webm">
+            {{ 'MOVIES.VIDEO_NOT_SUPPORTED' | translate }}
+          </video>
+        </div>
+        <div class="video-card-footer">
+          <p>{{ 'MOVIES.DRONE_VIDEO_1_DESCRIPTION' | translate }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Deuxième vidéo -->
+    <div class="col-md-6 video-item">
+      <div class="video-card">
+        <div class="video-card-header">
+          <h3>{{ 'MOVIES.DRONE_VIDEO_2' | translate }}</h3>
+        </div>
+        <div class="embed-responsive embed-responsive-16by9 video-player">
+          <video class="embed-responsive-item" controls muted playsinline poster="img/carousel/banniere-2.png">
+            <source src="videos/vid-2-drone-2024.webm" type="video/webm">
+            {{ 'MOVIES.VIDEO_NOT_SUPPORTED' | translate }}
+          </video>
+        </div>
+        <div class="video-card-footer">
+          <p>{{ 'MOVIES.DRONE_VIDEO_2_DESCRIPTION' | translate }}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-
-

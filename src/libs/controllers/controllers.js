@@ -152,3 +152,43 @@ olippControllers.controller('OlippAnnonceurCtrl', ['$scope', 'blockUI', 'blockUI
                     }
                   });
 }]);
+
+olippControllers.controller('OlippDashboardCtrl', ['$scope', '$sce', function($scope, $sce) {
+    
+    // Données existantes
+    $scope.date = new Date();
+    
+    // Note: Les anciennes références YouTube ont été supprimées et remplacées par une vidéo locale
+    
+    // Pour le carousel avec miniatures
+    $scope.currentSlide = 0;
+    
+    // Fonction pour définir la slide active
+    $scope.setCurrentSlide = function(index) {
+        $scope.currentSlide = index;
+    };
+    
+    // Écouter les événements du carousel de Bootstrap
+    angular.element(document).ready(function() {
+        // S'assurer que le carousel est correctement initialisé
+        var carousel = $('#myCarouselSalon');
+        
+        // Écouter l'événement slid.bs.carousel qui est déclenché après la transition
+        carousel.on('slid.bs.carousel', function(event) {
+            // Mettre à jour l'index de la slide active
+            $scope.currentSlide = $(event.relatedTarget).index();
+            $scope.$apply();
+            
+            // Faire défiler les miniatures pour centrer la miniature active
+            var container = document.querySelector('.thumbnails-container');
+            var activeThumb = document.querySelector('.thumbnail-item.active');
+            
+            if (container && activeThumb) {
+                container.scrollTo({
+                    left: activeThumb.offsetLeft - container.clientWidth / 2 + activeThumb.clientWidth / 2,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+}]);
