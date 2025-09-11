@@ -1,109 +1,116 @@
 <div class="container dashboard-container">
+  <!-- En-tête avec titre et date -->
   <div class="dashboard-header">
     <h1 class="dashboard-title">{{ 'DASHBOARD.MAIN_TITLE' | translate }}</h1>
     <p class="dashboard-subtitle">{{ 'DASHBOARD.SUBTITLE' | translate }}</p>
     <div class="date-badge">
       <span class="date-badge-text">{{ 'DASHBOARD.DATE' | translate }}</span>
     </div>
+    <p class="dashboard-description">{{ 'DASHBOARD.BODY_TEXT' | translate }}</p>
   </div>
 
-  <div class="row">
-    <div class="col-xs-12 col-md-8">
-      <!-- Description principale -->
+  <!-- Infos pratiques sur une ligne -->
+  <div class="row info-cards-row">
+    <!-- Panneau Téléchargement -->
+    <div class="col-md-4">
       <div class="info-card">
-        <div class="info-card-header">
-          <h3>{{ 'DASHBOARD.GALLERY_TITLE' | translate }}</h3>
+        <div class="info-card-header highlight-header">
+          <h3>{{ 'DOWNLOAD-PANEL.TITLE' | translate }}</h3>
         </div>
-        <div class="info-card-body p-0">
-          <!-- Carousel moderne avec miniatures -->
-          <div class="carousel-modern-container">
-            <div id="myCarouselSalon" class="carousel slide carousel-modern" data-ride="carousel" data-interval="5000">
-              <!-- Wrapper pour les slides principaux -->
-              <div class="carousel-inner" role="listbox">
-                <div ng-repeat="i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41]" 
-                     class="item" 
-                     ng-class="{'active': i === 1}">
-                  <img class="img-responsive center-block" ng-src="img/salon/{{i}}.webp" alt="{{ 'DASHBOARD.GALLERY_IMAGE' | translate }} {{i}}">
-                </div>
-              </div>
-              <!-- Les contrôles de navigation ont été supprimés car ils ne fonctionnaient pas correctement -->
-            </div>
-
-            <!-- Miniatures du carousel -->
-            <div class="carousel-thumbnails">
-              <div class="thumbnails-container">
-                <div ng-repeat="i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41]" 
-                     class="thumbnail-item" 
-                     ng-class="{'active': currentSlide === i-1}"
-                     data-target="#myCarouselSalon" 
-                     data-slide-to="{{i-1}}"
-                     ng-click="setCurrentSlide(i-1)">
-                  <img ng-src="img/salon/{{i}}.webp" alt="{{ 'DASHBOARD.GALLERY_THUMBNAIL' | translate }} {{i}}">
-                </div>
-              </div>
-            </div>
+        <div class="info-card-body download-card">
+          <img class="download-icon" src="img/icones/PDF-Icone.jpg" alt="PDF">
+          <div>
+            <a class="download-button" href="download/Dossier inscription salon habitat 2026.pdf" target="_blank" title="{{ 'DOWNLOAD-PANEL.BUTTON_TITLE' | translate }}">
+              {{ 'DOWNLOAD-PANEL.BUTTON' | translate }}
+            </a>
           </div>
-          
-          <div class="info-card-body">
-            <p class="dashboard-description">{{ 'DASHBOARD.BODY_TEXT' | translate }}</p>
-          </div>
+          <p class="download-text">{{ 'DOWNLOAD-PANEL.TEXT' | translate }}</p>
+          <div class="deadline-badge">{{ 'DOWNLOAD-PANEL.DEADLINE' | translate }}</div>
         </div>
       </div>
     </div>
 
-    <div class="col-xs-12 col-md-4">
-      <div class="row equal-height-row">
-        <!-- Téléchargement -->
-        <div class="col-xs-12">
-          <div class="info-card">
-            <div class="info-card-header">
-              <h3>{{ 'DOWNLOAD-PANEL.TITLE' | translate }}</h3>
-            </div>
-            <div class="info-card-body download-card">
-              <img class="download-icon" src="img/icones/PDF-Icone.jpg" alt="PDF">
-              <div>
-                <a class="download-button" href="download/Dossier inscription salon habitat 2026.pdf" target="_blank" title="{{ 'DOWNLOAD-PANEL.BUTTON_TITLE' | translate }}">
-                  {{ 'DOWNLOAD-PANEL.BUTTON' | translate }}
-                </a>
-              </div>
-              <p class="download-text">{{ 'DOWNLOAD-PANEL.TEXT' | translate }}</p>
-              <div class="deadline-badge">{{ 'DOWNLOAD-PANEL.DEADLINE' | translate }}</div>
+    <!-- Panneau Horaires -->
+    <div class="col-md-4">
+      <div class="info-card">
+        <div class="info-card-header highlight-header">
+          <h3>{{ 'TIME.TITLE' | translate }}</h3>
+        </div>
+        <div class="info-card-body">
+          <ul class="schedule-list">
+            <li class="schedule-item schedule-item-info">{{ 'TIME.LINE1' | translate }}</li>
+            <li class="schedule-item schedule-item-warning">{{ 'TIME.LINE2' | translate }}</li>
+            <li class="schedule-item schedule-item-info">{{ 'TIME.LINE3' | translate }}</li>
+            <li class="schedule-item schedule-item-info">{{ 'TIME.LINE4' | translate }}</li>
+            <li class="schedule-item schedule-item-warning">{{ 'TIME.LINE5' | translate }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panneau Informations -->
+    <div class="col-md-4">
+      <div class="info-card">
+        <div class="info-card-header highlight-header">
+          <h3>{{ 'INFO.TITLE' | translate }}</h3>
+        </div>
+        <div class="info-card-body">
+          <ul class="schedule-list">
+            <li class="schedule-item schedule-item-primary">{{ 'INFO.LINE1' | translate }}</li>
+            <li class="schedule-item schedule-item-primary">{{ 'INFO.LINE2' | translate }}</li>
+            <li class="schedule-item schedule-item-success">{{ 'INFO.LINE3' | translate }}</li>
+            <li class="schedule-item schedule-item-success">{{ 'INFO.LINE4' | translate }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carousel sur toute la largeur -->
+  <div class="row gallery-section">
+    <div class="col-md-12">
+      <h2 class="section-title">{{ 'DASHBOARD.GALLERY_TITLE' | translate }}</h2>
+      <!-- Carousel moderne avec miniatures -->
+      <div class="carousel-modern-container">
+        <div id="myCarouselSalon" class="carousel slide carousel-modern" data-ride="carousel" data-interval="5000">
+          <!-- Wrapper pour les slides principaux -->
+          <div class="carousel-inner" role="listbox">
+            <div ng-repeat="i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41]" 
+                class="item" 
+                ng-class="{'active': i === 1}">
+              <img class="img-responsive center-block" ng-src="img/salon/{{i}}.webp" alt="{{ 'DASHBOARD.GALLERY_IMAGE' | translate }} {{i}}">
             </div>
           </div>
         </div>
 
-        <!-- Horaires -->
-        <div class="col-xs-12">
-          <div class="info-card">
-            <div class="info-card-header">
-              <h3>{{ 'TIME.TITLE' | translate }}</h3>
-            </div>
-            <div class="info-card-body">
-              <ul class="schedule-list">
-                <li class="schedule-item schedule-item-info">{{ 'TIME.LINE1' | translate }}</li>
-                <li class="schedule-item schedule-item-warning">{{ 'TIME.LINE2' | translate }}</li>
-                <li class="schedule-item schedule-item-info">{{ 'TIME.LINE3' | translate }}</li>
-                <li class="schedule-item schedule-item-info">{{ 'TIME.LINE4' | translate }}</li>
-                <li class="schedule-item schedule-item-warning">{{ 'TIME.LINE5' | translate }}</li>
-              </ul>
+        <!-- Miniatures du carousel -->
+        <div class="carousel-thumbnails">
+          <div class="thumbnails-container">
+            <div ng-repeat="i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41]" 
+                class="thumbnail-item" 
+                ng-class="{'active': currentSlide === i-1}"
+                data-target="#myCarouselSalon" 
+                data-slide-to="{{i-1}}"
+                ng-click="setCurrentSlide(i-1)">
+              <img ng-src="img/salon/{{i}}.webp" alt="{{ 'DASHBOARD.GALLERY_THUMBNAIL' | translate }} {{i}}">
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
 
-        <!-- Informations -->
-        <div class="col-xs-12">
-          <div class="info-card">
-            <div class="info-card-header">
-              <h3>{{ 'INFO.TITLE' | translate }}</h3>
-            </div>
-            <div class="info-card-body">
-              <ul class="schedule-list">
-                <li class="schedule-item schedule-item-primary">{{ 'INFO.LINE1' | translate }}</li>
-                <li class="schedule-item schedule-item-primary">{{ 'INFO.LINE2' | translate }}</li>
-                <li class="schedule-item schedule-item-success">{{ 'INFO.LINE3' | translate }}</li>
-                <li class="schedule-item schedule-item-success">{{ 'INFO.LINE4' | translate }}</li>
-              </ul>
-            </div>
+  <!-- Section Vidéo drone -->
+  <div class="videos-section">
+    <h2 class="section-title">{{ 'DASHBOARD.VIDEOS_SECTION_TITLE' | translate }}</h2>
+    <div class="row">
+      <div class="col-xs-12 video-container">
+        <div class="video-card">
+          <div class="embed-responsive embed-responsive-16by9">
+            <video class="embed-responsive-item" autoplay loop muted playsinline>
+              <source src="videos/vid-1-drone-2024.webm" type="video/webm">
+              {{ 'DASHBOARD.VIDEO_NOT_SUPPORTED' | translate }}
+            </video>
           </div>
         </div>
       </div>
@@ -127,23 +134,6 @@
       </div>
       <div class="col-xs-12 col-md-9">
         <iframe class="location-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2806.723151185784!2d4.818553150638102!3d45.29381585271558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f53db8e741fe4d%3A0x4ed660684ff29aff!2s15+Rue+du+Levant%2C+26140+Saint-Rambert-d&#39;Albon!5e0!3m2!1sfr!2sfr!4v1457193257153" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-
-  <!-- Section Vidéo drone -->
-  <div class="videos-section">
-    <h2 class="section-title">{{ 'DASHBOARD.VIDEOS_SECTION_TITLE' | translate }}</h2>
-    <div class="row">
-      <div class="col-xs-12 video-container">
-        <div class="video-card">
-          <div class="embed-responsive embed-responsive-16by9">
-            <video class="embed-responsive-item" autoplay loop muted playsinline>
-              <source src="videos/vid-1-drone-2024.webm" type="video/webm">
-              {{ 'DASHBOARD.VIDEO_NOT_SUPPORTED' | translate }}
-            </video>
-          </div>
-        </div>
       </div>
     </div>
   </div>
