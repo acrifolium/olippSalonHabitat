@@ -153,12 +153,54 @@ olippControllers.controller('OlippAnnonceurCtrl', ['$scope', 'blockUI', 'blockUI
                   });
 }]);
 
+// Fonctions pour les contrôles vidéo du dashboard
+function toggleFullScreen(videoContainer) {
+  const video = videoContainer.querySelector('video');
+  
+  if (!document.fullscreenElement) {
+    if (video.requestFullscreen) {
+      video.requestFullscreen();
+    } else if (video.webkitRequestFullscreen) { /* Safari */
+      video.webkitRequestFullscreen();
+    } else if (video.msRequestFullscreen) { /* IE11 */
+      video.msRequestFullscreen();
+    }
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) { /* Safari */
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { /* IE11 */
+      document.msExitFullscreen();
+    }
+  }
+}
+
+function toggleMute(video) {
+  video.muted = !video.muted;
+  const btn = event.currentTarget;
+  if (video.muted) {
+    btn.querySelector('.glyphicon').className = 'glyphicon glyphicon-volume-off';
+  } else {
+    btn.querySelector('.glyphicon').className = 'glyphicon glyphicon-volume-up';
+  }
+}
+
+function togglePlay(video) {
+  const btn = event.currentTarget;
+  if (video.paused) {
+    video.play();
+    btn.querySelector('.glyphicon').className = 'glyphicon glyphicon-pause';
+  } else {
+    video.pause();
+    btn.querySelector('.glyphicon').className = 'glyphicon glyphicon-play';
+  }
+}
+
 olippControllers.controller('OlippDashboardCtrl', ['$scope', '$sce', function($scope, $sce) {
     
     // Données existantes
     $scope.date = new Date();
-    
-    // Note: Les anciennes références YouTube ont été supprimées et remplacées par une vidéo locale
     
     // Pour le carousel avec miniatures
     $scope.currentSlide = 0;
@@ -168,10 +210,59 @@ olippControllers.controller('OlippDashboardCtrl', ['$scope', '$sce', function($s
         $scope.currentSlide = index;
     };
     
+    // Fonctions pour les contrôles vidéo
+    $scope.toggleFullScreen = function(videoContainer) {
+        var video = videoContainer.querySelector('video');
+        
+        if (!document.fullscreenElement) {
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.webkitRequestFullscreen) { /* Safari */
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) { /* IE11 */
+                video.msRequestFullscreen();
+            }
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) { /* Safari */
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) { /* IE11 */
+                document.msExitFullscreen();
+            }
+        }
+    };
+
+    $scope.toggleMute = function(video) {
+        video.muted = !video.muted;
+        var btn = event.currentTarget;
+        if (video.muted) {
+            btn.querySelector('.glyphicon').className = 'glyphicon glyphicon-volume-off';
+        } else {
+            btn.querySelector('.glyphicon').className = 'glyphicon glyphicon-volume-up';
+        }
+    };
+
+    $scope.togglePlay = function(video) {
+        var btn = event.currentTarget;
+        if (video.paused) {
+            video.play();
+            btn.querySelector('.glyphicon').className = 'glyphicon glyphicon-pause';
+        } else {
+            video.pause();
+            btn.querySelector('.glyphicon').className = 'glyphicon glyphicon-play';
+        }
+    };
+    
     // Écouter les événements du carousel de Bootstrap
     angular.element(document).ready(function() {
         // S'assurer que le carousel est correctement initialisé
         var carousel = $('#myCarouselSalon');
+        
+        // Exposer les fonctions de contrôle vidéo globalement pour être utilisées par les handlers onclick
+        window.toggleFullScreen = $scope.toggleFullScreen;
+        window.toggleMute = $scope.toggleMute;
+        window.togglePlay = $scope.togglePlay;
         
         // Écouter l'événement slid.bs.carousel qui est déclenché après la transition
         carousel.on('slid.bs.carousel', function(event) {

@@ -113,13 +113,64 @@
   <div class="videos-section">
     <h2 class="section-title">{{ 'DASHBOARD.VIDEOS_SECTION_TITLE' | translate }}</h2>
     <div class="row">
-      <div class="col-xs-12 video-container">
-        <div class="video-card">
-          <div class="embed-responsive embed-responsive-16by9">
-            <video class="embed-responsive-item" autoplay loop muted playsinline>
-              <source src="videos/vid-1-drone-2024.webm" type="video/webm">
-              {{ 'DASHBOARD.VIDEO_NOT_SUPPORTED' | translate }}
-            </video>
+      <!-- Salle 1 - Vidéo principale -->
+      <div class="col-xs-12 col-md-6 video-container">
+        <div class="video-card dashboard-video-card">
+          <div class="video-card-header">
+            <h3>{{ 'DASHBOARD.VIDEO_TITLE_HALL1' | translate }}</h3>
+          </div>
+          <div class="video-wrapper">
+            <div class="embed-responsive embed-responsive-16by9">
+              <video class="embed-responsive-item" autoplay loop muted playsinline poster="img/carousel/banniere-1.png">
+                <source src="videos/vid-1-drone-2024.webm" type="video/webm">
+                {{ 'DASHBOARD.VIDEO_NOT_SUPPORTED' | translate }}
+              </video>
+            </div>
+            <div class="video-controls">
+              <button class="btn btn-sm btn-default video-control-btn expand-btn" onclick="toggleFullScreen(this.parentNode.previousElementSibling)">
+                <span class="glyphicon glyphicon-fullscreen"></span> {{ 'DASHBOARD.EXPAND_VIDEO' | translate }}
+              </button>
+              <button class="btn btn-sm btn-default video-control-btn toggle-mute-btn" onclick="toggleMute(this.parentNode.previousElementSibling.querySelector('video'))">
+                <span class="glyphicon glyphicon-volume-off"></span>
+              </button>
+              <button class="btn btn-sm btn-default video-control-btn toggle-play-btn" onclick="togglePlay(this.parentNode.previousElementSibling.querySelector('video'))">
+                <span class="glyphicon glyphicon-play"></span>
+              </button>
+            </div>
+          </div>
+          <div class="video-card-footer">
+            <p>{{ 'DASHBOARD.VIDEO_DESC_HALL1' | translate }}</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Salle 2 - Vidéo extension -->
+      <div class="col-xs-12 col-md-6 video-container">
+        <div class="video-card dashboard-video-card">
+          <div class="video-card-header">
+            <h3>{{ 'DASHBOARD.VIDEO_TITLE_HALL2' | translate }}</h3>
+          </div>
+          <div class="video-wrapper">
+            <div class="embed-responsive embed-responsive-16by9">
+              <video class="embed-responsive-item" autoplay loop muted playsinline poster="img/carousel/banniere-2.png">
+                <source src="videos/vid-2-drone-2024.webm" type="video/webm">
+                {{ 'DASHBOARD.VIDEO_NOT_SUPPORTED' | translate }}
+              </video>
+            </div>
+            <div class="video-controls">
+              <button class="btn btn-sm btn-default video-control-btn expand-btn" onclick="toggleFullScreen(this.parentNode.previousElementSibling)">
+                <span class="glyphicon glyphicon-fullscreen"></span> {{ 'DASHBOARD.EXPAND_VIDEO' | translate }}
+              </button>
+              <button class="btn btn-sm btn-default video-control-btn toggle-mute-btn" onclick="toggleMute(this.parentNode.previousElementSibling.querySelector('video'))">
+                <span class="glyphicon glyphicon-volume-off"></span>
+              </button>
+              <button class="btn btn-sm btn-default video-control-btn toggle-play-btn" onclick="togglePlay(this.parentNode.previousElementSibling.querySelector('video'))">
+                <span class="glyphicon glyphicon-play"></span>
+              </button>
+            </div>
+          </div>
+          <div class="video-card-footer">
+            <p>{{ 'DASHBOARD.VIDEO_DESC_HALL2' | translate }}</p>
           </div>
         </div>
       </div>

@@ -63,16 +63,21 @@
     }
   },
   "DASHBOARD": {
-    "MAIN_TITLE": "Salon Tout pour l'habitat",
-    "SUBTITLE": "Salon de l'habitat et de la construction",
+    "MAIN_TITLE": "Salon de l'Habitat & de la Construction",
+    "SUBTITLE": "Saint-Rambert-d'Albon (26140)",
     "DATE": "27, 28 et 29 Mars 2026",
-    "GALLERY_TITLE": "Galerie d'images du salon",
+    "GALLERY_TITLE": "Notre galerie",
     "GALLERY_IMAGE": "Image du salon",
     "GALLERY_THUMBNAIL": "Miniature",
     "BODY_TEXT": "Le salon de l'habitat et de la construction se tiendra les 27, 28 et 29 Mars 2026 à la salle Jean Ferrat de Saint-Rambert-d'Albon.",
     "LOCATION_SECTION_TITLE": "Lieu du salon",
-    "VIDEOS_SECTION_TITLE": "Vidéos du salon",
-    "VIDEO_NOT_SUPPORTED": "Votre navigateur ne prend pas en charge la lecture de vidéos."
+    "VIDEOS_SECTION_TITLE": "Découverte du salon en vidéo",
+    "VIDEO_TITLE_HALL1": "Salle principale",
+    "VIDEO_DESC_HALL1": "Survol de la salle principale du salon où vous pourrez rencontrer de nombreux exposants professionnels.",
+    "VIDEO_TITLE_HALL2": "Salle annexe",
+    "VIDEO_DESC_HALL2": "Aperçu de notre deuxième espace d'exposition, situé à proximité de la salle principale, à ne pas manquer lors de votre visite.",
+    "VIDEO_NOT_SUPPORTED": "Votre navigateur ne prend pas en charge la lecture de vidéos.",
+    "EXPAND_VIDEO": "Voir en plein écran"
   },
   "DOWNLOAD-PANEL": {
     "TITLE": "Dossier de participation",
@@ -100,10 +105,10 @@
   "MOVIES": {
     "PAGE_TITLE": "Vidéos du Salon",
     "PAGE_SUBTITLE": "Découvrez nos nouvelles vidéos de présentation du Salon de l'Habitat",
-    "DRONE_VIDEO_1": "Vue aérienne du salon - Partie 1",
-    "DRONE_VIDEO_1_DESCRIPTION": "Une vue spectaculaire par drone des installations du Salon de l'Habitat 2024, montrant l'ampleur de l'événement et la diversité des exposants.",
-    "DRONE_VIDEO_2": "Vue aérienne du salon - Partie 2",
-    "DRONE_VIDEO_2_DESCRIPTION": "Découvrez les extérieurs et l'environnement du Salon de l'Habitat filmés par drone lors de l'édition 2024.",
+    "DRONE_VIDEO_1": "Vue de la salle principale",
+    "DRONE_VIDEO_1_DESCRIPTION": "Visite virtuelle de notre salle principale filmée par drone, vous permettant d'explorer l'organisation et la disposition des stands dans cet espace.",
+    "DRONE_VIDEO_2": "Vue de la salle annexe",
+    "DRONE_VIDEO_2_DESCRIPTION": "Découvrez notre seconde salle d'exposition, un espace complémentaire souvent méconnu mais essentiel pour profiter pleinement du salon.",
     "VIDEO_NOT_SUPPORTED": "Votre navigateur ne prend pas en charge la lecture de vidéos."
   },
   "EXPOSANT_FORM": {
