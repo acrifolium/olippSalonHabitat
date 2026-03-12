@@ -81,11 +81,14 @@
   },
   "DOWNLOAD-PANEL": {
     "TITLE": "Dossier de participation",
-    "BUTTON": "Télécharger",
+    "BUTTON": "Télécharger le dossier",
     "BUTTON_TITLE": "Télécharger le dossier d'inscription",
-    "PLAQUETTE": "Plaquette",
+    "PLAQUETTE": "Plaquette du salon",
     "TEXT": "Pensez à nous retourner votre bulletin d'inscription à télécharger ci-dessus dûment rempli et accompagné de votre réglement avant le 16 Janvier 2026.",
-    "DEADLINE": "Date limite: 16 Janvier 2026"
+    "DEADLINE": "Date limite: 16 Janvier 2026",
+    "PLAQUETTE_BUTTON": "Télécharger la plaquette",
+    "PLAQUETTE_BUTTON_TITLE": "Télécharger la plaquette du Salon Habitat 2026",
+    "PLAQUETTE_TEXT": "Consultez la plaquette du salon pour découvrir toutes les informations visiteurs et le programme de l'édition 2026."
   },
   "TIME": {
     "TITLE": "Horaires d'ouverture",
