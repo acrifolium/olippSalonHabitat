@@ -10,20 +10,24 @@ var csvParser = {
      * @return {Array} Array of parsed objects
      */
     parseExposants: function(csvString, delimiter) {
-        delimiter = delimiter || ',';
+        delimiter = delimiter || ';';
         
         // Split into lines
         const lines = csvString.split('\n');
         const result = [];
         
+        // Skip first 2 lines: title + column headers
+        const dataLines = lines.slice(2);
+        
         // Process each line
-        lines.forEach(line => {
+        dataLines.forEach(line => {
             if (!line.trim()) return; // Skip empty lines
             
             // Split the line by delimiter but respect quoted values
             const values = this.splitCSVLine(line, delimiter);
             
             // Create object structure matching the old PHP structure
+            // New CSV column order: name;description;contact;firstline;city;mail;telephone;portable;;;
             const node = {};
             node.name = values[0] || '';
             node.description = values[1] || '';
@@ -31,14 +35,14 @@ var csvParser = {
             const address = {};
             address.contact = values[2] || '';
             address.firstline = values[3] || '';
-            address.postalCode = values[4] || '';
-            address.city = values[5] || '';
+            address.postalCode = '';
+            address.city = values[4] || ''; // VILLE CP (combined)
             node.address = address;
             
             node.telephone = values[6] || '';
             node.portable = values[7] || '';
-            node.mail = values[8] || '';
-            node.webSite = values[9] || '';
+            node.mail = values[5] || '';
+            node.webSite = '';
             
             result.push(node);
         });

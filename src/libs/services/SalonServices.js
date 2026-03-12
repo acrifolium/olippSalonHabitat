@@ -10,10 +10,10 @@ salonServices.factory('salonServices', ['$http', '$q',
     obj.GetExposants = function(){
         var deferred = $q.defer();
         
-        $http.get('api/data/EXPOSANTS.csv', { transformResponse: null })
+        $http.get('api/data/EXPOSANTS%202026.csv', { transformResponse: null })
             .then(function(response) {
                 var csvData = response.data;
-                var exposants = csvParser.parseExposants(csvData);
+                var exposants = csvParser.parseExposants(csvData, ';');
                 
                 var result = {
                     data: {
